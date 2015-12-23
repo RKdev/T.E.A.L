@@ -1,1 +1,12 @@
 A.L.F - the Adaptable Learning Framework
+E.L.F - the Extensible Learning Framework
+T.E.A.L - The Extensible Adaptable Learning framework
+
+To Do
+
+Create basic input form
+
+Ability to create new resource objects and add them to the resource array
+
+Conceptual Questions
+What happens to a resource ID when a resource is removed?
