@@ -1,0 +1,3 @@
+Add Resource (resource type, title, category, [topic{parent,name}])- Add a new resource
+Add Resource to Resource
+Add Subcategory to Resource
