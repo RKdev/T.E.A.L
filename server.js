@@ -669,7 +669,8 @@ http.createServer(function(req, res){
 		res.end();
 		return;
 	}
-   res.write('OHAI\n');
+
+
 	// Check if file/directory
 	if(stats.isFile()){
 		var mimeType = mimeTypes[path.extname(fileName).split("").reverse()[0]];
