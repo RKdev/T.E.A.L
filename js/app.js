@@ -8,12 +8,12 @@ var resources = [
     cycle: 0,
     category: {
         name:"Mathematics",
-        topics: [
-          {parent: "Mathematics", name:"College Algebra"},
-          {parent: "Mathematics", name:"Precalulus"},
-          {parent: "Mathematics", name:"Calculus"},
-        ],
     },
+    topics: [
+      {parent: "Mathematics", name:"College Algebra"},
+      {parent: "Mathematics", name:"Precalulus"},
+      {parent: "Mathematics", name:"Calculus"},
+    ],
   },
   {
     id: 1,
@@ -22,26 +22,26 @@ var resources = [
     cycle: 0,
     category: {
         name:"Mathematics",
-        topics: [
-          {parent: "Mathematics", name:"College Algebra"},
-          {parent: "Mathematics", name:"Precalulus"},
-          {parent: "Mathematics", name:"Calculus"},
-        ],
     },
+    topics: [
+      {parent: "Mathematics", name:"College Algebra"},
+      {parent: "Mathematics", name:"Precalulus"},
+      {parent: "Mathematics", name:"Calculus"},
+    ],
   },
 ];
 
 
 listResources();
-readArray(resources[0].category.topics);
+readArray(resources[0].topics);
 listTopics(0);
 
 
 //function declarations
 function listTopics(resourceID){
-  var intArrayLength = resources[resourceID].category.topics.length;
+  var intArrayLength = resources[resourceID].topics.length;
   for (var i = 0; i < intArrayLength; i++) {
-    console.log(resources[resourceID].category.topics[i].name);
+    console.log(resources[resourceID].topics[i].name);
   }
 }
 
