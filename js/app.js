@@ -24,8 +24,6 @@ var resources = [
         name:"Mathematics",
     },
     topics: [
-      {parent: "Mathematics", name:"College Algebra"},
-      {parent: "Mathematics", name:"Precalulus"},
       {parent: "Mathematics", name:"Calculus"},
     ],
   },
@@ -34,7 +32,7 @@ var resources = [
 
 listResources();
 readArray(resources[0].topics);
-listTopics(0);
+listTopics(1);
 
 
 //function declarations
