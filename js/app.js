@@ -1,38 +1,16 @@
 console.log('Running...');
+//Some setup vars
+var db = "/pretendDB/data.json"
+var resources = [];
 
-var resources = [
-  {
-    id: 0,
-    name: "College Mathematics",
-    type: "Text Book",
-    cycle: 0,
-    category: {
-        name:"Mathematics",
-    },
-    topics: [
-      {parent: "Mathematics", name:"College Algebra"},
-      {parent: "Mathematics", name:"Precalulus"},
-      {parent: "Mathematics", name:"Calculus"},
-    ],
-  },
-  {
-    id: 1,
-    name: "Kahn Video",
-    type: "Video",
-    cycle: 0,
-    category: {
-        name:"Mathematics",
-    },
-    topics: [
-      {parent: "Mathematics", name:"Calculus"},
-    ],
-  },
-];
+console.log(resources.length);
+jsonLoader(db, function() {
+  console.log(resources);
+});
 
-
-listResources();
-readArray(resources[0].topics);
-listTopics(1);
+jsonWriter(db, function() {
+  console.log(resources);
+});
 
 
 //function declarations
@@ -56,6 +34,47 @@ function readArray(anyArray) {
   }
 }
 
+function supports_local_storage() {
+  try {
+    return 'localStorage' in window && window['localStorage'] !== null;
+  } catch(e){
+    return false;
+  }
+}
+
+function jsonLoader(absPath, callback) {
+       var xhr = new XMLHttpRequest();
+       xhr.open("GET", absPath, true);
+       xhr.addEventListener("load", function(){
+        resources=JSON.parse(this.responseText);
+        callback();
+       });
+       xhr.send();
+}
+
+function jsonWriter(absPath, callback) {
+       var xhr = new XMLHttpRequest();
+       xhr.open("PUT", absPath, true);
+       xhr.addEventListener("load", function(){
+        resources=JSON.parse(this.responseText);
+        callback();
+       });
+       xhr.send();
+}
+
+
+
+/*
+function jsonWriter(absPath, callback) {
+       var xhr = new XMLHttpRequest();
+       xhr.open("POST", absPath, true);
+       xhr.onload = function() {
+           var json = JSON.parse(this.responseText);
+           callback(json);
+       };
+       xhr.send();
+}
+*/
 
 //functions to make
 
@@ -69,5 +88,3 @@ function readArray(anyArray) {
 //add topic
 //  add topic to a topic array within a record
 //  wants record to add to, category, topic name
-
-//
