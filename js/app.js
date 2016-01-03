@@ -3,16 +3,6 @@ console.log('Running...');
 var db = "/pretendDB/data.json"
 var resources = [];
 
-console.log(resources.length);
-jsonLoader(db, function() {
-  console.log(resources);
-});
-
-jsonWriter(db, function() {
-  console.log(resources);
-});
-
-
 //function declarations
 function listTopics(resourceID){
   var intArrayLength = resources[resourceID].topics.length;
@@ -42,6 +32,20 @@ function supports_local_storage() {
   }
 }
 
+function addResource(category,id,name,subresources,topics,type){
+  var newResource = {};
+ newResource.category = category;
+/*  newResource.cycle = 0;
+  newResource.id = id;
+  newResource.name = name;
+  newResource.subresources = [];
+  newResource.topics = [];
+  newResource.type = type;
+  */
+  resources.push(newResource);
+  console.log(resources);
+}
+
 function jsonLoader(absPath, callback) {
        var xhr = new XMLHttpRequest();
        xhr.open("GET", absPath, true);
@@ -54,27 +58,13 @@ function jsonLoader(absPath, callback) {
 
 function jsonWriter(absPath, callback) {
        var xhr = new XMLHttpRequest();
-       xhr.open("PUT", absPath, true);
+       xhr.open("POST", absPath, true);
        xhr.addEventListener("load", function(){
         resources=JSON.parse(this.responseText);
         callback();
        });
        xhr.send();
 }
-
-
-
-/*
-function jsonWriter(absPath, callback) {
-       var xhr = new XMLHttpRequest();
-       xhr.open("POST", absPath, true);
-       xhr.onload = function() {
-           var json = JSON.parse(this.responseText);
-           callback(json);
-       };
-       xhr.send();
-}
-*/
 
 //functions to make
 
