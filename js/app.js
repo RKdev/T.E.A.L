@@ -46,6 +46,11 @@ function addResource(category,id,name,subresources,topics,type){
   console.log(resources);
 }
 
+/*still not sure about how to do this correctly. Right now I'm accessing the global
+ resources array manually instead of passing a reference - which I want to do
+ I'm thinking it's just a lack of understanding how to do objects and callbacks
+ correctly in javascript. But it works for right now.*/
+ 
 function jsonLoader(absPath, callback) {
        var xhr = new XMLHttpRequest();
        xhr.open("GET", absPath, true);
@@ -56,6 +61,7 @@ function jsonLoader(absPath, callback) {
        xhr.send();
 }
 
+//broken till I learn POSTing with node.js, right now it's just a copy of the jsonLoader function
 function jsonWriter(absPath, callback) {
        var xhr = new XMLHttpRequest();
        xhr.open("POST", absPath, true);
