@@ -5,7 +5,8 @@ This is a pet project I've been wanting to work on for years. The idea is a lear
 
 I originally conceived of the idea as a way of managing how to read all the books I have. As I played around with it, I decided I wanted
 to extend the concept to more than just library books to any kind of resource, ie. youtube videos, online classes, wikipedia articles, etc.
-From a usability standpoint I want to try and combine the usability of Pinterest with the spaced-learning system in Anki.
+From a usage standpoint I want to try and combine the usability of Pinterest
+with the spaced-learning system in Anki.
 
 I'm also using this project as a learning platform for web development in general. It contains a tiny node.js instance for learning server-
 side code.
