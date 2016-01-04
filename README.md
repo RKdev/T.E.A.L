@@ -8,8 +8,7 @@ to extend the concept to more than just library books to any kind of resource, i
 From a usage standpoint I want to try and combine the usability of Pinterest
 with the spaced-learning system in Anki.
 
-I'm also using this project as a learning platform for web development in general. It contains a tiny node.js instance for learning server-
-side code.
+I'm also using this project as a learning platform for web development in general. It contains a tiny node.js instance for learning server-side code.
 
 I should mention that this is a giant work-in-progress and will probably be broken half the time. My goal is to have a working beta of
 the system up by March.
