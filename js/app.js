@@ -66,6 +66,7 @@ function jsonLoader(appendObject, absPath, callback) {
        xhr.send();
 }
 
+
 //broken till I learn POSTing with node.js, right now it's just a copy of the jsonLoader function
 /*function jsonWriter(absPath, callback) {
        var xhr = new XMLHttpRequest();
