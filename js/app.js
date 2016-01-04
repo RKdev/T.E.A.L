@@ -2,13 +2,16 @@ console.log('Running...');
 //Some setup vars
 var db = "/pretendDB/data.json"
 var resources = [];
-var test = {};
+var test = [];
 
-test.bob="hi";
 
 //function declarations
-function fncAppendObject(data){
-  resources = data;
+
+function populateArray(data, target){
+    for (var i = 0; i < data.length; i++) {
+      console.log(data[i]);
+      target.push(data[i]);
+    }
   console.log(resources);
 }
 
@@ -59,26 +62,25 @@ function addResource(category,id,name,subresources,topics,type){
  I'm thinking it's just a lack of understanding how to do objects and callbacks
  correctly in javascript. But it works for right now. I want this to be a generic function though*/
 
-function jsonLoader(absPath, callback) {
+function jsonLoader(absPath, target, callback) {
        var xhr = new XMLHttpRequest();
        xhr.open("GET", absPath, true);
        xhr.addEventListener("load", function(){
          var appendObject=JSON.parse(this.responseText);
-         callback(appendObject);
+         callback(appendObject, target);
        });
        xhr.send();
 }
 
-//broken till I learn POSTing with node.js, right now it's just a copy of the jsonLoader function
-/*function jsonWriter(absPath, callback) {
+//broken till I learn POSTing with node.js, right now it's just a copy of the
+function jsonWriter(absPath, target, callback) {
        var xhr = new XMLHttpRequest();
        xhr.open("POST", absPath, true);
        xhr.addEventListener("load", function(){
-        resources=JSON.parse(this.responseText);
-        callback();
+       callback();
        });
        xhr.send();
-}*/
+}
 
 //functions to make
 
