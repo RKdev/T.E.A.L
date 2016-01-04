@@ -12,7 +12,7 @@ function populateArray(data, target){
       console.log(data[i]);
       target.push(data[i]);
     }
-  console.log(resources);
+  console.log(target);
 }
 
 function listTopics(resourceID){
