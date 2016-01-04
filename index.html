@@ -118,13 +118,13 @@
   	<p>Hello, World!</p>
 		<canvas id="canvas" width="150" height="150"></canvas>
 		<hr/>
-		<button type="button" onclick="jsonLoader(db, resources, populateArray)">Load Data</button>
+		<button type="button" onclick="jsonLoader(db, resources, populateArray)">Load Resource Array</button>
 	  <button type="button" onclick="addResource('category')">AddResource</button>
 		<button type="button" onclick="jsonWriter(db, resources, function() {
-		  console.log(resources);})">Write Data</button>
-		<button type="button" onclick="jsonLoader(db, test, populateArray)">Load Data</button>
+		  console.log(resources);})">Ouput Resource Array</button>
+		<button type="button" onclick="jsonLoader(db, test, populateArray)">Load Test Array</button>
 	  <button type="button" onclick="addResource('category')">AddResource</button>
 		<button type="button" onclick="jsonWriter(db, test, function() {
-		  console.log(test);})">Write Data</button>
+		  console.log(test);})">Output Test Array</button>
 	</body>
 </html>
