@@ -62,12 +62,12 @@ function addResource(category,id,name,subresources,topics,type){
  I'm thinking it's just a lack of understanding how to do objects and callbacks
  correctly in javascript. But it works for right now. I want this to be a generic function though*/
 
-function jsonLoader(absPath, target, callback) {
+function jsonLoader(absPath, bob, callback) {
        var xhr = new XMLHttpRequest();
        xhr.open("GET", absPath, true);
        xhr.addEventListener("load", function(){
          var appendObject=JSON.parse(this.responseText);
-         callback(appendObject, target);
+         callback(appendObject, bob);
        });
        xhr.send();
 }
