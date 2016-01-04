@@ -5,9 +5,13 @@ var resources = [];
 var test = {};
 
 test.bob="hi";
-console.log(test);
 
 //function declarations
+function fncAppendObject(data){
+  resources = data;
+  console.log(resources);
+}
+
 function listTopics(resourceID){
   var intArrayLength = resources[resourceID].topics.length;
   for (var i = 0; i < intArrayLength; i++) {
@@ -55,13 +59,12 @@ function addResource(category,id,name,subresources,topics,type){
  I'm thinking it's just a lack of understanding how to do objects and callbacks
  correctly in javascript. But it works for right now. I want this to be a generic function though*/
 
-function jsonLoader(appendObject, absPath, callback) {
+function jsonLoader(absPath, callback) {
        var xhr = new XMLHttpRequest();
        xhr.open("GET", absPath, true);
        xhr.addEventListener("load", function(){
-         appendObject=JSON.parse(this.responseText);
-         console.log(appendObject);
-         callback('bob');
+         var appendObject=JSON.parse(this.responseText);
+         callback(appendObject);
        });
        xhr.send();
 }
