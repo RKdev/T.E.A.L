@@ -7,27 +7,22 @@
 		<script type="text/javascript" src="js/jquery-2.1.4.min.js"/> </script>
 		<script type="text/javascript" src="js/pacman.js"/> </script>
 		</script>
-		
+
 		<style type="text/css">
 			canvas { border: 1px solid black;}
 		</style>
   </head>
-
-	<!-- function populateResourceArray(data){
-		resources = data;
-		console.log(resources); -->
 
 	<body onload="draw();">
   	<p>Hello, World!</p>
 		<canvas id="canvas" width="150" height="150"></canvas>
 		<hr/>
 		<button type="button" onclick="TEAL.loadArrayfromJSON(TEAL.db, TEAL.resourcesArray, TEAL.populateArray)">Load Resource Array</button>
-	  <button type="button" onclick="TEAL.addToArray(TEAL.resourcesArray, 'category')">AddResource</button>
-		<button type="button" onclick="jsonWriter(TEAL.db, resources, function() {
-		  console.log(resources);})">Ouput Resource Array</button>
-		<button type="button" onclick="jsonLoader(TEAL.db, test, populateArray)">Load Test Array</button>
-	  <button type="button" onclick="addResource('category')">AddResource</button>
-		<button type="button" onclick="jsonWriter(TEAL.db, test, function() {
-		  console.log(test);})">Output Test Array</button>
+	  <button type="button" onclick="TEAL.addToArray(TEAL.resourcesArray, 'category')">Add to Resource Array</button>
+		<button type="button" onclick="console.log(TEAL.resourcesArray);">Ouput Resource Array</button>
+
+		<button type="button" onclick="TEAL.loadArrayfromJSON(TEAL.db, TEAL.testArray, TEAL.populateArray)">Load Test Array</button>
+		<button type="button" onclick="TEAL.addToArray(TEAL.testArray, 'superbob')">Add to Test Array</button>
+		<button type="button" onclick="console.log(TEAL.testArray);">Ouput Test Array</button>
 	</body>
 </html>
