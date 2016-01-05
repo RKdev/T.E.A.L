@@ -8,6 +8,14 @@ test.bob="hi";
 console.log(test);
 
 //function declarations
+function addCategory(item) {
+    var dropdown = document.getElementById("categories");
+    console.log(dropdown.length);
+    // Append the element to the end of Array list
+    dropdown[dropdown.length] = new Option(item);
+    console.log(dropdown[dropdown.length - 1]);
+}
+
 function listTopics(resourceID){
   var intArrayLength = resources[resourceID].topics.length;
   for (var i = 0; i < intArrayLength; i++) {
@@ -90,3 +98,10 @@ function jsonLoader(appendObject, absPath, callback) {
 //add topic
 //  add topic to a topic array within a record
 //  wants record to add to, category, topic name
+
+var categories = [
+  "Mathematics",
+  "Philosophy",
+  "Programming",
+  "Fiction",
+];
