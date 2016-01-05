@@ -14,3 +14,17 @@ Add Subcategory to Resource
 //add topic
 //  add topic to a topic array within a record
 //  wants record to add to, category, topic name
+
+TEAL.addToArray = function(target, category){
+  var newResource = {};
+  newResource.category = category;
+/*  newResource.cycle = 0;
+  newResource.id = id;
+  newResource.name = name;
+  newResource.subresources = [];
+  newResource.topics = [];
+  newResource.type = type;
+  */
+  target.push(newResource);
+  console.log(target);
+}
