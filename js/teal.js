@@ -80,16 +80,3 @@ function jsonWriter(absPath, target, callback) {
        });
        xhr.send();
 }
-
-//functions to make
-
-//create record
-//  adds to record id array
-//  wants name, type, category
-//  optionally wants topics
-//  sets record id to array subscript
-//  sets cycle to 0
-
-//add topic
-//  add topic to a topic array within a record
-//  wants record to add to, category, topic name
