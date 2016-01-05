@@ -2,14 +2,15 @@
 <html>
 	<head>
 		<title>Index Page</title>
-		<script type="text/javascript" src="js/app.js"/> </script>
+		<!-- <script type="text/javascript" src="js/app.js"/> </script>-->
+		<script type="text/javascript" src="js/teal.js"/> </script>
 		<script type="text/javascript" src="js/jquery-2.1.4.min.js"/> </script>
 		<script type="text/javascript"/>
 			function draw() {
 			var canvas = document.getElementById('canvas');
 			if (canvas.getContext) {
 			 var ctx = canvas.getContext('2d');
-			 
+
 
 			roundedRect(ctx,12,12,150,150,15);
 	    roundedRect(ctx,19,19,150,150,9);
@@ -119,13 +120,13 @@
   	<p>Hello, World!</p>
 		<canvas id="canvas" width="150" height="150"></canvas>
 		<hr/>
-		<button type="button" onclick="jsonLoader(db, resources, populateArray)">Load Resource Array</button>
-	  <button type="button" onclick="addResource('category')">AddResource</button>
-		<button type="button" onclick="jsonWriter(db, resources, function() {
+		<button type="button" onclick="TEAL.loadArrayfromJSON(TEAL.db, TEAL.resourcesArray, TEAL.populateArray)">Load Resource Array</button>
+	  <button type="button" onclick="TEAL.addToArray(TEAL.resourcesArray, 'category')">AddResource</button>
+		<button type="button" onclick="jsonWriter(TEAL.db, resources, function() {
 		  console.log(resources);})">Ouput Resource Array</button>
-		<button type="button" onclick="jsonLoader(db, test, populateArray)">Load Test Array</button>
+		<button type="button" onclick="jsonLoader(TEAL.db, test, populateArray)">Load Test Array</button>
 	  <button type="button" onclick="addResource('category')">AddResource</button>
-		<button type="button" onclick="jsonWriter(db, test, function() {
+		<button type="button" onclick="jsonWriter(TEAL.db, test, function() {
 		  console.log(test);})">Output Test Array</button>
 	</body>
 </html>
