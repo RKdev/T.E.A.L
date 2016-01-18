@@ -10,6 +10,7 @@
 
 		<style type="text/css">
 			canvas { border: 1px solid black;}
+			#scaryButton { float: right;}
 		</style>
   </head>
 
@@ -21,13 +22,9 @@
 		<button type="button" onclick="TEAL.loadArrayfromAJAX(TEAL.db, TEAL.resourcesArray, TEAL.populateArray)">Load Resource Array</button>
 	  <button type="button" onclick="TEAL.addToArray(TEAL.resourcesArray, 'category')">Add to Resource Array</button>
 		<button type="button" onclick="console.log(TEAL.resourcesArray);">Ouput Resource Array</button>
-		<button type="button" onclick="TEAL.emptyArray(TEAL.resourcesArray)">Empty Resource Array</button>
-		<button type="button" onclick="TEAL.writeArraytoAJAX(TEAL.db, TEAL.resourcesArray, function() {});">Write Resource Array</button>
-
-
-<!--		<button type="button" onclick="TEAL.loadArrayfromAJAX(TEAL.db, TEAL.testArray, TEAL.populateArray)">Load Test Array</button>
-		<button type="button" onclick="TEAL.addToArray(TEAL.testArray, 'superbob')">Add to Test Array</button>
-		<button type="button" onclick="console.log(TEAL.testArray);">Ouput Test Array</button> -->
-
+		<button type="button" id="scaryButton" onclick="TEAL.emptyArray(TEAL.resourcesArray)">Empty Resource Array</button>
+    <br/>
+    <br/>
+		<button type="button" onclick="TEAL.writeArraytoAJAX(TEAL.db, TEAL.resourcesArray)">Write Resource Array</button>
 	</body>
 </html>

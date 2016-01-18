@@ -1,7 +1,6 @@
 console.log('Running...');
 var TEAL = TEAL || {};
 
-
 //Some setup vars
 TEAL.resourcesArray = [];
 TEAL.testArray = [];
@@ -13,10 +12,11 @@ TEAL.db = "/pretendDB/data.json"
 TEAL.populateArray = function(data, target){
     for (var i = 0; i < data.length; i++) {
         if (target.push(data[i])) {
-          console.log("success");
+          console.log("data loaded");
         }
     }
 }
+
 TEAL.emptyArray = function(target){
   target.length = 0;
   if (target.length === 0) {
@@ -27,7 +27,7 @@ TEAL.emptyArray = function(target){
 TEAL.loadArrayfromAJAX = function(absPath, arrayTarget, callback){
   var xhr = new XMLHttpRequest();
   xhr.onreadystatechange = function() {
-    console.log(xhr.readyState);
+    console.log('AJAX: ' + xhr.readyState);
   }
   xhr.open("GET", absPath, true);
   xhr.addEventListener("load", function(){
@@ -37,15 +37,15 @@ TEAL.loadArrayfromAJAX = function(absPath, arrayTarget, callback){
   xhr.send();
 }
 
-TEAL.writeArraytoAJAX = function(absPath, arraySource, callback){
+TEAL.writeArraytoAJAX = function(absPath, arraySource){
   var xhr = new XMLHttpRequest();
   xhr.onreadystatechange = function() {
-    console.log(xhr.readyState);
+    console.log('AJAX: ' + xhr.readyState);
   }
   xhr.open("POST", absPath, true);
-  xhr.addEventListener("load", function(){
-    callback(arraySource);
-  });
+//  xhr.addEventListener("load", function(){
+//    callback(arraySource);
+//  });
   xhr.send(JSON.stringify(arraySource));
 }
 
@@ -53,7 +53,7 @@ TEAL.addToArray = function(target, category){
   var newResource = {};
   newResource.category = category;
   if (target.push(newResource)) {
-    console.log("success");
+    console.log("data added");
   }
 }
 
