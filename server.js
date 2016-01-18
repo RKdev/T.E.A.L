@@ -687,4 +687,23 @@ http.createServer(function(req, res){
 		res.write('500 Internal Error\n');
 		res.end();
 	}
+
+  //Do something with POST request
+	if(req.method === 'POST'){
+		    console.log('Begin POST transaction');
+	     	var fullBody = '';
+		    req.on('data', function(chunk) {
+		      // append the current chunk of data to the fullBody variable
+		      fullBody += chunk;
+		    });
+
+    req.on('end', function() {
+			console.log(uri);
+			var wstream = fs.createWriteStream(fileName);
+			wstream.write(fullBody);
+			wstream.end();
+      console.log('End POST transaction');
+    });
+
+	}
 }).listen(5397);

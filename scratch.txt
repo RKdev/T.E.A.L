@@ -1,0 +1,12 @@
+POST workflow
+
+CLIENT
+Add button "send data" button to index.html
+
+Callback function to send stringified JSON data to server
+
+
+SERVER
+
+examine POST data
+write payload to db file

@@ -12,15 +12,18 @@ TEAL.db = "/pretendDB/data.json"
 
 TEAL.populateArray = function(data, target){
     for (var i = 0; i < data.length; i++) {
-      console.log(data[i]);
-      target.push(data[i]);
+        if (target.push(data[i])) {
+          console.log("success");
+        }
     }
-  console.log(target);
 }
 
 
-TEAL.loadArrayfromJSON = function(absPath, arrayTarget, callback){
+TEAL.loadArrayfromAJAX = function(absPath, arrayTarget, callback){
   var xhr = new XMLHttpRequest();
+  xhr.onreadystatechange = function() {
+    console.log(xhr.readyState);
+  }
   xhr.open("GET", absPath, true);
   xhr.addEventListener("load", function(){
     var appendArrayItems=JSON.parse(this.responseText);
@@ -29,11 +32,24 @@ TEAL.loadArrayfromJSON = function(absPath, arrayTarget, callback){
   xhr.send();
 }
 
+TEAL.writeArraytoAJAX = function(absPath, arraySource, callback){
+  var xhr = new XMLHttpRequest();
+  xhr.onreadystatechange = function() {
+    console.log(xhr.readyState);
+  }
+  xhr.open("POST", absPath, true);
+  xhr.addEventListener("load", function(){
+    callback(arraySource);
+  });
+  xhr.send(JSON.stringify(arraySource));
+}
+
 TEAL.addToArray = function(target, category){
   var newResource = {};
   newResource.category = category;
-  target.push(newResource);
-  console.log(target);
+  if (target.push(newResource)) {
+    console.log("success");
+  }
 }
 
 function listTopics(resourceID){

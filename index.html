@@ -14,15 +14,19 @@
   </head>
 
 	<body onload="drawPacMan();">
+		<!-- I think it's cool to draw PacMan -->
   	<p>Hello, World!</p>
 		<canvas id="canvas" width="150" height="150"></canvas>
 		<hr/>
-		<button type="button" onclick="TEAL.loadArrayfromJSON(TEAL.db, TEAL.resourcesArray, TEAL.populateArray)">Load Resource Array</button>
+		<button type="button" onclick="TEAL.loadArrayfromAJAX(TEAL.db, TEAL.resourcesArray, TEAL.populateArray)">Load Resource Array</button>
 	  <button type="button" onclick="TEAL.addToArray(TEAL.resourcesArray, 'category')">Add to Resource Array</button>
 		<button type="button" onclick="console.log(TEAL.resourcesArray);">Ouput Resource Array</button>
+		<button type="button" onclick="TEAL.writeArraytoAJAX(TEAL.db, TEAL.resourcesArray, function() {});">Write Resource Array</button>
 
-		<button type="button" onclick="TEAL.loadArrayfromJSON(TEAL.db, TEAL.testArray, TEAL.populateArray)">Load Test Array</button>
+
+<!--		<button type="button" onclick="TEAL.loadArrayfromAJAX(TEAL.db, TEAL.testArray, TEAL.populateArray)">Load Test Array</button>
 		<button type="button" onclick="TEAL.addToArray(TEAL.testArray, 'superbob')">Add to Test Array</button>
-		<button type="button" onclick="console.log(TEAL.testArray);">Ouput Test Array</button>
+		<button type="button" onclick="console.log(TEAL.testArray);">Ouput Test Array</button> -->
+
 	</body>
 </html>
