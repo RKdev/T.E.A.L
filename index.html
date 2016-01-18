@@ -122,8 +122,8 @@
 		<hr/>
 		<button type="button" onclick="TEAL.loadArrayfromJSON(TEAL.db, TEAL.resourcesArray, TEAL.populateArray)">Load Resource Array</button>
 	  <button type="button" onclick="TEAL.addToArray(TEAL.resourcesArray, 'category')">AddResource</button>
-		<button type="button" onclick="jsonWriter(TEAL.db, resources, function() {
-		  console.log(resources);})">Ouput Resource Array</button>
+		<button type="button" onclick="jsonWriter(TEAL.db, TEAL.resourcesArray, function() {
+		  console.log(TEAL.resourcesArray);})">Ouput Resource Array</button>
 		<button type="button" onclick="jsonLoader(TEAL.db, test, populateArray)">Load Test Array</button>
 	  <button type="button" onclick="addResource('category')">AddResource</button>
 		<button type="button" onclick="jsonWriter(TEAL.db, test, function() {

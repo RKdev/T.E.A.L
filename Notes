@@ -11,4 +11,10 @@ Ability to create new resource objects and add them to the resource array
 Conceptual Questions
 What happens to a resource ID when a resource is removed?
 
-Added notes to make initial commit show up on github
+
+Random notes:
+
+memory prompt resource - when doing a review, a memory prompt resource is a mnemonic device or similar thing
+  that pops up to remind you *how* to remember the answer. Triggered by a specific action or a timer
+
+Goals for March Beta:
