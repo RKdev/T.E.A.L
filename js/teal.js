@@ -17,7 +17,12 @@ TEAL.populateArray = function(data, target){
         }
     }
 }
-
+TEAL.emptyArray = function(target){
+  target.length = 0;
+  if (target.length === 0) {
+    console.log("array emptied");
+  }
+}
 
 TEAL.loadArrayfromAJAX = function(absPath, arrayTarget, callback){
   var xhr = new XMLHttpRequest();
