@@ -656,9 +656,10 @@ var mimeTypes = {
 
 // Create Server
 http.createServer(function(req, res){
+	//Resouce loader
 	var uri = url.parse(req.url).pathname;
 	var fileName = path.join(process.cwd(),unescape(uri));
-	console.log('Loading '+ uri);
+	console.log('Resource loader: Loading '+ uri);
 	var stats;
 
 	try{
@@ -688,9 +689,9 @@ http.createServer(function(req, res){
 		res.end();
 	}
 
-  //Do something with POST request
+  //POST handler
 	if(req.method === 'POST'){
-		    console.log('Begin POST transaction');
+		    console.log('POST handler: Begin POST transaction');
 	     	var fullBody = '';
 		    req.on('data', function(chunk) {
 		      // append the current chunk of data to the fullBody variable
@@ -698,11 +699,11 @@ http.createServer(function(req, res){
 		    });
 
     req.on('end', function() {
-			console.log(uri);
+			console.log("POST handler: " + uri);
 			var wstream = fs.createWriteStream(fileName);
 			wstream.write(fullBody);
 			wstream.end();
-      console.log('End POST transaction');
+      console.log('POST handler: End POST transaction');
     });
 
 	}
