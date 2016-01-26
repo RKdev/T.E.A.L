@@ -1,6 +1,6 @@
 console.log('Running...');
 //Some setup vars
-var db = "/pretendDB/data.json"
+var db = "/pretendDB/data.json";
 var resources = [];
 var test = [];
 
@@ -37,7 +37,7 @@ function readArray(anyArray) {
 
 function supports_local_storage() {
   try {
-    return 'localStorage' in window && window['localStorage'] !== null;
+    return 'localStorage' in window && window.localStorage !== null;
   } catch(e){
     return false;
   }

@@ -7,6 +7,12 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
   },
-  "author": "Brad Traversy from Learn Nodejs by Building 10 Projects at Udemy.com",
-  "license": "GPL"
+  "author": "RKDev",
+  "license": "GPL",
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-changed": "^1.3.0",
+    "gulp-jshint": "^2.0.0",
+    "jshint": "^2.9.1"
+  }
 }
