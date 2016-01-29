@@ -9,22 +9,65 @@
 		</script>
 
 		<style type="text/css">
-			canvas { border: 1px solid black;}
+			canvas {
+				border: 1px solid black;
+			}
 			#scaryButton { float: right;}
+			#panel1{
+				background-color: purple;
+				width: 200px;
+				height: 200px;
+				float: left;
+			}
+			#panel2 {
+				background-color: blue;
+				width: 150px;
+				height: 150px;
+				float: right;
+			}
+			#panel3 {
+				background-color: green;
+				width: 150px;
+				height: 150px;
+				float: left;
+			}
+			#panel4 {
+				background-color: red;
+				width: 150px;
+				height: 150px;
+				float: right;
+			}
+			.clear {
+				clear: both;
+			}
 		</style>
   </head>
 
 	<body onload="drawPacMan();">
 		<!-- I think it's cool to draw PacMan -->
-  	<p>Hello, World!</p>
-		<canvas id="canvas" width="150" height="150"></canvas>
-		<hr/>
-		<button type="button" onclick="TEAL.loadArrayfromAJAX(TEAL.db, TEAL.resourcesArray, TEAL.populateArray)">Load Resource Array</button>
-	  <button type="button" onclick="TEAL.addToArray(TEAL.resourcesArray, 'category')">Add to Resource Array</button>
-		<button type="button" onclick="console.log('Index.HTML: ' + TEAL.resourcesArray);">Ouput Resource Array</button>
-		<button type="button" id="scaryButton" onclick="TEAL.emptyArray(TEAL.resourcesArray)">Empty Resource Array</button>
-    <br/>
-    <br/>
-		<button type="button" onclick="TEAL.writeArraytoAJAX(TEAL.db, TEAL.resourcesArray)">Write Resource Array</button>
+		<div id="panel1">
+			<p>Panel 1</p>
+			<canvas id="canvas" width="150" height="150"></canvas>
+		</div>
+		<div id="panel2">
+			<p>Panel 2</p>
+		</div>
+	  <div class="clear"></div>
+		<div id="panel3">
+			<p>Panel 3</p>
+			<button type="button" onclick="TEAL.loadArrayfromAJAX(TEAL.db, TEAL.resourcesArray, TEAL.populateArray)">Load Resource Array</button>
+		  <button type="button" onclick="TEAL.addToArray(TEAL.resourcesArray, 'category')">Add to Resource Array</button>
+			<button type="button" onclick="console.log('Index.HTML: ' + TEAL.resourcesArray);">Ouput Resource Array</button>
+			<button type="button" id="scaryButton" onclick="TEAL.emptyArray(TEAL.resourcesArray)">Empty Resource Array</button>
+	    <br/>
+	    <br/>
+			<button type="button" onclick="TEAL.writeArraytoAJAX(TEAL.db, TEAL.resourcesArray)">Write Resource Array</button>
+
+		</div>
+		<div id="panel4">
+			<p>Panel 4</p>
+		</div>
+
+
 	</body>
 </html>
