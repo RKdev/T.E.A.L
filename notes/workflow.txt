@@ -1,0 +1,10 @@
+Open Web Browser
+Open TEAL URL
+Login to TEAL
+
+What happens?
+
+T.E.A.L Version 0
+-basic interface
+
+Panel1: List of Categories

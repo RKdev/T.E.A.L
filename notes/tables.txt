@@ -1,0 +1,3 @@
+categories table
+topics table
+resources table
