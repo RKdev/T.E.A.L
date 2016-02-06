@@ -1,0 +1,11 @@
+Tables
+
+categories table
+topics table
+resources table
+
+replace data.json with different table files
+
+categories.json
+topics.json
+resources.json
