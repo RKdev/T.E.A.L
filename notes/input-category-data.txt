@@ -1,0 +1,6 @@
+Front End Functions
+Add to categories table
+Read from categories table
+
+Panel 3 = new category input box, add button, list of categories, list resource button
+Panel 1 = list of resources for category selected in panel 2
