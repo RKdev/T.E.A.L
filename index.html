@@ -9,22 +9,51 @@
 		</script>
 
 		<style type="text/css">
-			canvas { border: 1px solid black;}
+			canvas {
+				border: 1px solid black;
+			}
 			#scaryButton { float: right;}
+
+			html, body { height: 100%; padding: 0; margin: 0; }
+
+			.qp {
+				width: 50%;
+				height: 50%;
+				float: left;
+			}
+
+			#panel1 { background-color: purple; }
+			#panel2 { background-color: blue; }
+			#panel3 { background-color: green; }
+			#panel4 { background-color: red; }
 		</style>
   </head>
 
 	<body onload="drawPacMan();">
 		<!-- I think it's cool to draw PacMan -->
-  	<p>Hello, World!</p>
-		<canvas id="canvas" width="150" height="150"></canvas>
-		<hr/>
-		<button type="button" onclick="TEAL.loadArrayfromAJAX(TEAL.db, TEAL.resourcesArray, TEAL.populateArray)">Load Resource Array</button>
-	  <button type="button" onclick="TEAL.addToArray(TEAL.resourcesArray, 'category')">Add to Resource Array</button>
-		<button type="button" onclick="console.log('Index.HTML: ' + TEAL.resourcesArray);">Ouput Resource Array</button>
-		<button type="button" id="scaryButton" onclick="TEAL.emptyArray(TEAL.resourcesArray)">Empty Resource Array</button>
-    <br/>
-    <br/>
-		<button type="button" onclick="TEAL.writeArraytoAJAX(TEAL.db, TEAL.resourcesArray)">Write Resource Array</button>
+		<div id="panel1" class="qp">
+			<p>Panel 1</p>
+			<canvas id="canvas" width="150" height="150"></canvas>
+		</div>
+		<div id="panel2" class="qp">
+			<p>Panel 2</p>
+			<!-- <iframe src="https://en.wikipedia.org/wiki/Mathematics"></iframe> -->
+		</div>
+		<div id="panel3" class="qp">
+			<p>Panel 3</p>
+			<button type="button" onclick="TEAL.loadArrayfromAJAX(TEAL.db, TEAL.resourcesArray, TEAL.populateArray)">Load Resource Array</button>
+		  <button type="button" onclick="TEAL.addToArray(TEAL.resourcesArray, 'category')">Add to Resource Array</button>
+			<button type="button" onclick="console.log('Index.HTML: ' + TEAL.resourcesArray);">Ouput Resource Array</button>
+			<button type="button" id="scaryButton" onclick="TEAL.emptyArray(TEAL.resourcesArray)">Empty Resource Array</button>
+	    <br/>
+	    <br/>
+			<button type="button" onclick="TEAL.writeArraytoAJAX(TEAL.db, TEAL.resourcesArray)">Write Resource Array</button>
+
+		</div>
+		<div id="panel4" class="qp">
+			<p>Panel 4</p>
+		</div>
+
+
 	</body>
 </html>
