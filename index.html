@@ -31,26 +31,36 @@
 		<div id="panel1" class="qp">
 			<p>Panel 1</p>
 		</div>
+
 		<div id="panel2" class="qp">
 			<p>Panel 2</p>
 			<!-- <iframe src="https://en.wikipedia.org/wiki/Mathematics"></iframe> -->
 			<button type="button" onclick="TEAL.loadArrayfromAJAX(TEAL.db, TEAL.resourcesArray, TEAL.populateArray)">Load Resource Array</button>
-			<button type="button" onclick="TEAL.addToArray(TEAL.resourcesArray, 'category')">Add to Resource Array</button>
+			<button type="button" onclick="TEAL.addObjectToArray(TEAL.resourcesArray, 'category')">Add to Resource Array</button>
 			<button type="button" onclick="console.log('Index.HTML: ' + TEAL.resourcesArray);">Ouput Resource Array</button>
 			<button type="button" onclick="TEAL.emptyArray(TEAL.resourcesArray)">Empty Resource Array</button>
 			<br/>
 			<br/>
 			<button type="button" onclick="TEAL.writeArraytoAJAX(TEAL.db, TEAL.resourcesArray)">Write Resource Array</button>
 		</div>
+
 		<div id="panel3" class="qp">
-			<p>Panel 3</p>
-			<div id="input-category-area">
+			<div id="category-button-area">
+				<input type="button" name="list-category" value="List Categories" onclick="TEAL.loadArrayfromAJAX(TEAL.category_db, TEAL.categoryArray, TEAL.populateArray)">
 				<input type="text" name="input-category">
 				<input type="button" name="add-category" value="add">
+				<select id="category-drop-down">
+  				<option value="s1">Sample 1</option>
+  				<option value="s2">Sample 2</option>
+  				<option value="s3">Sample 3</option>
+  				<option value="s4">Sample 4</option>
+				</select>
+				<input type="button" name="add-category" value="delete">
 			</div>
-			<div id="input-category-show-categories">
+			<div id="category-output-area">
 			</div>
 		</div>
+
 		<div id="panel4" class="qp">
 			<p>Panel 4</p>
 						<canvas id="canvas" width="150" height="150"></canvas>

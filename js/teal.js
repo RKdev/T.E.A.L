@@ -3,9 +3,19 @@ var TEAL = TEAL || {};
 
 
 //Some setup vars
-TEAL.resourcesArray = [];
 TEAL.testArray = [];
 TEAL.db = "/pretendDB/data.json";
+
+TEAL.categoryArray = [];
+TEAL.category_db = "/pretendDB/categories.json";
+
+TEAL.resourcesArray = [];
+TEAL.resource_db = "/pretendDB/resources.json";
+
+TEAL.topicsArray = [];
+TEAL.topic_db = "/pretendDB/topics.json";
+
+
 
 
 //function declarations
@@ -45,20 +55,23 @@ TEAL.writeArraytoAJAX = function(absPath, arraySource){
     console.log('TEAL.writeArraytoAJAX: ' + xhr.readyState);
   };
   xhr.open("POST", absPath, true);
-//  xhr.addEventListener("load", function(){
-//    callback(arraySource);
-//  });
+    //  xhr.addEventListener("load", function(){
+    //    callback(arraySource);
+    //  });
   xhr.send(JSON.stringify(arraySource));
 };
 
-TEAL.addToArray = function(target, category){
-  var newResource = {};
-  newResource.category = category;
-  if (target.push(newResource)) {
-    console.log("TEAL.addToArray: data added");
+TEAL.addObjectToArray = function(target, objectItem){
+  var newObject = {};
+  newObject.objectItem = objectItem;
+  if (target.push(newObject)) {
+    console.log("TEAL.addObjectToArray: data added");
   }
 };
 
+
+// ******************************************
+// global functions - turn into TEAL objects
 function listTopics(resourceID){
   var intArrayLength = resources[resourceID].topics.length;
   for (var i = 0; i < intArrayLength; i++) {

@@ -4,3 +4,18 @@ Read from categories table
 
 Panel 3 = new category input box, add button, list of categories, list resource button
 Panel 1 = list of resources for category selected in panel 2
+Panel 2 = "controls panel", add load-categories button -> reads categories from DB
+
+add button ->
+  - will add new item to category array
+  - create and display new button for that category in the "display div"
+
+category drop-down ->
+  - populated from category array
+
+delete button ->
+ - removes category from array based on current value of category drop down
+
+category(x) button ->
+  - will create and display topic buttons in panel 1
+  - will create default "no topics" button if no topics exist yet for that category

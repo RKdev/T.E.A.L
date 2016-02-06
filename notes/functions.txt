@@ -16,3 +16,11 @@ Fetch Resource based on cycle
 Back End Functions
 *Read/Write JSON data to server
   -> turn into Database Requests
+
+TEAL functions
+
+TEAL.populateArray = function(data, target){
+TEAL.emptyArray = function emptyArray(target){
+TEAL.loadArrayfromAJAX = function(absPath, arrayTarget, callback){
+TEAL.writeArraytoAJAX = function(absPath, arraySource){
+TEAL.addObjectToArray = function(target, category){
