@@ -1,7 +1,7 @@
 Develop Unit Testing
 Learn JSDocs
 
-"Quarter Panel" index.html
+*"Quarter Panel" index.html
 
 Write out functions
 
