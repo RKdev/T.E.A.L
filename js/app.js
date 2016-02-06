@@ -4,7 +4,6 @@ var db = "/pretendDB/data.json";
 var resources = [];
 var test = [];
 
-
 //function declarations
 
 function populateArray(data, target){

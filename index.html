@@ -30,27 +30,24 @@
 		<!-- I think it's cool to draw PacMan -->
 		<div id="panel1" class="qp">
 			<p>Panel 1</p>
-			<canvas id="canvas" width="150" height="150"></canvas>
 		</div>
 		<div id="panel2" class="qp">
 			<p>Panel 2</p>
 			<!-- <iframe src="https://en.wikipedia.org/wiki/Mathematics"></iframe> -->
+			<button type="button" onclick="TEAL.loadArrayfromAJAX(TEAL.db, TEAL.resourcesArray, TEAL.populateArray)">Load Resource Array</button>
+			<button type="button" onclick="TEAL.addToArray(TEAL.resourcesArray, 'category')">Add to Resource Array</button>
+			<button type="button" onclick="console.log('Index.HTML: ' + TEAL.resourcesArray);">Ouput Resource Array</button>
+			<button type="button" onclick="TEAL.emptyArray(TEAL.resourcesArray)">Empty Resource Array</button>
+			<br/>
+			<br/>
+			<button type="button" onclick="TEAL.writeArraytoAJAX(TEAL.db, TEAL.resourcesArray)">Write Resource Array</button>
 		</div>
 		<div id="panel3" class="qp">
 			<p>Panel 3</p>
-			<button type="button" onclick="TEAL.loadArrayfromAJAX(TEAL.db, TEAL.resourcesArray, TEAL.populateArray)">Load Resource Array</button>
-		  <button type="button" onclick="TEAL.addToArray(TEAL.resourcesArray, 'category')">Add to Resource Array</button>
-			<button type="button" onclick="console.log('Index.HTML: ' + TEAL.resourcesArray);">Ouput Resource Array</button>
-			<button type="button" id="scaryButton" onclick="TEAL.emptyArray(TEAL.resourcesArray)">Empty Resource Array</button>
-	    <br/>
-	    <br/>
-			<button type="button" onclick="TEAL.writeArraytoAJAX(TEAL.db, TEAL.resourcesArray)">Write Resource Array</button>
-
 		</div>
 		<div id="panel4" class="qp">
 			<p>Panel 4</p>
+						<canvas id="canvas" width="150" height="150"></canvas>
 		</div>
-
-
 	</body>
 </html>

@@ -8,7 +8,7 @@ gulp.task('default', ['jshint']);
 
 // JS hint task
 gulp.task('jshint', function() {
-  gulp.src('./js/*.js')
+  gulp.src(['./js/*.js', '!./js/jquery*'])
     .pipe(jshint())
     .pipe(jshint.reporter('default'));
 });
