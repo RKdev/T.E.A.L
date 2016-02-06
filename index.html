@@ -13,47 +13,33 @@
 				border: 1px solid black;
 			}
 			#scaryButton { float: right;}
-			#panel1{
-				background-color: purple;
-				width: 200px;
-				height: 200px;
+
+			html, body { height: 100%; padding: 0; margin: 0; }
+
+			.qp {
+				width: 50%;
+				height: 50%;
 				float: left;
 			}
-			#panel2 {
-				background-color: blue;
-				width: 150px;
-				height: 150px;
-				float: right;
-			}
-			#panel3 {
-				background-color: green;
-				width: 150px;
-				height: 150px;
-				float: left;
-			}
-			#panel4 {
-				background-color: red;
-				width: 150px;
-				height: 150px;
-				float: right;
-			}
-			.clear {
-				clear: both;
-			}
+
+			#panel1 { background-color: purple; }
+			#panel2 { background-color: blue; }
+			#panel3 { background-color: green; }
+			#panel4 { background-color: red; }
 		</style>
   </head>
 
 	<body onload="drawPacMan();">
 		<!-- I think it's cool to draw PacMan -->
-		<div id="panel1">
+		<div id="panel1" class="qp">
 			<p>Panel 1</p>
 			<canvas id="canvas" width="150" height="150"></canvas>
 		</div>
-		<div id="panel2">
+		<div id="panel2" class="qp">
 			<p>Panel 2</p>
+			<!-- <iframe src="https://en.wikipedia.org/wiki/Mathematics"></iframe> -->
 		</div>
-	  <div class="clear"></div>
-		<div id="panel3">
+		<div id="panel3" class="qp">
 			<p>Panel 3</p>
 			<button type="button" onclick="TEAL.loadArrayfromAJAX(TEAL.db, TEAL.resourcesArray, TEAL.populateArray)">Load Resource Array</button>
 		  <button type="button" onclick="TEAL.addToArray(TEAL.resourcesArray, 'category')">Add to Resource Array</button>
@@ -64,7 +50,7 @@
 			<button type="button" onclick="TEAL.writeArraytoAJAX(TEAL.db, TEAL.resourcesArray)">Write Resource Array</button>
 
 		</div>
-		<div id="panel4">
+		<div id="panel4" class="qp">
 			<p>Panel 4</p>
 		</div>
 

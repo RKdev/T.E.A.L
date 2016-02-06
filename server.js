@@ -708,3 +708,4 @@ http.createServer(function(req, res){
 
 	}
 }).listen(5397);
+console.log("Node Server running...");
