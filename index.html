@@ -17,6 +17,7 @@
 			html, body { height: 100%; padding: 0; margin: 0; }
 
 			.qp{position: absolute; padding: 1em; border: 1px solid #000}
+			.categoryButton {width: 50%; height: 50%; background-color: cyan; font-weight: bold;}
 
 			#panel1{/*background: #f09;*/ top: 0; left: 0; right: 50%; bottom: 50%}
 			#panel2{/*background: #f90;*/ top: 0; left: 50%; right: 0; bottom: 50%}
@@ -46,20 +47,17 @@
 
 		<div id="panel3" class="qp">
 			<div id="category-button-area">
-				<input type="button" id="load-category" value="Load Categories" onclick="TEAL.loadArrayfromAJAX(TEAL.category_db, TEAL.categoryArray, TEAL.populateArray)">
+				<input type="button" id="load-category" value="Load Categories" onclick="TEAL.loadArrayfromAJAX(TEAL.category_db, TEAL.categoryArray, TEAL.loadCategories)">
         <input type="button" id="list-category" value="List Categories" onclick="TEAL.displayCategories()">
 				<input type="button" id="store-category" value="Store	Categories" onclick="TEAL.writeArraytoAJAX(TEAL.category_db, TEAL.categoryArray)">
 			</br>
-				<input type="text" id="input-category">
+				<input type="text" id="input-category" onkeydown="if (event.keyCode == 13)  document.getElementById('add-category').click()">
 				<input type="button" id="add-category" value="add" onclick="TEAL.addCategory(document.getElementById('input-category').value)">
 				<select id="category-drop-down">
-  				<option value="s1">Sample 1</option>
-  				<option value="s2">Sample 2</option>
-  				<option value="s3">Sample 3</option>
-  				<option value="s4">Sample 4</option>
 				</select>
-				<input type="button" name="add-category" value="delete">
+				<input type="button" name="add-category" value="delete" onclick="console.log('index.html: not ready')">
 			</div>
+			<hr/>
 			<div id="category-output-area">
 			</div>
 		</div>

@@ -14,10 +14,13 @@ TEAL.resource_db = "/pretendDB/resources.json";
 TEAL.topicsArray = [];
 TEAL.topic_db = "/pretendDB/topics.json";
 
-
-
-
 //function declarations
+
+TEAL.populateDropDownfromArray = function(data, target){
+    for (var i = 0; i < data.length; i++) {
+        addItemtoDropdown(target, data[i]);
+    }
+};
 
 TEAL.populateArray = function(data, target){
     for (var i = 0; i < data.length; i++) {
@@ -76,14 +79,30 @@ TEAL.addItemToArray = function(target, arrayItem){
   } else {console.log("TEAL.addItemToArray: Cannot add empty value");}
 };
 
+TEAL.loadCategories = function(data, targetArray){
+  var targetDropdown = 'category-drop-down';
+  TEAL.populateArray(data, targetArray);
+  TEAL.populateDropDownfromArray(targetArray, targetDropdown);
+  TEAL.displayCategories();
+};
+
 TEAL.addCategory = function (categoryName){
   TEAL.addItemToArray(TEAL.categoryArray, categoryName);
+  addItemtoDropdown('category-drop-down', categoryName);
+  document.getElementById('input-category').value='';
+  TEAL.displayCategories();
 };
 
 TEAL.displayCategories = function (){
   var aryLength = TEAL.categoryArray.length;
-  for (var i = 0; i < aryLength; i++) {
-    console.log("TEAL.displayCategories: " + i + ' ' + TEAL.categoryArray[i]);
+  if (aryLength) {
+    var categoryButtonDiv = document.getElementById('category-output-area');
+    categoryButtonDiv.innerHTML = '';
+    for (var i = 0; i < aryLength; i++) {
+      console.log("TEAL.displayCategories: " + i + ' ' + TEAL.categoryArray[i]);
+
+      categoryButtonDiv.innerHTML = categoryButtonDiv.innerHTML + '<input type="button" class="categoryButton" id=' + i + ' value=' + TEAL.categoryArray[i] + '>';
+    }
   }
 };
 
@@ -110,6 +129,18 @@ function readArray(anyArray) {
         for (var i = 0; i < anyArray.length; i++)
         console.log("Global Function readArray:" + i + ":" + anyArray[i]);
       }
+}
+
+function addItemtoDropdown(anyDropdown, item) {
+  if (item){
+    var tmpDropdown = document.getElementById(anyDropdown);
+    var dropdownLength =  tmpDropdown.length;
+    var el = document.createElement("option");
+      el.textContent = item;
+      el.value = dropdownLength;
+      console.log("addItemtoDropdown: Value = " + el.value + " Text= " + el.textContent);
+    tmpDropdown.appendChild(el);
+ }
 }
 
 function supports_local_storage() {
