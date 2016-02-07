@@ -1,7 +1,6 @@
 console.log('T.E.A.L Running...');
 var TEAL = TEAL || {};
 
-
 //Some setup vars
 TEAL.testArray = [];
 TEAL.db = "/pretendDB/data.json";
@@ -69,9 +68,27 @@ TEAL.addObjectToArray = function(target, objectItem){
   }
 };
 
+TEAL.addItemToArray = function(target, arrayItem){
+  if (arrayItem){
+    if (target.push(arrayItem)) {
+      console.log("TEAL.addObjectToArray: data added");
+    }
+  } else {console.log("TEAL.addItemToArray: Cannot add empty value");}
+};
+
+TEAL.addCategory = function (categoryName){
+  TEAL.addItemToArray(TEAL.categoryArray, categoryName);
+};
+
+TEAL.displayCategories = function (){
+  var aryLength = TEAL.categoryArray.length;
+  for (var i = 0; i < aryLength; i++) {
+    console.log("TEAL.displayCategories: " + i + ' ' + TEAL.categoryArray[i]);
+  }
+};
 
 // ******************************************
-// global functions - turn into TEAL objects
+// global functions - convert into TEAL objects or make into utils
 function listTopics(resourceID){
   var intArrayLength = resources[resourceID].topics.length;
   for (var i = 0; i < intArrayLength; i++) {
@@ -87,9 +104,12 @@ function listResources() {
 }
 
 function readArray(anyArray) {
-  for (var i = 0; i < anyArray.length; i++) {
-    console.log("Global Function readArray:" + anyArray[i]);
-  }
+    if (anyArray.length === 0) {
+        console.log("Global Function readArray: Array Empty" );
+      } else {
+        for (var i = 0; i < anyArray.length; i++)
+        console.log("Global Function readArray:" + i + ":" + anyArray[i]);
+      }
 }
 
 function supports_local_storage() {

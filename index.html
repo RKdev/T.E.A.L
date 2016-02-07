@@ -46,9 +46,12 @@
 
 		<div id="panel3" class="qp">
 			<div id="category-button-area">
-				<input type="button" name="list-category" value="List Categories" onclick="TEAL.loadArrayfromAJAX(TEAL.category_db, TEAL.categoryArray, TEAL.populateArray)">
-				<input type="text" name="input-category">
-				<input type="button" name="add-category" value="add">
+				<input type="button" id="load-category" value="Load Categories" onclick="TEAL.loadArrayfromAJAX(TEAL.category_db, TEAL.categoryArray, TEAL.populateArray)">
+        <input type="button" id="list-category" value="List Categories" onclick="TEAL.displayCategories()">
+				<input type="button" id="store-category" value="Store	Categories" onclick="TEAL.writeArraytoAJAX(TEAL.category_db, TEAL.categoryArray)">
+			</br>
+				<input type="text" id="input-category">
+				<input type="button" id="add-category" value="add" onclick="TEAL.addCategory(document.getElementById('input-category').value)">
 				<select id="category-drop-down">
   				<option value="s1">Sample 1</option>
   				<option value="s2">Sample 2</option>
