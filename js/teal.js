@@ -81,9 +81,11 @@ TEAL.addItemToArray = function(target, arrayItem){
 
 TEAL.loadCategories = function(data, targetArray){
   var targetDropdown = 'category-drop-down';
+  if(!(targetArray.length)){
   TEAL.populateArray(data, targetArray);
   TEAL.populateDropDownfromArray(targetArray, targetDropdown);
   TEAL.displayCategories();
+  }
 };
 
 TEAL.addCategory = function (categoryName){
@@ -91,6 +93,8 @@ TEAL.addCategory = function (categoryName){
   addItemtoDropdown('category-drop-down', categoryName);
   document.getElementById('input-category').value='';
   TEAL.displayCategories();
+  TEAL.writeArraytoAJAX(TEAL.category_db, TEAL.categoryArray);
+
 };
 
 TEAL.displayCategories = function (){
