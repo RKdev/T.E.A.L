@@ -138,10 +138,10 @@ function readArray(anyArray) {
 function addItemtoDropdown(anyDropdown, item) {
   if (item){
     var tmpDropdown = document.getElementById(anyDropdown);
-    var dropdownLength =  tmpDropdown.length;
+    var dropdownIndex =  tmpDropdown.length;
     var el = document.createElement("option");
       el.textContent = item;
-      el.value = dropdownLength;
+      el.value = dropdownIndex;
       console.log("addItemtoDropdown: Value = " + el.value + " Text= " + el.textContent);
     tmpDropdown.appendChild(el);
  }
