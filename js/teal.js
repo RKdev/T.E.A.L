@@ -1,7 +1,50 @@
 console.log('T.E.A.L Running...');
 var TEAL = TEAL || {};
 
-//Some setup vars
+//Define categories object
+TEAL.categories = {};
+TEAL.categories.categoryArray = [];
+TEAL.categories.db = "/pretendDB/categories.json";
+TEAL.categories.loadCategories = function(data, targetArray){
+  var targetDropdown = 'category-drop-down';
+  if(!(targetArray.length)){
+  TEAL.populateArray(data, targetArray);
+  TEAL.populateDropDownfromArray(targetArray, targetDropdown);
+  TEAL.displayCategories();
+  }
+};
+
+
+TEAL.categories.addCategory = function (categoryName){
+  TEAL.addItemToArray(TEAL.categoryArray, categoryName);
+  addItemtoDropdown('category-drop-down', categoryName);
+  document.getElementById('input-category').value='';
+  TEAL.displayCategories();
+  TEAL.writeArraytoAJAX(TEAL.category_db, TEAL.categoryArray);
+
+};
+
+TEAL.categories.displayCategories = function (){
+  var aryLength = TEAL.categoryArray.length;
+  if (aryLength) {
+    var categoryButtonDiv = document.getElementById('category-output-area');
+    categoryButtonDiv.innerHTML = '';
+    for (var i = 0; i < aryLength; i++) {
+      console.log("TEAL.displayCategories: " + i + ' ' + TEAL.categoryArray[i]);
+      categoryButtonDiv.innerHTML = categoryButtonDiv.innerHTML + '<input type="button" class="categoryButton" id=' + i + ' value=' + TEAL.categoryArray[i] + '>';
+    }
+  }
+};
+
+
+
+TEAL.resources = {};
+TEAL.topics = {};
+
+TEAL.topics.bob = "bob";
+
+
+
 TEAL.testArray = [];
 TEAL.db = "/pretendDB/data.json";
 
@@ -78,79 +121,4 @@ TEAL.addItemToArray = function(target, arrayItem){
     }
   } else {console.log("TEAL.addItemToArray: Cannot add empty value");}
 };
-
-TEAL.loadCategories = function(data, targetArray){
-  var targetDropdown = 'category-drop-down';
-  if(!(targetArray.length)){
-  TEAL.populateArray(data, targetArray);
-  TEAL.populateDropDownfromArray(targetArray, targetDropdown);
-  TEAL.displayCategories();
-  }
-};
-
-TEAL.addCategory = function (categoryName){
-  TEAL.addItemToArray(TEAL.categoryArray, categoryName);
-  addItemtoDropdown('category-drop-down', categoryName);
-  document.getElementById('input-category').value='';
-  TEAL.displayCategories();
-  TEAL.writeArraytoAJAX(TEAL.category_db, TEAL.categoryArray);
-
-};
-
-TEAL.displayCategories = function (){
-  var aryLength = TEAL.categoryArray.length;
-  if (aryLength) {
-    var categoryButtonDiv = document.getElementById('category-output-area');
-    categoryButtonDiv.innerHTML = '';
-    for (var i = 0; i < aryLength; i++) {
-      console.log("TEAL.displayCategories: " + i + ' ' + TEAL.categoryArray[i]);
-
-      categoryButtonDiv.innerHTML = categoryButtonDiv.innerHTML + '<input type="button" class="categoryButton" id=' + i + ' value=' + TEAL.categoryArray[i] + '>';
-    }
-  }
-};
-
-// ******************************************
-// global functions - convert into TEAL objects or make into utils
-function listTopics(resourceID){
-  var intArrayLength = resources[resourceID].topics.length;
-  for (var i = 0; i < intArrayLength; i++) {
-    console.log("Global Function listTopics: " + resources[resourceID].topics[i].name);
-  }
-}
-
-function listResources() {
-  var aryLength = resources.length;
-  for (var i = 0; i < aryLength; i++) {
-    console.log("Global Function listResources: " + resources[i].id + ' ' + resources[i].name);
-  }
-}
-
-function readArray(anyArray) {
-    if (anyArray.length === 0) {
-        console.log("Global Function readArray: Array Empty" );
-      } else {
-        for (var i = 0; i < anyArray.length; i++)
-        console.log("Global Function readArray:" + i + ":" + anyArray[i]);
-      }
-}
-
-function addItemtoDropdown(anyDropdown, item) {
-  if (item){
-    var tmpDropdown = document.getElementById(anyDropdown);
-    var dropdownIndex =  tmpDropdown.length;
-    var el = document.createElement("option");
-      el.textContent = item;
-      el.value = dropdownIndex;
-      console.log("addItemtoDropdown: Value = " + el.value + " Text= " + el.textContent);
-    tmpDropdown.appendChild(el);
- }
-}
-
-function supports_local_storage() {
-  try {
-    return 'localStorage' in window && window.localStorage !== null;
-  } catch(e){
-    return false;
-  }
-}
+module.exports = TEAL;

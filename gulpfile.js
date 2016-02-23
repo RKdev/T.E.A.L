@@ -19,7 +19,7 @@ gulp.task('jasmine', function() {
 });
 
 // watch for JS changes
-gulp.watch('spec/**/*.js', function() {
+gulp.watch(['spec/**/*.js', 'js/**/*.js'], function() {
   gulp.run('jasmine');
 });
 

@@ -1,8 +1,11 @@
 Develop Unit Testing
 Learn JSDocs
-
-*"Quarter Panel" index.html
-
 Write out functions
 
-Model pretend database
+
+Write unit tests for all TEAL.js methods
+
+
+*Model pretend database
+*"Quarter Panel" index.html
+*Move anything in app.js to teal.js
