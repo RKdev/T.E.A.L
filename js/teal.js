@@ -2,26 +2,22 @@ console.log('T.E.A.L Running...');
 var TEAL = TEAL || {};
 
 //Define categories object
-TEAL.categories = {};
-TEAL.categories.categoryArray = [];
+TEAL.categories = TEAL.categories || {};
+TEAL.categories.array = TEAL.categoryArray || [];
 TEAL.categories.db = "/pretendDB/categories.json";
-TEAL.categories.loadCategories = function(data, targetArray){
-  var targetDropdown = 'category-drop-down';
-  if(!(targetArray.length)){
+
+TEAL.categories.loadCategories = function(data){
+  if(!(TEAL.categories.array)){
   TEAL.populateArray(data, targetArray);
-  TEAL.populateDropDownfromArray(targetArray, targetDropdown);
-  TEAL.displayCategories();
   }
 };
 
+TEAL.categories.writeCategories = function(){};
 
-TEAL.categories.addCategory = function (categoryName){
-  TEAL.addItemToArray(TEAL.categoryArray, categoryName);
-  addItemtoDropdown('category-drop-down', categoryName);
-  document.getElementById('input-category').value='';
+TEAL.categories.renderCategories = function(){
+  var targetDropdown = 'category-drop-down';
+  TEAL.populateDropDownfromArray(targetArray, targetDropdown);
   TEAL.displayCategories();
-  TEAL.writeArraytoAJAX(TEAL.category_db, TEAL.categoryArray);
-
 };
 
 TEAL.categories.displayCategories = function (){
@@ -38,11 +34,23 @@ TEAL.categories.displayCategories = function (){
 
 
 
+TEAL.categories.$2plus2 = function(){
+  var returnVal = 4;
+  return returnVal;
+};
+
+TEAL.categories.addCategory = function (categoryName){
+  TEAL.addItemToArray(TEAL.categoryArray, categoryName);
+  addItemtoDropdown('category-drop-down', categoryName);
+  document.getElementById('input-category').value='';
+  TEAL.displayCategories();
+  TEAL.writeArraytoAJAX(TEAL.category_db, TEAL.categoryArray);
+
+};
+TEAL.categories.removeCategory = function(){};
+
 TEAL.resources = {};
 TEAL.topics = {};
-
-TEAL.topics.bob = "bob";
-
 
 
 TEAL.testArray = [];

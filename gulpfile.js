@@ -10,7 +10,7 @@ var jasmineconfig = JSON.parse(fs.readFileSync('spec/support/jasmine.json'));
 
 /*gulp.task('default', ['jshint']);*/
 
-gulp.task('default', ['jasmine']);
+gulp.task('default', ['jasmine', 'watch']);
 
 //jasmine
 gulp.task('jasmine', function() {
@@ -19,9 +19,10 @@ gulp.task('jasmine', function() {
 });
 
 // watch for JS changes
-gulp.watch(['spec/**/*.js', 'js/**/*.js'], function() {
-  gulp.run('jasmine');
+gulp.task('watch', function(){
+  gulp.watch(['spec/**/*.js', 'js/**/*.js'], ['jasmine']);
 });
+
 
 /*
 

@@ -2,4 +2,4 @@
 
 var TEAL = require('../../js/teal.js');
 
-console.log(TEAL);
+console.log(TEAL.categories.array);

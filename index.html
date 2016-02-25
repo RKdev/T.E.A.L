@@ -48,6 +48,7 @@
 		<div id="panel3" class="qp">
 			<div id="category-button-area">
 				<input type="button" id="load-category" value="Load Categories" onclick="TEAL.loadArrayfromAJAX(TEAL.category_db, TEAL.categoryArray, TEAL.loadCategories)">
+				<input type="button" id="test$2plus2" value="Test $2plus2" onclick="TEAL.categories.$2plus2()">
 			</br>
 				<input type="text" id="input-category" onkeydown="if (event.keyCode === 13)  document.getElementById('add-category').click()">
 				<input type="button" id="add-category" value="add" onclick="TEAL.addCategory(document.getElementById('input-category').value)">
