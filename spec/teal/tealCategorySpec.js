@@ -2,16 +2,15 @@
 
 var TEAL = require('../../js/teal.js');
 var test = TEAL.categories;
+
 console.log('teal.categories object');
-TEAL.categories.array = ['1', '2', '3'];
+console.log(test);
 
 //Begin Describe
 describe('2plus2', function(){
-  //Begin It
+
   it('should return 4', function(){
-    var testVal = test.$2plus2();
-    expect(testVal).toEqual(4);
-  //End It
+    expect(test.$2plus2({value:4})).toEqual(4);
   });
 //End Describe
 });
@@ -19,25 +18,25 @@ describe('2plus2', function(){
 
 //Begin Describe
 describe('loadCategories', function(){
-  it ('should execute an AJAX GET call to the category_db');
-  it ('should return AJAX BAD if AJAX call fails');
-  it ('should return AJAX GOOD if AJAX call succeeds');
   it ('should start with an empty array');
   it ('should populate the empty array with data');
+  it ('should execute an AJAX GET call to the category_db');
+  it ('should respond appropriately to the response of the AJAX call');
+
 //End Describe
 });
 
 //Begin Describe
 describe('renderCategories', function(){
-  it ('should create an html button for each category');
+  it ('should create an html button for each category if told to create');
+  it ('should remove an html button for each category if told to destroy');
 //End Describe
 });
 
 //Begin Describe
 describe('writeCategories', function(){
  it ('should execute an AJAX POST call to the category_db');
- it ('should return AJAX BAD if AJAX call fails');
- it ('should return AJAX GOOD if AJAX call succeeds');
+ it ('should respond appropriately to the response of the AJAX call');
 //End Describe
 });
 
@@ -56,5 +55,17 @@ describe('removeCategory', function(){
  it ('should verify that the correct item has been removed from the array');
  it ('should remove the html button');
  it ('should verify that the correct button has been removed');
+//End Describe
+});
+
+//Begin Describe
+describe ('requestAJAX', function(){
+  it ('should specify a request type to the server', function(){
+//    expect(TEAL.requestAJAX({srvReq:'wr_db'})).toEqual('wr_db');
+//    expect(TEAL.requestAJAX({srvReq:'rd_db'})).toEqual('rd_db');
+//    expect(TEAL.requestAJAX('stuff')).toEqual('noReq');
+//    expect(TEAL.requestAJAX({srvReq:'bob'})).toEqual('badReq');
+  });
+  it ('should alert if the AJAX call fails for some reason');
 //End Describe
 });
