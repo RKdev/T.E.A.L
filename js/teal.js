@@ -28,9 +28,10 @@ TEAL.categories.populateCategoryArray = function(AJAXdata){
 TEAL.categories.renderCategories = function(){
   var targetDropdown = 'category-drop-down';
   TEAL.populateDropDownfromArray(targetArray, targetDropdown);
-  TEAL.displayCategories();
+  TEAL.categories.displayCategories();
 };
 
+//create a button for each category
 TEAL.categories.displayCategories = function (){
   var aryLength = TEAL.categories.array.length;
   if (aryLength) {
@@ -38,7 +39,8 @@ TEAL.categories.displayCategories = function (){
     categoryButtonDiv.innerHTML = '';
     for (var i = 0; i < aryLength; i++) {
       console.log("TEAL.displayCategories: " + i + ' ' + TEAL.categories.array[i]);
-      categoryButtonDiv.innerHTML = categoryButtonDiv.innerHTML + '<input type="button" class="categoryButton" id=' + i + ' value=' + TEAL.categories.array[i] + '>';
+      categoryButtonDiv.innerHTML = categoryButtonDiv.innerHTML +
+      '<input type="button" class="categoryButton" id=' + i + ' value=' + TEAL.categories.array[i] + '>';
     }
   }
 };
@@ -58,7 +60,20 @@ TEAL.categories.addCategory = function (categoryName){
   TEAL.categories.writeCategories();
 
 };
-TEAL.categories.removeCategory = function(){};
+TEAL.categories.removeCategory = function(){
+  //select item from dropdown
+
+var listOfDropDownValues = document.getElementById('category-drop-down');
+var ddItem = listOfDropDownValues.selectedIndex;
+
+console.log('TEAL.categories.removeCategory :' + listOfDropDownValues[ddItem].value);
+  //remove item from array
+
+  TEAL.removeItemFromArray(TEAL.categories.array, ddItem);
+
+  //remove item from dropdownlistOfDropDownValues.selectedIndex
+
+};
 
 //function declarations
 
@@ -119,6 +134,30 @@ TEAL.addItemToArray = function(target, arrayItem){
       console.log("TEAL.addObjectToArray: data added");
     }
   } else {console.log("TEAL.addItemToArray: Cannot add empty value");}
+};
+
+TEAL.removeItemFromArray = function(target, arrayItem){
+  if (target) {
+    if (target.arrayItem) {
+    target.splice(arrayItem, 1);
+    } else {
+      console.log("TEAL.removeItemFromArray: array index does not exist");
+    }
+  } else {
+    console.log("TEAL.removeItemFromArray: invalid array");
+  }
+};
+
+TEAL.addItemtoDropdown = function(anyDropdown, item) {
+  if (item){
+    var tmpDropdown = document.getElementById(anyDropdown);
+    var dropdownIndex =  tmpDropdown.length;
+    var el = document.createElement("option");
+      el.textContent = item;
+      el.value = dropdownIndex;
+      console.log("addItemtoDropdown: Value = " + el.value + " Text= " + el.textContent);
+    tmpDropdown.appendChild(el);
+ }
 };
 
 //module.exports = TEAL;

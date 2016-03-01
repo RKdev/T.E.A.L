@@ -69,3 +69,9 @@ describe ('requestAJAX', function(){
   it ('should alert if the AJAX call fails for some reason');
 //End Describe
 });
+
+//Begin Describe
+describe('TEAL.removeItemFromArray', function(){
+it("should remove an item from an array given it's index");
+//End Describe
+});
