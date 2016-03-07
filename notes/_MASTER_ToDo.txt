@@ -1,11 +1,14 @@
-Develop Unit Testing
 Learn JSDocs
 Write out functions
 
+categories
 
-Write unit tests for all TEAL.js methods
+topics
+
+resources
 
 
+*Learn basic unit testing Write unit tests for all TEAL.js methods
 *Model pretend database
 *"Quarter Panel" index.html
 *Move anything in app.js to teal.js

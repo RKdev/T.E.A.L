@@ -8,7 +8,7 @@ TEAL.categories.db = "/pretendDB/categories.json";
 
 TEAL.categories.loadCategories = function(){
   if(!(TEAL.categories.array.length)){  //only load category array once
-  TEAL.requestAJAX({srvReq:"rd_db", db:TEAL.categories.db, requestType:"GET", async:true, callback:TEAL.categories.populateCategoryArray });
+  TEAL.requestAJAX({srvReq:"rd_db", db:TEAL.categories.db, requestType:"GET", async:true, callback:TEAL.categories.populateCategoryArray});
   } else {
   console.log("TEAL.categories.loadCategories: categories already loaded");
   }
@@ -48,7 +48,7 @@ TEAL.categories.displayCategories = function (){
 
 TEAL.categories.$2plus2 = function(parameters){
 
-  return parameters.value;
+  console.log(parameters.value);
 
 };
 
@@ -61,21 +61,19 @@ TEAL.categories.addCategory = function (categoryName){
 
 };
 TEAL.categories.removeCategory = function(){
-  //select item from dropdown
-
+//select item from dropdown
 var listOfDropDownValues = document.getElementById('category-drop-down');
 var ddItem = listOfDropDownValues.selectedIndex;
-
 console.log('TEAL.categories.removeCategory :' + listOfDropDownValues[ddItem].value);
-  //remove item from array
 
+//remove item from array
+  console.log(TEAL.categories.array);
   TEAL.removeItemFromArray(TEAL.categories.array, ddItem);
+  console.log(TEAL.categories.array);
 
-  //remove item from dropdownlistOfDropDownValues.selectedIndex
-
+//remove item from dropdownlist
 };
 
-//function declarations
 
 TEAL.populateDropDownfromArray = function(data, target){
     for (var i = 0; i < data.length; i++) {
@@ -138,7 +136,7 @@ TEAL.addItemToArray = function(target, arrayItem){
 
 TEAL.removeItemFromArray = function(target, arrayItem){
   if (target) {
-    if (target.arrayItem) {
+    if (target[arrayItem]) {
     target.splice(arrayItem, 1);
     } else {
       console.log("TEAL.removeItemFromArray: array index does not exist");
