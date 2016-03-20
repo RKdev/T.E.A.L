@@ -31,7 +31,6 @@ TEAL.categories.displayCategories = function (){
       '<input type="button" class="categoriesButton" id=' + i + ' value=' + TEAL.categories.array[i] + '>';
   }
   TEAL.buildDropdownFromArray('categories-drop-down', TEAL.categories.array);
-
 };
 
 TEAL.categories.addcategories = function (categoriesName){
@@ -49,5 +48,4 @@ TEAL.categories.removeFromcategories = function(){
   TEAL.removeItemFromArray(TEAL.categories.array, ddItem); //remove item from array, redislplay UI items, store data
   TEAL.categories.displayCategories();
   TEAL.categories.writeCategories();
-
 };
