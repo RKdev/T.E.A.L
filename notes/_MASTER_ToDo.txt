@@ -1,12 +1,14 @@
 topics
-
+populate topics array with objects
+populate topics array with relevant data only
 
 
 resources
 
 Learn JSDocs
 
-
+*categories buttons generate their own function calls
+*r/w to topics db
 *get DELETE button working
 *Learn basic unit testing
 *Model pretend database

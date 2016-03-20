@@ -18,20 +18,11 @@ TEAL.topics.writetopics = function(){
 
 TEAL.topics.populatetopicsData = function(AJAXdata){
   var JSONdata = JSON.parse(AJAXdata);
-  /* var JSONdata = [];
-  if(JSONdataTmp) {
-    for (var i = 0; i <= JSONdataTmp.length; i++) {
-      if (JSONdataTmp[i].categoriesName === TEAL.topics.categoriesName) {
-        JSONdata.push(JSONdata[i]);
-      }
-    }
-  } */
-
   TEAL.populateArray(JSONdata, TEAL.topics.array);
   TEAL.topics.displaytopics();
 };
 
-//create a button for each topic
+//create a button for each category
 TEAL.topics.displaytopics = function (){
   var aryLength = TEAL.topics.array.length;
   var topicsButtonDiv = document.getElementById('topics-output-area');
@@ -43,7 +34,7 @@ TEAL.topics.displaytopics = function (){
   TEAL.buildDropdownFromArray('topics-drop-down', TEAL.topics.array);
 };
 
-TEAL.topics.addToTopics = function (topicsName){
+TEAL.topics.addTotopics = function (topicsName){
   document.getElementById('input-topics').value='';   //clear input box
 
   TEAL.addItemToArray(TEAL.topics.array, topicsName);   //add item to array, redislplay UI items, store data
@@ -61,7 +52,7 @@ TEAL.topics.removeFromtopics = function(){
 };
 
 TEAL.topics.searchFromCategories = function(categoriesName){
-  console.log("TEAL.topics.searchFromCategories: " + categoriesName);
   TEAL.topics.categoriesName = categoriesName;
+    console.log("TEAL.categories.searchFromcategories: " + TEAL.topics.categoriesName);
   TEAL.topics.loadtopics();
 };

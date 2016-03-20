@@ -29,7 +29,6 @@
   </head>
 
 	<body>
-		<!-- I think it's cool to draw PacMan -->
 		<div id="panel1" class="qp">
 			<div id="categories-button-area">
 				<input type="button" id="load-categories" value="Load Categories" onclick="TEAL.categories.loadCategories()">
@@ -42,13 +41,26 @@
 			</div>
 			<hr/>
 			<div id="categories-output-area">
-			</div>		</div>
+			</div>
+		</div>
 <!--
 		<div id="panel2" class="qp">
 			<p>Panel 2</p>
 		</div>
 -->
 		<div id="panel3" class="qp">
+			<div id="categories-button-area">
+				<input type="button" id="load-topics" value="Load topics" onclick="TEAL.topics.loadtopics()">
+			</br>
+				<input type="text" id="input-topics" onkeydown="if (event.keyCode === 13)  document.getElementById('add-topics').click()">
+				<input type="button" id="add-topics" value="add" onclick="TEAL.topics.addTotopics(document.getElementById('input-topics').value)">
+				<select id="topics-drop-down">
+				</select>
+				<input type="button" name="add-topics" value="delete" onclick="TEAL.topics.removeFromtopics()">
+			</div>
+			<hr/>
+			<div id="topics-output-area">
+			</div>
 		</div>
 
 <!--
