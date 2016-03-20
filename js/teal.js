@@ -1,86 +1,6 @@
 console.log('T.E.A.L Running...');
 var TEAL = TEAL || {};
 
-//Define categories object
-TEAL.categories = TEAL.categories || {};
-TEAL.categories.array = TEAL.categories.array || [];
-TEAL.categories.db = "/pretendDB/categories.json";
-
-TEAL.categories.loadCategories = function(){
-  if(!(TEAL.categories.array.length)){  //only load category array once
-  TEAL.requestAJAX({srvReq:"rd_db", db:TEAL.categories.db, requestType:"GET", async:true, callback:TEAL.categories.populateCategoryArray});
-  } else {
-  console.log("TEAL.categories.loadCategories: categories already loaded");
-  }
-};
-
-TEAL.categories.writeCategories = function(){
-  TEAL.requestAJAX({srvReq:"wr_db", db:TEAL.categories.db, requestType:"POST", async:true, POSTdata:JSON.stringify(TEAL.categories.array)});
-};
-
-TEAL.categories.populateCategoryArray = function(AJAXdata){
-  var JSONdata = JSON.parse(AJAXdata);
-  TEAL.populateArray(JSONdata, TEAL.categories.array);
-  TEAL.populateDropDownfromArray(TEAL.categories.array, 'category-drop-down');
-  TEAL.categories.displayCategories();
-};
-
-TEAL.categories.renderCategories = function(){
-  var targetDropdown = 'category-drop-down';
-  TEAL.populateDropDownfromArray(targetArray, targetDropdown);
-  TEAL.categories.displayCategories();
-};
-
-//create a button for each category
-TEAL.categories.displayCategories = function (){
-  var aryLength = TEAL.categories.array.length;
-  if (aryLength) {
-    var categoryButtonDiv = document.getElementById('category-output-area');
-    categoryButtonDiv.innerHTML = '';
-    for (var i = 0; i < aryLength; i++) {
-      console.log("TEAL.displayCategories: " + i + ' ' + TEAL.categories.array[i]);
-      categoryButtonDiv.innerHTML = categoryButtonDiv.innerHTML +
-      '<input type="button" class="categoryButton" id=' + i + ' value=' + TEAL.categories.array[i] + '>';
-    }
-  }
-};
-
-
-TEAL.categories.$2plus2 = function(parameters){
-
-  console.log(parameters.value);
-
-};
-
-TEAL.categories.addCategory = function (categoryName){
-  TEAL.addItemToArray(TEAL.categories.array, categoryName);
-  addItemtoDropdown('category-drop-down', categoryName);
-  document.getElementById('input-category').value='';
-  TEAL.categories.displayCategories();
-  TEAL.categories.writeCategories();
-
-};
-TEAL.categories.removeCategory = function(){
-//select item from dropdown
-var listOfDropDownValues = document.getElementById('category-drop-down');
-var ddItem = listOfDropDownValues.selectedIndex;
-console.log('TEAL.categories.removeCategory :' + listOfDropDownValues[ddItem].value);
-
-//remove item from array
-  console.log(TEAL.categories.array);
-  TEAL.removeItemFromArray(TEAL.categories.array, ddItem);
-  console.log(TEAL.categories.array);
-
-//remove item from dropdownlist
-};
-
-
-TEAL.populateDropDownfromArray = function(data, target){
-    for (var i = 0; i < data.length; i++) {
-        addItemtoDropdown(target, data[i]);
-    }
-};
-
 TEAL.populateArray = function(data, target){
     for (var i = 0; i < data.length; i++) {
         if (target.push(data[i])) {
@@ -146,16 +66,25 @@ TEAL.removeItemFromArray = function(target, arrayItem){
   }
 };
 
-TEAL.addItemtoDropdown = function(anyDropdown, item) {
-  if (item){
-    var tmpDropdown = document.getElementById(anyDropdown);
-    var dropdownIndex =  tmpDropdown.length;
-    var el = document.createElement("option");
-      el.textContent = item;
-      el.value = dropdownIndex;
-      console.log("addItemtoDropdown: Value = " + el.value + " Text= " + el.textContent);
-    tmpDropdown.appendChild(el);
- }
+TEAL.buildDropdownFromArray = function(anyDropdown, sourceArray) {
+ if (sourceArray) { //don't do anything if there's not any data to change
+     var tmpDropdown = document.getElementById(anyDropdown);
+     var ddOption = document.createElement("option");
+
+     tmpDropdown.innerHTML = '';
+
+     for (var i = 0; i < sourceArray.length; i++) {
+       tmpDropdown = document.getElementById(anyDropdown);
+       ddOption = document.createElement("option");
+
+       ddOption.textContent = sourceArray[i];
+       console.log("addItemtoDropdown: Text= " + ddOption.textContent);
+       tmpDropdown.appendChild(ddOption);
+       console.log("3 TEAL.buildDropdownFromArray: " + tmpDropdown.innerHTML);
+
+     }
+  }
+
 };
 
 //module.exports = TEAL;

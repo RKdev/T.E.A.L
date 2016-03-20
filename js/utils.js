@@ -23,18 +23,6 @@ function readArray(anyArray) {
       }
 }
 
-function addItemtoDropdown(anyDropdown, item) {
-  if (item){
-    var tmpDropdown = document.getElementById(anyDropdown);
-    var dropdownIndex =  tmpDropdown.length;
-    var el = document.createElement("option");
-      el.textContent = item;
-      el.value = dropdownIndex;
-      console.log("addItemtoDropdown: Value = " + el.value + " Text= " + el.textContent);
-    tmpDropdown.appendChild(el);
- }
-}
-
 function supports_local_storage() {
   try {
     return 'localStorage' in window && window.localStorage !== null;

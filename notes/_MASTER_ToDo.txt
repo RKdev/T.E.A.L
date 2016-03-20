@@ -1,13 +1,13 @@
-Learn JSDocs
-Write out functions
 
 categories
-DELETE button working
-
+get DELETE button working
 
 topics
 
 resources
+
+Learn JSDocs
+
 
 
 *Learn basic unit testing Write unit tests for all TEAL.js methods
