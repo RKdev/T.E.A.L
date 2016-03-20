@@ -9,6 +9,12 @@ TEAL.populateArray = function(data, target){
     }
 };
 
+TEAL.populateArrayofObjects = function(data, target){
+    for (var i = 0; i < data.length; i++) {
+      TEAL.addObjectToArray(data,topic);
+        }
+};
+
 TEAL.emptyArray = function emptyArray(target){
   target.length = 0;
   if (target.length === 0) {
@@ -38,9 +44,10 @@ TEAL.requestAJAX = function(params){
   xhr.send(params.POSTdata);
 };
 
-TEAL.addObjectToArray = function(target, objectItem){
+TEAL.addObjectToArray = function(target, datum){
+  console.log(target);
   var newObject = {};
-  newObject.objectItem = objectItem;
+  newObject.objectItem = datum;
   if (target.push(newObject)) {
     console.log("TEAL.addObjectToArray: data added");
   }
