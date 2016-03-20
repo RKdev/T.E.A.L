@@ -78,9 +78,7 @@ TEAL.buildDropdownFromArray = function(anyDropdown, sourceArray) {
        ddOption = document.createElement("option");
 
        ddOption.textContent = sourceArray[i];
-       console.log("addItemtoDropdown: Text= " + ddOption.textContent);
        tmpDropdown.appendChild(ddOption);
-       console.log("3 TEAL.buildDropdownFromArray: " + tmpDropdown.innerHTML);
 
      }
   }

@@ -1,16 +1,14 @@
-
-categories
-get DELETE button working
-
 topics
+
+
 
 resources
 
 Learn JSDocs
 
 
-
-*Learn basic unit testing Write unit tests for all TEAL.js methods
+*get DELETE button working
+*Learn basic unit testing
 *Model pretend database
 *"Quarter Panel" index.html
 *Move anything in app.js to teal.js
