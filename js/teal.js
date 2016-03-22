@@ -73,22 +73,27 @@ TEAL.removeItemFromArray = function(target, arrayItem){
   }
 };
 
-TEAL.buildDropdownFromArray = function(anyDropdown, sourceArray) {
- if (sourceArray) { //don't do anything if there's not any data to change
-     var tmpDropdown = document.getElementById(anyDropdown);
+TEAL.buildDropdownFromArray = function(params) {
+    //params.anyDropdown
+    //params.textArray
+    //params.valuesArray
+    //params.arrayLength
+
+
+     var tmpDropdown = document.getElementById(params.anyDropdown);
      var ddOption = document.createElement("option");
 
      tmpDropdown.innerHTML = '';
 
-     for (var i = 0; i < sourceArray.length; i++) {
-       tmpDropdown = document.getElementById(anyDropdown);
+     for (var i = 0; i < params.arrayLength; i++) {
+       tmpDropdown = document.getElementById(params.anyDropdown);
        ddOption = document.createElement("option");
 
-       ddOption.textContent = sourceArray[i];
+       ddOption.textContent = params.textArray[i];
+       ddOption.Value = params.valuesArray[i];
        tmpDropdown.appendChild(ddOption);
-
      }
-  }
+
 
 };
 
