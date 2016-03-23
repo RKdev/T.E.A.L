@@ -86,8 +86,8 @@ console.log(params.textArray + ":" + params.valuesArray);
        tmpDropdown = document.getElementById(params.anyDropdown);
        ddOption = document.createElement("option");
 
-       ddOption.textContent = params.textArray[i];
-       ddOption.value = params.valuesArray[i];
+       if (params.textArray) {ddOption.textContent = params.textArray[i];}
+       if (params.valuesArray) {ddOption.value = params.valuesArray[i];}
        tmpDropdown.appendChild(ddOption);
      }
 
