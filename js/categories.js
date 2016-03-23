@@ -32,7 +32,7 @@ TEAL.categories.displayCategories = function (){
       ' onclick="TEAL.topics.searchFromCategories(' + "'" + TEAL.categories.array[i] + "'" + ')"' + '>';
   }
   TEAL.buildDropdownFromArray({anyDropdown: 'categories-drop-down', textArray: TEAL.categories.array, arrayLength: aryLength});
-//  TEAL.buildDropdownFromArray('categories-drop-down', TEAL.categories.array);
+
   console.log("TEAL.categories.displayCategories: " + categoriesButtonDiv.innerHTML);
 };
 
