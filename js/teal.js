@@ -76,7 +76,7 @@ TEAL.buildDropdownFromArray = function(params) {
     //params.textArray
     //params.valuesArray
     //params.arrayLength
-console.log(params.textArray + ":" + params.valuesArray);
+
      var tmpDropdown = document.getElementById(params.anyDropdown);
      var ddOption = document.createElement("option");
 

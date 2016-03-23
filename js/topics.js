@@ -2,6 +2,7 @@
 TEAL.topics = TEAL.topics || {};
 TEAL.topics.array = TEAL.topics.array || [];
 TEAL.topics.db = "/pretendDB/topics.json";
+TEAL.topics.categoriesName = '';
 
 TEAL.topics.loadtopics = function(){
   TEAL.emptyArray(TEAL.topics.array);

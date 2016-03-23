@@ -1,12 +1,13 @@
-topics
-populate topics array with objects
-populate topics array with relevant data only
+categories
 
+topics
 
 resources
 
 Learn JSDocs
 
+*populate topics array with objects
+*populate topics array with relevant data only
 *categories buttons generate their own function calls
 *r/w to topics db
 *get DELETE button working
