@@ -78,8 +78,7 @@ TEAL.buildDropdownFromArray = function(params) {
     //params.textArray
     //params.valuesArray
     //params.arrayLength
-
-
+console.log(params.textArray + ":" + params.valuesArray);
      var tmpDropdown = document.getElementById(params.anyDropdown);
      var ddOption = document.createElement("option");
 
@@ -90,10 +89,9 @@ TEAL.buildDropdownFromArray = function(params) {
        ddOption = document.createElement("option");
 
        ddOption.textContent = params.textArray[i];
-       ddOption.Value = params.valuesArray[i];
+       ddOption.value = params.valuesArray[i];
        tmpDropdown.appendChild(ddOption);
      }
-
 
 };
 
