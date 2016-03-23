@@ -34,7 +34,7 @@ TEAL.topics.displaytopics = function (){
       TEAL.addItemToArray(topicsNameArray, TEAL.topics.array[i].topicsName);
       TEAL.addItemToArray(topicsIndexArray, i);
       topicsButtonDiv.innerHTML = topicsButtonDiv.innerHTML +
-      '<input type="button" class="topicsButton" id=' + i + ' value=' + TEAL.topics.array[i].topicsName + '>';
+      '<input type="button" class="topicsButton" id=' + i + ' value="' + TEAL.topics.array[i].topicsName + '">';
     }
   }
   TEAL.buildDropdownFromArray({anyDropdown: 'topics-drop-down', textArray: topicsNameArray, valuesArray: topicsIndexArray, arrayLength: topicsNameArray.length});

@@ -28,8 +28,8 @@ TEAL.categories.displayCategories = function (){
   categoriesButtonDiv.innerHTML = '';
   for (var i = 0; i < aryLength; i++) {
       categoriesButtonDiv.innerHTML = categoriesButtonDiv.innerHTML +
-      '<input type="button" class="categoriesButton" id=' + i + ' value=' + TEAL.categories.array[i] +
-      ' onclick="TEAL.topics.searchFromCategories(' + "'" + TEAL.categories.array[i] + "'" + ')"' + '>';
+      '<input type="button" class="categoriesButton" id=' + i + ' value="' + TEAL.categories.array[i] +
+      '" onclick="TEAL.topics.searchFromCategories(' + "'" + TEAL.categories.array[i] + "'" + ')"' + '>';
   }
   TEAL.buildDropdownFromArray({anyDropdown: 'categories-drop-down', textArray: TEAL.categories.array, arrayLength: aryLength});
 //  TEAL.buildDropdownFromArray('categories-drop-down', TEAL.categories.array);
