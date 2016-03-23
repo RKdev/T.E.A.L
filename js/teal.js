@@ -54,11 +54,9 @@ TEAL.addObjectToArray = function(target, datum){
 };
 
 TEAL.addItemToArray = function(target, arrayItem){
-  if (arrayItem){
     if (target.push(arrayItem)) {
-      console.log("TEAL.addObjectToArray: data added");
+      console.log("TEAL.addItemToArray: data added");
     }
-  } else {console.log("TEAL.addItemToArray: Cannot add empty value");}
 };
 
 TEAL.removeItemFromArray = function(target, arrayItem){
