@@ -3,6 +3,10 @@ categories
 topics
 
 resources
+create resources panel
+create resources object
+create resources database logic
+
 
 Learn JSDocs
 

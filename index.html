@@ -5,6 +5,7 @@
 		<script type="text/javascript" src="js/teal.js"/> </script>
 		<script type="text/javascript" src="js/categories.js"/> </script>
 		<script type="text/javascript" src="js/topics.js"/> </script>
+		<script type="text/javascript" src="js/resources.js"/> </script>
 		<script type="text/javascript" src="js/pacman.js"/> </script>
 
 		<style type="text/css">
@@ -16,13 +17,16 @@
 			/*html, body { height: 100%; padding: 0; margin: 0; }*/
 
 			.qp{position: absolute; padding: 1em; border: 1px solid #000; overflow-x:none; overflow-y:auto;}
-			.categoriesButton {width: 150px; height: 100px; background-color: cyan; font-weight: bold;  font-size: 45}
+			.categoriesButton {width: 50%; height: 50%; background-color: cyan; font-weight: bold;  font-size: 45}
+			.topicsButton {width: 50%; height: 50%; background-color: orange; font-weight: bold;  font-size: 45}
+			.resourcesButton {width: 50%; height: 50%; background-color: grey; font-weight: bold;  font-size: 45}
 
-			#panel1{ top: 0; left: 0; right: 0%; bottom: 50%;}
-/*			#panel2{ top: 0; left: 50%; right: 0; bottom: 50%} */
-			#panel3{ top: 50%; left: 0; right: 0%; bottom: 0;}
+			#panel1{ top: 0; left: 0; right: 50%; bottom: 50%;}
+			#panel2{ top: 0; left: 50%; right: 0; bottom: 50%}
+			#panel3{ top: 50%; left: 0; right: 50%; bottom: 0;}
 /*			#panel4{ top: 50%; left: 50%; right: 0; bottom: 0} */
 			#topics-header-area{ text-align: center;}
+			#resources-header-area{ text-align: center;}
 		</style>
   </head>
 
@@ -41,11 +45,24 @@
 			<div id="categories-output-area">
 			</div>
 		</div>
-<!--
+
 		<div id="panel2" class="qp">
-			<p>Panel 2</p>
+			<div id="resources-header-area">
+        Resources
+			</div>
+			  <div id="resources-button-area">
+			  </br>
+			    <input type="text" id="input-resources" onkeydown="if (event.keyCode === 13) document.getElementById('add-resources').click()">
+			    <input type="button" id="add-resources" value="add" onclick="TEAL.resources.addToresources(document.getElementById('input-resources').value)">
+			    <select id="resources-drop-down">
+			    </select>
+			    <input type="button" name="add-resources" value="delete" onclick="TEAL.resources.removeFromresources()">
+			  </div>
+			  <hr/>
+			  <div id="resources-output-area">
+			  </div>
 		</div>
--->
+
 		<div id="panel3" class="qp">
 			<div id="topics-header-area">
 			</div>
