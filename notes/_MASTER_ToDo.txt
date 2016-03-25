@@ -1,15 +1,19 @@
+TEAL
+enter dummy data
+figure out "sub-resources"
+
 categories
 
 topics
 
 resources
-create resources panel
-create resources object
-create resources database logic
 
 
 Learn JSDocs
 
+*create resources panel
+*create resources object
+*create resources database logic
 *populate topics array with objects
 *populate topics array with relevant data only
 *categories buttons generate their own function calls

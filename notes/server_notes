@@ -1,0 +1,135 @@
+
+evillemez [9:25 PM]
+want a pedantic/trendy opinion?
+
+kz [9:25 PM]
+Sure
+
+evillemez [9:25 PM]
+also, are you using anything on the node side, besides raw node?
+
+kz [9:25 PM]
+Nope. It's super simple
+
+[9:25]
+If it gets a POST request it just clobbers whatever is in the JSON file
+
+evillemez [9:26 PM]
+ok, pedantic… it’s an RPC interface, so from the UI, it’s very clear that you’re calling some specific implementation on the backend
+
+[9:26]
+so… if you make big changes to the backend, you’ll need to update your ui code as well
+
+[9:26]
+but that’s expected, not really a big deal
+
+[9:27]
+However, nowadays people often try to hide those details as much as possible, and there’s a general approach that people have kinda settled on
+
+[9:28]
+some people call it “RESTful”, but there’s sometimes a lot of debate as what that actually means
+
+[9:28]
+but, I’ll show you client/server examples similar to what you have above
+
+[9:29]
+What are the 3 tables you have again?  Categories, resources, … topics?
+
+[9:29]
+And right now each of those are in their own JSON file?
+
+kz [9:29 PM]
+Correct
+
+evillemez [9:29 PM]
+ok
+
+[9:30]
+Imagine your UI code looking like this instead, I’ll get to the server part later
+
+[9:30]
+`TEAL.request("GET", "/categories", callbackFn)`
+
+[9:30]
+That would be to read… and
+
+[9:31]
+`TEAL.request("GET", "/topics", callbackFn)`
+
+[9:31]
+`TEAL.request("GET", "/resources", callbackFn)`
+
+[9:31]
+And if you were going to write
+
+[9:32]
+`TEAL.request("POST", "/topics", callbackFn, postData)`
+
+[9:33]
+So, rather than specifying a function on the backend, you’re specifying a url path, and the http method is expressing what type of action it is
+
+[9:33]
+If you want to extend that do operations on specific items, you would have:
+
+[9:34]
+`TEAL.request("GET", "/topics/34", callbackFn)` or `TEAL.request("PUT", "/topics/34", callbackFn, postData)`
+
+[9:34]
+where 34 is some unique ID, probably from the database
+
+[9:35]
+or it could just be the array index if you just have raw items in a json file
+
+[9:35]
+now, for the server side
+
+[9:36]
+On the server side, you would be mapping handler functions to those URLs/Methods, and there are a shit ton of frameworks that make this easier… so I’ll just steal an API from them to demonstrate the point
+
+[9:37]
+I think this is from express or something `app.get("/topics", function() {/* read & return json file from disk */})`
+
+[9:37]
+or, sorry, you’d probably say `TEAL.get()`, but whatev
+
+kz [9:37 PM]
+Yeah, I follow
+
+evillemez [9:38 PM]
+and then `TEAL.put("/topics", function(postData){ /* take posted data, put in file*/ })`
+
+[9:38]
+`TEAL.get("/topics/{id}", function(id) { /*return specific item from json file*/ })`
+
+[9:39]
+that id argument was basically inferred by regex parsing the URL you bound to
+
+[9:39]
+I just chose that syntax because because like 1000 frameworks use it
+
+[9:40]
+then `TEAL.put("/topics/{id}", function(id, data){ /*update specific item with sent data*/ })`
+
+[9:40]
+You’d have the same api on the backend for `/resources` and `/categories`
+
+[9:41]
+And abstracting away all the helper stuff so you don’t have write the same shit over and over
+
+[9:41]
+But, the point is really this: the API between your client and server is now implementation agnostic
+
+[9:42]
+You could switch out that handling code for those server routes to use a database instead of a raw json file
+
+[9:42]
+but your client side wouldn’t change a bit
+
+kz [9:42 PM]
+I C
+
+evillemez [9:42 PM]
+you could ditch node entirely and expose the same api with something else, the client wouldn’t have to change
+
+[9:43]
+instead, the server api is exposing routes that express the structure of the data you care about
