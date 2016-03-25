@@ -93,4 +93,14 @@ TEAL.buildDropdownFromArray = function(params) {
 
 };
 
+
+TEAL.schema = {
+
+  name: "The Objects Name",
+  type: "category, topic, resource",
+  pointer: "pointer up. If object is a resource, points to topic. If object is a topic, points to category",
+          // "if object is a category, set to category"
+  cycle: "an integer representing the resources cycle"
+};
+
 //module.exports = TEAL;
