@@ -50,12 +50,12 @@ TEAL.topics.addTotopics = function (topicsName){
 };
 
 TEAL.topics.removeFromtopics = function(){
-  var listOfDropDownValues = document.getElementById('topics-drop-down'); //select item from dropdown
-  var ddItem = listOfDropDownValues.options[listOfDropDownValues.selectedIndex].value;
+  var listOfDropDownValues = document.getElementById('topics-drop-down'); //select dropdown
+  var ddItem = listOfDropDownValues.options[listOfDropDownValues.selectedIndex].value; //select item from dropdown
   console.log(ddItem);
-  TEAL.removeItemFromArray(TEAL.topics.array, ddItem); //remove item from array, redislplay UI items, store data
-  TEAL.topics.displaytopics();
-  TEAL.topics.writetopics();
+  TEAL.removeItemFromArray(TEAL.topics.array, ddItem); //remove item from array
+  TEAL.topics.displaytopics(); //redislplay UI items
+  TEAL.topics.writetopics(); //store data
 };
 
 TEAL.topics.searchFromCategories = function(categoriesName){

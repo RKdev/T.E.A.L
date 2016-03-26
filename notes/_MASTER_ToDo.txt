@@ -23,3 +23,10 @@ Learn JSDocs
 *Model pretend database
 *"Quarter Panel" index.html
 *Move anything in app.js to teal.js
+
+
+Thoughtdump
+
+So things are going well. It's still not useable though...
+
+I need to build a schema object next.
