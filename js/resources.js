@@ -35,7 +35,8 @@ TEAL.resources.displayresources = function (){
       TEAL.addItemToArray(resourcesNameArray, TEAL.resources.array[i].resourcesName);
       TEAL.addItemToArray(resourcesIndexArray, i);
       resourcesButtonDiv.innerHTML = resourcesButtonDiv.innerHTML +
-      '<input type="button" class="resourcesButton" id=' + i + ' value="' + TEAL.resources.array[i].resourcesName + '">';
+      '<input type="button" class="resourcesButton" id=' + i + ' value="' + TEAL.resources.array[i].resourcesName +
+      '" onclick="TEAL.contents.searchFromCategories(' + "'" + TEAL.resources.array[i].resourcesName + "'" + ')"' + '>';
     }
   }
   TEAL.buildDropdownFromArray({anyDropdown: 'resources-drop-down', textArray: resourcesNameArray, valuesArray: resourcesIndexArray, arrayLength: resourcesNameArray.length});

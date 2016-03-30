@@ -6,6 +6,7 @@
 		<script type="text/javascript" src="js/categories.js"/> </script>
 		<script type="text/javascript" src="js/topics.js"/> </script>
 		<script type="text/javascript" src="js/resources.js"/> </script>
+		<script type="text/javascript" src="js/contents.js"/> </script>
 		<script type="text/javascript" src="js/pacman.js"/> </script>
 
 		<style type="text/css">
@@ -20,6 +21,7 @@
 			.categoriesButton {width: 50%; height: 50%; background-color: cyan; font-weight: bold;  font-size: 45}
 			.topicsButton {width: 50%; height: 50%; background-color: orange; font-weight: bold;  font-size: 45}
 			.resourcesButton {width: 50%; height: 50%; background-color: grey; font-weight: bold;  font-size: 45}
+			.contentsButton {width: 50%; height: 50%; background-color: grey; font-weight: bold;  font-size: 45}
 
 			#panel1{ top: 0; left: 0; right: 50%; bottom: 50%;}
 			#panel2{ top: 0; left: 50%; right: 0; bottom: 50%}
@@ -27,6 +29,7 @@
 			#panel4{ top: 50%; left: 50%; right: 0; bottom: 0}
 			#topics-header-area{ text-align: center;}
 			#resources-header-area{ text-align: center;}
+			#contents-header-area{ text-align: center;}
 		</style>
   </head>
 
@@ -81,10 +84,22 @@
 
 
 		<div id="panel4" class="qp">
-					<!--	<canvas id="canvas" width="150" height="150"></canvas> -->
-					<iframe style="position:absolute; left:0; top:0; width:100%; height:100%"
-		src="http://wikipedia.org">
-</iframe>
+			<!--	<canvas id="canvas" width="150" height="150"></canvas>
+			<iframe style="position:absolute; left:0; top:0; width:100%; height:100%" src="http://wikipedia.org"> </iframe> -->
+			<div id="contents-header-area">
+		      Contents
+			</div>
+				<div id="contents-button-area">
+				</br>
+				  <input type="text" id="input-contents" onkeydown="if (event.keyCode === 13) document.getElementById('add-contents').click()">
+				  <input type="button" id="add-contents" value="add" onclick="TEAL.contents.addTocontents(document.getElementById('input-contents').value)">
+				  <select id="contents-drop-down">
+			    </select>
+				<input type="button" name="add-contents" value="delete" onclick="TEAL.contents.removeFromcontents()">
+			  </div>
+			  <hr/>
+			  <div id="contents-output-area">
+			  </div>
 		</div>
 
 

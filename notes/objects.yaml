@@ -1,0 +1,32 @@
+#Categories
+name:
+cycle:
+
+#Topics
+name:
+category:
+cycle:
+
+#Resources
+name:
+topic:
+type:
+cycle:
+vocab: ->
+
+
+#Contents
+name:
+cycle:
+notes:
+
+#vocab
+name:
+def:
+topic:
+category:
+resources: []
+
+#cards
+deck:
+cards:
