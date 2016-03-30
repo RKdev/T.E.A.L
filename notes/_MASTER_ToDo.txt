@@ -1,5 +1,12 @@
 TEAL
-enter dummy data
+
+Short term:
+
+Long term:
+better encapsulation\inheritance
+
+
+
 figure out "sub-resources"
 
 categories
@@ -11,6 +18,8 @@ resources
 
 Learn JSDocs
 
+
+*enter dummy data
 *create resources panel
 *create resources object
 *create resources database logic
