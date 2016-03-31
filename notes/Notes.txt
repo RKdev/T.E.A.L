@@ -42,3 +42,6 @@ TEAL.addObjectToArray = function(target, category){
   target.push(newResource);
   console.log(target);
 }
+
+
+ERR_EMPTY_RESPONSE - could not find machine

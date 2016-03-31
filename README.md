@@ -26,3 +26,6 @@ based heavily on the **categories** object.  Right now I want to get the logic
 for **topics**  and finally **resources** in place.  The next step will be to
 integrate with Aanki.  At that point I will consider the project in Beta and
 will see if I can get people to start testing.
+
+After discussing RESTful interfaces I decided development will probably be
+faster later if I go ahead and redesign the database logic 
