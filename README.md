@@ -20,12 +20,8 @@ UPDATE:
 I know the readme file isn't a blog, but I feel like it's the easiest place to
 put project updates.
 
-I had gotten pretty far when I decided that I wanted to reorganize everything. I
-think this was a good decision because the next objects I want to create will be
-based heavily on the **categories** object.  Right now I want to get the logic
-for **topics**  and finally **resources** in place.  The next step will be to
-integrate with Aanki.  At that point I will consider the project in Beta and
-will see if I can get people to start testing.
+I've been learning MVC from http://todomvc.com/ and it's been really helping me to understand modern development techniques. I'll be completely refactoring T.E.A.L to use MVC with a RESTful interface.
 
-After discussing RESTful interfaces I decided development will probably be
-faster later if I go ahead and redesign the database logic 
+
+I'm still going to keep it in pure javascript for now since this is supposed to be a learning exercise to help me get a solid understanding of
+Javascript and modern web design. Depending on how it goes I will make decisions about adding jQuery, Bootstrap, React or other frameworks as I gain more understanding and feel the project outgrowing what pure JS can readily do.
