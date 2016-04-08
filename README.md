@@ -25,3 +25,5 @@ I've been learning MVC from http://todomvc.com/ and it's been really helping me 
 
 I'm still going to keep it in pure javascript for now since this is supposed to be a learning exercise to help me get a solid understanding of
 Javascript and modern web design. Depending on how it goes I will make decisions about adding jQuery, Bootstrap, React or other frameworks as I gain more understanding and feel the project outgrowing what pure JS can readily do.
+
+Please visit the wiki page as well to see the evolution of the design.
