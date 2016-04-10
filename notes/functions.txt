@@ -17,14 +17,6 @@ Back End Functions
 *Read/Write JSON data to server
   -> turn into Database Requests
 
-TEAL functions
-
-TEAL.populateArray = function(data, target){
-TEAL.emptyArray = function emptyArray(target){
-TEAL.loadArrayfromAJAX = function(absPath, arrayTarget, callback){
-TEAL.writeArraytoAJAX = function(absPath, arraySource){
-TEAL.addObjectToArray = function(target, category){
-
 
 //functions to make
 
@@ -39,9 +31,22 @@ TEAL.addObjectToArray = function(target, category){
 //  add topic to a topic array within a record
 //  wants record to add to, category, topic name
 
-function addResource(category,id,name,subresources,topics,type){
+//functions to make
+
+//create record
+//  adds to record id array
+//  wants name, type, category
+//  optionally wants topics
+//  sets record id to array subscript
+//  sets cycle to 0
+
+//add topic
+//  add topic to a topic array within a record
+//  wants record to add to, category, topic name
+
+TEAL.addObjectToArray = function(target, category){
   var newResource = {};
- newResource.category = category;
+  newResource.category = category;
 /*  newResource.cycle = 0;
   newResource.id = id;
   newResource.name = name;
@@ -49,6 +54,6 @@ function addResource(category,id,name,subresources,topics,type){
   newResource.topics = [];
   newResource.type = type;
   */
-  resources.push(newResource);
-  console.log(resources);
+  target.push(newResource);
+  console.log(target);
 }

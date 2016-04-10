@@ -1,8 +1,0 @@
-categoryButton = Name
-load topics = load topics where topicCategory equals category button Name
-
-
-topic object
-
-name:
-category:

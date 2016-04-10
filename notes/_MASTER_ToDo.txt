@@ -7,35 +7,6 @@ categories
 topics
 resources
 
-REST_redesign
-
-Routes:                         Trivial Example:
-
-/categories                       All categories
-/categories/{id}                  "Mathematics"
-/topics                           All topics
-/topics/{id}                      "PreCalculus"
-/topics/{id}/category             "Mathematics"
-/topics/{id}/cards                All "PreCalculus" cards
-/topics/{id}/clips                All clips related to "PreCalculus"
-/topics/{id}notes                 All notes related to "PreCalculus"
-/resources                        All resources
-/resources/{id}                   "The Calculus: 7"
-/resources/{type}                 "Book"
-/resources/{type}                 "Video" *other possible type
-/resources/{id}/category          "Mathematics"
-/resources/{id}/topics            "Calculus"
-/resources/{id}/sections          Table of Contents to "The Calculus: 7"
-/resources/{id}/sections/{id}     Chapter 1 of "The Calculus: 7"
-/resources/{id}/cards             Cards created for "The Calculus: 7"
-/resources/{id}/cards/{id}/hints  all hints for a resource
-/resources/{id}/clips             all clips for a resource
-/resources/{id}/notes             all notes for a resource
-/clips/{id}/topics                returns a cards topic
-/exercises                        returns all exercises
-/resources/{id}/exercises         all exercises for "Algebra 1"
-
-
 
 Learn JSDocs
 
@@ -55,8 +26,37 @@ Learn JSDocs
 *Move anything in app.js to teal.js
 
 
-Thoughtdump
+function addResource(category,id,name,subresources,topics,type){
+  var newResource = {};
+ newResource.category = category;
+/*  newResource.cycle = 0;
+  newResource.id = id;
+  newResource.name = name;
+  newResource.subresources = [];
+  newResource.topics = [];
+  newResource.type = type;
+  */
+  resources.push(newResource);
+  console.log(resources);
+}
 
-So things are going well. It's still not useable though...
+Open Web Browser
+Open TEAL URL
+Login to TEAL
 
-I need to build a schema object next.
+What happens?
+
+T.E.A.L Version 0
+-basic interface
+
+Load categories
+
+Click a category will load the topics associated with that category
+Click a topic will load the resource stack (ie Aanki deck) for that topic
+
+Categories, Topics, and Resources will be a different shade (from blue to red) depending on when last review has
+happened.
+
+
+Panel1: List of Categories
+Panel2: Topics per Category
