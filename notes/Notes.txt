@@ -15,3 +15,9 @@ What happens to a resource ID when a resource is removed?
 
 
 ERR_EMPTY_RESPONSE - could not find machine
+
+Categories, Topics, and Resources will be a different shade (from blue to red) depending on when last review has
+happened.
+
+Click a category will load the topics associated with that category
+Click a topic will load the resource stack (ie Aanki deck) for that topic

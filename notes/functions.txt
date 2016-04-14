@@ -37,3 +37,18 @@ TEAL.addObjectToArray = function(target, category){
   target.push(newResource);
   console.log(target);
 }
+
+
+function addResource(category,id,name,subresources,topics,type){
+  var newResource = {};
+ newResource.category = category;
+/*  newResource.cycle = 0;
+  newResource.id = id;
+  newResource.name = name;
+  newResource.subresources = [];
+  newResource.topics = [];
+  newResource.type = type;
+  */
+  resources.push(newResource);
+  console.log(resources);
+}

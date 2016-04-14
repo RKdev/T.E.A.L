@@ -1,0 +1,27 @@
+REST_redesign
+
+Routes:                         Trivial Example:
+
+/categories                       All categories
+/categories/{id}                  "Mathematics"
+/topics                           All topics
+/topics/{id}                      "PreCalculus"
+/topics/{id}/category             "Mathematics"
+/topics/{id}/cards                All "PreCalculus" cards
+/topics/{id}/clips                All clips related to "PreCalculus"
+/topics/{id}notes                 All notes related to "PreCalculus"
+/resources                        All resources
+/resources/{id}                   "The Calculus: 7"
+/resources/{type}                 "Book"
+/resources/{type}                 "Video" *other possible type
+/resources/{id}/category          "Mathematics"
+/resources/{id}/topics            "Calculus"
+/resources/{id}/sections          Table of Contents to "The Calculus: 7"
+/resources/{id}/sections/{id}     Chapter 1 of "The Calculus: 7"
+/resources/{id}/cards             Cards created for "The Calculus: 7"
+/resources/{id}/cards/{id}/hints  all hints for a resource
+/resources/{id}/clips             all clips for a resource
+/resources/{id}/notes             all notes for a resource
+/clips/{id}/topics                returns a cards topic
+/exercises                        returns all exercises
+/resources/{id}/exercises         all exercises for "Algebra 1"
