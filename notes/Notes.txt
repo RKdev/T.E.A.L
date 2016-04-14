@@ -21,3 +21,15 @@ happened.
 
 Click a category will load the topics associated with that category
 Click a topic will load the resource stack (ie Aanki deck) for that topic
+
+Files
+index.html
+styles.css
+
+server.js
+utils.js
+teal.js
+model.js
+view.js
+controller.js
+store.js

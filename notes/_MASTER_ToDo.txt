@@ -9,10 +9,17 @@ resources
 Learn JSDocs
 
 
+define routes and storage
+categories
+topics
+resources
+
+define testing functions
 
 
 
-
+define basic 2 panel layout
+do colors ^
 
 
 
