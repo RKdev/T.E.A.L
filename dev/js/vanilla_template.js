@@ -109,6 +109,6 @@
 	};
 
 	// Export to window
-	window.TEAL = window.TEAL || {};
-	window.TEAL.Template = Template;
+	window.app = window.app || {};
+	window.app.Template = Template;
 })(window);

@@ -17,6 +17,7 @@ function Template() {
      + '</div>';
 }
 
+
 window.TEAL  = window.TEAL || {};
 window.TEAL.template = Template;
 })(window);
