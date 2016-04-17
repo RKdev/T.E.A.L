@@ -5,8 +5,8 @@
 
         //get a list of panels from somewhere
         this.panels = {
-                panel1 : geid('panel_1'),
-                panel2 : geid('panel_2')
+                panel1 : window.geid('panel_1'),
+                panel2 : window.geid('panel_2')
         };
     }
 
