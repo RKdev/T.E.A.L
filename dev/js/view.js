@@ -1,9 +1,16 @@
 (function(window){
 
-    function View(template){
-        this.template = template;
+    function View(templatesJS){
+        this.templates = templatesJS;
+
+        //get a list of panels from somewhere
+        this.$panel1 = geid('panel_1');
+        this.$panel2 = geid('panel_2');
     }
-View.prototype.geid = function(elem_id){
+
+View.prototype.renderPanel = function(panelRef, templateRef){
+        this.$panel1.innerHTML = this.templates.dataPanelTemplate;
+        this.$panel2.innerHTML = this.templates.controlPanelTemplate;
 
 };
 

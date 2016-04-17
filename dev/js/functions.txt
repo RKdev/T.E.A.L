@@ -1,0 +1,54 @@
+vanilla_app.js
+vanilla_controller.js
+	Controller.prototype.setView 
+	Controller.prototype.showAll 
+	Controller.prototype.showActive 
+	Controller.prototype.showCompleted 
+	Controller.prototype.addItem 
+	Controller.prototype.editItem 
+	Controller.prototype.editItemSave 
+	Controller.prototype.editItemCancel 
+	Controller.prototype.removeItem 
+	Controller.prototype.removeCompletedItems 
+	Controller.prototype.toggleComplete 
+	Controller.prototype.toggleAll 
+	Controller.prototype._updateCount 
+	Controller.prototype._filter 
+	Controller.prototype._updateFilterState 
+vanilla_helpers.js
+	window.qs 
+	window.qsa 
+	window.$on 
+	window.$delegate 
+	window.$parent 
+vanilla_model.js
+	Model.prototype.create 
+	Model.prototype.read 
+	Model.prototype.update 
+	Model.prototype.remove 
+	Model.prototype.removeAll 
+	Model.prototype.getCount 
+vanilla_store.js
+	Store.prototype.find 
+	Store.prototype.findAll 
+	Store.prototype.save 
+	Store.prototype.remove 
+	Store.prototype.drop 
+vanilla_template.js
+	var escapeHtmlChar 
+	var escape 
+	Template.prototype.show 
+	Template.prototype.itemCounter 
+	Template.prototype.clearCompletedButton 
+vanilla_view.js
+	View.prototype._removeItem 
+	View.prototype._clearCompletedButton 
+	View.prototype._setFilter 
+	View.prototype._elementComplete 
+	View.prototype._editItem 
+	View.prototype._editItemDone 
+	View.prototype.render 
+	View.prototype._itemId 
+	View.prototype._bindItemEditDone 
+	View.prototype._bindItemEditCancel 
+	View.prototype.bind 

@@ -1,7 +1,7 @@
 /*jshint laxbreak:true*/
 (function(window){
 
-function Template() {
+function Templates() {
     this.buttonTemplate = '<input type="button" value="{{name}}">';
 
     this.dataPanelTemplate
@@ -17,7 +17,16 @@ function Template() {
      + '</div>';
 }
 
+Templates.prototype.display = function(template, data){
+    var view = '';
+    var returnTemplate = '';
+
+
+    view = view + returnTemplate;
+    return view;
+
+};
 
 window.TEAL  = window.TEAL || {};
-window.TEAL.template = Template;
+window.TEAL.templates = Templates;
 })(window);
