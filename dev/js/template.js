@@ -28,6 +28,6 @@ Templates.prototype.display = function(template, data){
 
 };
 
-window.TEAL  = window.TEAL || {};
-window.TEAL.templates = Templates;
+window.TEALClass  = window.TEALClass || {};
+window.TEALClass.templates = Templates;
 })(window);

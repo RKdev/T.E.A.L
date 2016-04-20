@@ -4,6 +4,6 @@
         this.hello = "world";
     }
 
-window.TEAL = window.TEAL || {};
-window.TEAL.model = Model;
+window.TEALClass = window.TEALClass || {};
+window.TEALClass.model = Model;
 })(window);
