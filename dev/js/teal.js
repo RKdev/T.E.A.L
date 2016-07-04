@@ -3,6 +3,7 @@ function Teal() {
         this.controller = new TEALClass.controller();
         this.templates = new TEALClass.templates();
         this.view = new TEALClass.view(this.templates);
+        this.store = new TEALClass.store();
 }
 
     var  teal = new Teal();

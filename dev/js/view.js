@@ -18,6 +18,7 @@ View.prototype.getLayout = function() {
               var panelName = 'panel_' + (i + 1).toString();
               this.panels[panelName] = divs[i].id;
         }
+        return("getLayout");
 };
 
 View.prototype.renderPanel = function(panelRef, templateRef){
