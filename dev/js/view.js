@@ -13,7 +13,7 @@ View.prototype.getLayout = function() {
         // for now retrieves div list from document
         var divs = qsa('div');
 
-        //popluate panels {} with div panel ids
+        //populate panels {} with div panel ids
         for (var i = 0; i < divs.length; i++){
               var panelName = 'panel_' + (i + 1).toString();
               this.panels[panelName] = divs[i].id;
