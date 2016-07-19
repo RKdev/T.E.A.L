@@ -30,6 +30,7 @@ Store.prototype.requestAJAX = function(params) {
 
     xhr.send(params.POSTdata);
 };
+//these should be moved to model
 
 Store.prototype.listCategories = function () {
     //generate a list of all defined categories
