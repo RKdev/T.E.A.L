@@ -5,6 +5,8 @@
         this.categories_db = '/dev/pretendDB/categories.json';
     }
 
+
+//store needs to pass a local "utility" callback to requestAJAX, followed by the program's callback
 Store.prototype.requestAJAX = function(params) {
     //parameters
     //db : for now, abs path to db
@@ -27,7 +29,7 @@ Store.prototype.requestAJAX = function(params) {
     });
 
     xhr.send(params.POSTdata);
-  };
+};
 
 Store.prototype.listCategories = function () {
     //generate a list of all defined categories
