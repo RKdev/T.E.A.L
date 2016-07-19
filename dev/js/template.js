@@ -12,6 +12,9 @@ function Templates() {
         controlPanel :
              '<header><h2>{{Title}}</h2><hr/></header>'
             + '<div id="control_panel_features">'
+            + '<input type="button" value="{{Load Button}}">'
+            + '<br/>'
+            + '<br/>'
             + '<input id="input_box" type="text">'
             + '<input type="button" value="Add">'
             + '<input type="button" value="Delete">'
