@@ -1,9 +1,9 @@
 function Teal() {
-        this.model = new TEALClass.model();
-        this.controller = new TEALClass.controller();
+        this.store = new TEALClass.store();
         this.templates = new TEALClass.templates();
         this.view = new TEALClass.view(this.templates);
-        this.store = new TEALClass.store();
+        this.model = new TEALClass.model(this.store);
+        this.controller = new TEALClass.controller();
 }
 
     var  teal = new Teal();

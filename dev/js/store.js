@@ -1,8 +1,12 @@
+//remember to remove logging before prod!
+
 (function(window){
 
     function Store(){
         this.hello = "world";
         this.categories_db = '/dev/pretendDB/categories.json';
+        this.topics_db = '/dev/pretendDB/topics.json';
+        this.resources_db = '/dev/pretendDB/resources.json';
     }
 
 
@@ -22,9 +26,10 @@ Store.prototype.requestAJAX = function(params) {
 
     xhr.open(params.requestType, params.db, true);
     xhr.addEventListener("load", function(){
+      //remove logging before prod
       console.log('teal.store.requestAJAX:\n\n' + xhr.responseText);
 
-      //remove logging from callback before prod
+      //remove logging before prod
       console.log(params.callback());
     });
 
@@ -32,9 +37,9 @@ Store.prototype.requestAJAX = function(params) {
 };
 //these should be moved to model
 
-Store.prototype.listCategories = function () {
+Store.prototype.readFile = function (file_db) {
     //generate a list of all defined categories
-    this.requestAJAX({db:this.categories_db, requestType:'GET', callback:Math.random});
+    this.requestAJAX({db:file_db, requestType:'GET', callback:Math.random});
 };
 
 Store.prototype.listTopicsByCategory = function (category, callback) {
