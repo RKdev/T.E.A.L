@@ -10,6 +10,7 @@
     }
 
 
+
 //store needs to pass a local "utility" callback to requestAJAX, followed by the program's callback
 Store.prototype.requestAJAX = function(params) {
     //parameters
@@ -42,15 +43,11 @@ Store.prototype.readFile = function (file_db) {
     this.requestAJAX({db:file_db, requestType:'GET', callback:Math.random});
 };
 
-Store.prototype.listTopicsByCategory = function (category, callback) {
-    //generate a list of all topics within a category
-    //pass that list to a callback function
-};
+//create
+//read
+//update
+//destroy
 
-Store.prototype.listResourcesByTopic = function (topic, callback) {
-    //generate a list of all resources withing a topic
-    //pass that list to a callback function
-};
 
 window.TEALClass = window.TEALClass || {};
 window.TEALClass.store = Store;

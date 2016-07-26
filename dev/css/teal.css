@@ -23,8 +23,8 @@ body {
 }
 header h2 {text-align: center;}
 
-
-.button {width: 50%; height: 50%; background-color: #268bd2; border 0; font-weight: bold;  font-size: 45}
+/*width: 50%; height: 50%; */
+.button {background-color: #839496; border 0; font-weight: bold;  font-size: 45}
 .panel{position: absolute; padding: 50px; border: 1px solid #000; border-color: #839496; overflow-x:auto; overflow-y:auto;}
 #panel_1{ top: 0; left: 0; right: 50%; bottom: 50%;}
 #panel_2{ top: 0; left: 50%; right: 0; bottom: 50%}

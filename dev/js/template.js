@@ -3,7 +3,7 @@
 
 function Templates() {
     this.list = {
-        button : '<input type="button" value="{{name}}">',
+        button : '<id="{{id}}" input type="button" value="{{name}}" onclick="{{function}}">',
 
         dataPanel :
              '<header><h2>{{Title}}</h2><hr/></header>'
@@ -12,12 +12,12 @@ function Templates() {
         controlPanel :
              '<header><h2>{{Title}}</h2><hr/></header>'
             + '<div id="control_panel_features">'
-            + '<input type="button" value="{{Load Button}}">'
+            + '<input id="load" type="button" class="button" value="{{Load Button}}" onclick="{{function}}">'
             + '<br/>'
             + '<br/>'
             + '<input id="input_box" type="text">'
-            + '<input type="button" value="Add">'
-            + '<input type="button" value="Delete">'
+            + '<input id="add" type="button" class="button" value="Add" onclick="{{function}}">'
+            + '<input id="delete" type="button" class="button" value="Delete" onclick="{{function}}">'
             + '</div>'
     };
 }

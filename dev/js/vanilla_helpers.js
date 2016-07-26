@@ -6,6 +6,7 @@
 	window.qs = function (selector, scope) {
 		return (scope || document).querySelector(selector);
 	};
+
 	window.qsa = function (selector, scope) {
 		return (scope || document).querySelectorAll(selector);
 	};
