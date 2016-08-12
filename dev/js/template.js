@@ -3,8 +3,6 @@
 
 function Templates() {
     this.list = {
-        button : '<id="{{id}}" input type="button" value="{{name}}" onclick="{{function}}">',
-
         dataPanel :
              '<header><h2>{{Title}}</h2><hr/></header>'
             + '<div id=data_panel_output></div>',
@@ -20,12 +18,18 @@ function Templates() {
             + '<input id="delete" type="button" class="button" value="Delete" onclick="{{function}}">'
             + '</div>'
     };
+    this.elements = {
+      button : '<id="{{id}}" input type="button" value="{{name}}" onclick="{{function}}">'
+    };
 }
 
 Templates.prototype.display = function(template, data){
     var view = '';
     var returnTemplate = this.list[template];
 
+    //put data in template
+
+    //return template
     view = view + returnTemplate;
     return view;
 

@@ -1,0 +1,23 @@
+Current view function:
+
+A. Gets layout from index.html
+B. ses "renderPanel()" to populate two panels with templates
+
+
+
+Desired capabilities:
+A. need to pass data in renderPanel function so that panels render with actual data
+  - need to define data object
+
+
+B. Need to add data to panel
+  Target specific DIV in datapanel
+  Generate innerHTML for DIV from data object
+  destroy and rebuild DIV with new data
+
+
+C. Click "Categories" -> Queries all "categories"
+  -> pass "category" names as data to function that makes buttons
+  -> render dataPanel Div with generated buttons
+
+D.

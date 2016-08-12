@@ -18,13 +18,10 @@ define testing functions
 
 
 
+
+
+
 *define basic 2 panel layout
-do colors ^
-
-
-
-
-
 done:
 *enter dummy data
 *create resources panel
