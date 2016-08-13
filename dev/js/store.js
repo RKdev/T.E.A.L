@@ -38,8 +38,8 @@ Store.prototype.requestAJAX = function(params) {
 };
 //these should be moved to model
 
-Store.prototype.readFile = function (file_db) {
-    //generate a list of all defined categories
+Store.prototype.readFile = function(file_db) {
+    //generate a list of all a files contents
     this.requestAJAX({db:file_db, requestType:'GET', callback:Math.random});
 };
 

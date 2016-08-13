@@ -13,8 +13,8 @@ function Teal() {
         teal.view.getLayout();
 
         //render initial view
-        teal.view.renderPanel('panel_1', 'dataPanel');
-        teal.view.renderPanel('panel_2', 'controlPanel');
+        teal.view.renderPanel('panel_1', 'dataPanel', {Title: 'Data Panel'});
+        teal.view.renderPanel('panel_2', 'controlPanel', {Title: 'Control Panel', controlbutton: 'Load Data'});
 
         //get current view
         teal.view.getLayout();

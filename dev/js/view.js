@@ -1,4 +1,4 @@
-(function(window){
+  (function(window){
 
     function View(templates){
         this.templates = templates;
@@ -33,15 +33,16 @@ View.prototype.findDiv = function(divValue) {
 };
 
 
-View.prototype.renderPanel = function(panelRef, templateRef){
+View.prototype.renderPanel = function(panelRef, templateRef, data){
     //search the divs object for the name of the div to modify
     var searchDiv;
     if ((searchDiv = this.findDiv(panelRef)) !== false){
       el = geid(this.divs[searchDiv]);
       el.innerHTML = ''; //wipe
-      el.innerHTML = this.templates.display(templateRef); //load
+      el.innerHTML = this.templates.display(templateRef, data); //load
     }
     else {console.log('teal.view.renderPanel: div not found');}
+    return("renderPanel");
 };
 
 window.TEALClass = window.TEALClass || {};

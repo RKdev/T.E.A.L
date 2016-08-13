@@ -1,7 +1,7 @@
 Current view function:
 
 A. Gets layout from index.html
-B. ses "renderPanel()" to populate two panels with templates
+B. uses "renderPanel()" to populate two panels with templates
 
 
 
@@ -20,4 +20,4 @@ C. Click "Categories" -> Queries all "categories"
   -> pass "category" names as data to function that makes buttons
   -> render dataPanel Div with generated buttons
 
-D.
+Data Object:

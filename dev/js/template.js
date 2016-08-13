@@ -10,24 +10,30 @@ function Templates() {
         controlPanel :
              '<header><h2>{{Title}}</h2><hr/></header>'
             + '<div id="control_panel_features">'
-            + '<input id="load" type="button" class="button" value="{{Load Button}}" onclick="{{function}}">'
+            + '<input id="load" type="button" class="button" value="{{controlbutton}}" onclick="{{controlfunction}}">'
             + '<br/>'
             + '<br/>'
             + '<input id="input_box" type="text">'
-            + '<input id="add" type="button" class="button" value="Add" onclick="{{function}}">'
-            + '<input id="delete" type="button" class="button" value="Delete" onclick="{{function}}">'
+            + '<input id="add" type="button" class="button" value="Add" onclick="{{addf}}">'
+            + '<input id="delete" type="button" class="button" value="Delete" onclick="{{deletef}}">'
             + '</div>'
     };
     this.elements = {
-      button : '<id="{{id}}" input type="button" value="{{name}}" onclick="{{function}}">'
+      button : '<id="{{id}}" input type="button" value="{{buttonname}}" onclick="{{buttonf}}">'
     };
 }
 
 Templates.prototype.display = function(template, data){
     var view = '';
+    var dataValues = data;
     var returnTemplate = this.list[template];
 
     //put data in template
+    for(var key in data ){
+        //replace template item with data[key]
+        //template item must match data object key name
+        returnTemplate = returnTemplate.replace('{{' + key + '}}', data[key]);
+    }
 
     //return template
     view = view + returnTemplate;
