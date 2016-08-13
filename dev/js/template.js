@@ -25,7 +25,6 @@ function Templates() {
 
 Templates.prototype.display = function(template, data){
     var view = '';
-    var dataValues = data;
     var returnTemplate = this.list[template];
 
     //put data in template
