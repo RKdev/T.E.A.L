@@ -10,16 +10,16 @@ function Templates() {
         controlPanel :
              '<header><h2>{{Title}}</h2><hr/></header>'
             + '<div id="control_panel_features">'
-            + '<input id="load" type="button" class="button" value="{{controlbutton}}" onclick="{{controlfunction}}">'
+            + '<input id="load" type="button" class="button" value="{{controlbutton}}">'
             + '<br/>'
             + '<br/>'
             + '<input id="input_box" type="text">'
-            + '<input id="add" type="button" class="button" value="Add" onclick="{{addf}}">'
-            + '<input id="delete" type="button" class="button" value="Delete" onclick="{{deletef}}">'
+            + '<input id="add" type="button" class="button" value="Add">'
+            + '<input id="delete" type="button" class="button" value="Delete">'
             + '</div>'
     };
     this.elements = {
-      button : '<id="{{id}}" input type="button" value="{{buttonname}}" onclick="{{buttonf}}">'
+      button : '<id="{{id}}" input type="button" value="{{buttonname}}">'
     };
 }
 
