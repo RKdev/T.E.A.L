@@ -19,10 +19,10 @@ Store.prototype.requestAJAX = function(params) {
     //POSTdata : data to send to server
     //callback: function to run on request load
 
-    console.log(params);
+    //console.log(params);
     var xhr = new XMLHttpRequest();
     xhr.onreadystatechange = function() {
-          console.log('teal.store.requestAJAX: ' + xhr.readyState);
+          //console.log('teal.store.requestAJAX: ' + xhr.readyState);
     };
 
     xhr.open(params.requestType, params.db, true);
