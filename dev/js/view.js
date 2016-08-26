@@ -32,7 +32,7 @@ View.prototype.findDiv = function(divValue) {
   return(false);
 };
 
-
+//this is really a special case - it should be generalized further
 View.prototype.renderPanel = function(panelRef, templateRef, data){
     //search the divs object for the name of the div to modify
     var searchDiv;
@@ -43,6 +43,17 @@ View.prototype.renderPanel = function(panelRef, templateRef, data){
     }
     else {console.log('teal.view.renderPanel: div not found');}
     return("renderPanel");
+};
+
+View.prototype.addTemplateToPanel = function(panelRef, templateRef, data) {
+  var searchDiv;
+  if ((searchDiv = this.findDiv(panelRef)) !== false){
+    el = geid(this.divs[searchDiv]);
+    console.log(el);
+    el.innerHTML = el.innerHTML + this.templates.display(templateRef, data); //load
+  }
+  else {console.log('teal.view.renderPanel: div not found');}
+  return("addTemplateToPanel");
 };
 
 window.TEALClass = window.TEALClass || {};

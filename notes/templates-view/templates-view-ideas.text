@@ -11,8 +11,8 @@ Desired capabilities:
 
 
 B. Need to add data to panel
-  Target specific DIV in datapanel
-  Generate innerHTML for DIV from data object
+*  Target specific DIV in datapanel
+*  Generate innerHTML for DIV from data object
   destroy and rebuild DIV with new data
 
 
