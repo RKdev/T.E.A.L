@@ -33,6 +33,7 @@ View.prototype.findDiv = function(divValue) {
 };
 
 //this is really a special case - it should be generalized further
+// or kept the same, and have controller logic build template data
 View.prototype.renderPanel = function(panelRef, templateRef, data){
     //search the divs object for the name of the div to modify
     var searchDiv;
@@ -47,10 +48,14 @@ View.prototype.renderPanel = function(panelRef, templateRef, data){
 
 View.prototype.addTemplateToPanel = function(panelRef, templateRef, data) {
   var searchDiv;
+  var html;
   if ((searchDiv = this.findDiv(panelRef)) !== false){
     el = geid(this.divs[searchDiv]);
     console.log(el);
-    el.innerHTML = el.innerHTML + this.templates.display(templateRef, data); //load
+    html = el.innerHTML;
+    html = html + this.templates.display(templateRef, data);
+    el.innerHTML = ''; //wipe
+    el.innerHTML = html; //load
   }
   else {console.log('teal.view.renderPanel: div not found');}
   return("addTemplateToPanel");
