@@ -17,7 +17,10 @@ B. Need to add data to panel
 
 
 C. Click "Categories" -> Queries all "categories"
-  -> pass "category" names as data to function that makes buttons
-  -> render dataPanel Div with generated buttons
+*  -> pass "category" names as data to function that makes buttons
+*  -> render dataPanel Div with generated buttons
+  -> generalize the above functions
+  
+D. Fix "this" binding issue
 
 Data Object:

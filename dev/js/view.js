@@ -13,7 +13,7 @@ View.prototype.getLayout = function() {
         // for now retrieves div list from document
         var divs = qsa('div');
 
-        //populate panels {} with div panel ids
+        //populate divs {} with div panel ids
         for (var i = 0; i < divs.length; i++){
               var divName = 'div_' + (i + 1).toString();
               this.divs[divName] = divs[i].id;
@@ -34,10 +34,10 @@ View.prototype.findDiv = function(divValue) {
 
 //this is really a special case - it should be generalized further
 // or kept the same, and have controller logic build template data
-View.prototype.renderPanel = function(panelRef, templateRef, data){
+View.prototype.renderPanel = function(divRef, templateRef, data){
     //search the divs object for the name of the div to modify
     var searchDiv;
-    if ((searchDiv = this.findDiv(panelRef)) !== false){
+    if ((searchDiv = this.findDiv(divRef)) !== false){
       el = geid(this.divs[searchDiv]);
       el.innerHTML = ''; //wipe
       el.innerHTML = this.templates.display(templateRef, data); //load
@@ -46,18 +46,17 @@ View.prototype.renderPanel = function(panelRef, templateRef, data){
     return("renderPanel");
 };
 
-View.prototype.addTemplateToPanel = function(panelRef, templateRef, data) {
+View.prototype.addTemplateToPanel = function(divRef, templateRef, data) {
   var searchDiv;
   var html;
-  if ((searchDiv = this.findDiv(panelRef)) !== false){
+  if ((searchDiv = this.findDiv(divRef)) !== false){
     el = geid(this.divs[searchDiv]);
-    console.log(el);
     html = el.innerHTML;
     html = html + this.templates.display(templateRef, data);
     el.innerHTML = ''; //wipe
     el.innerHTML = html; //load
   }
-  else {console.log('teal.view.renderPanel: div not found');}
+  else {console.log('teal.view.addTemplateToPanel: div not found');}
   return("addTemplateToPanel");
 };
 

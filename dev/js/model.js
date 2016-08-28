@@ -5,9 +5,9 @@
         this.store = store;
     }
 
-Model.prototype.readCategories = function () {
+Model.prototype.readCategories = function (callback) {
         //generate a list of all defined categories
-        this.store.readFile(this.store.categories_db);
+        this.store.readFile(this.store.categories_db, callback);
         return ('teal.model.readCategories');
     };
 

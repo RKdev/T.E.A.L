@@ -31,16 +31,16 @@ Store.prototype.requestAJAX = function(params) {
       console.log('teal.store.requestAJAX:\n\n' + xhr.responseText);
 
       //remove logging before prod
-      console.log(params.callback());
+      console.log(params.callback(JSON.parse(this.responseText)));
     });
 
     xhr.send(params.POSTdata);
 };
 //these should be moved to model
 
-Store.prototype.readFile = function(file_db) {
+Store.prototype.readFile = function(file_db, callback) {
     //generate a list of all a files contents
-    this.requestAJAX({db:file_db, requestType:'GET', callback:Math.random});
+    this.requestAJAX({db:file_db, requestType:'GET', callback:callback});
 };
 
 //create
