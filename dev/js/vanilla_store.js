@@ -110,7 +110,7 @@
 	 * @param {function} callback The callback to fire after saving
 	 */
 	Store.prototype.remove = function (id, callback) {
-		var data = JSON.parse(localStorage[this._dbName]);
+		var data = JSON.parse(localStorage[this._dbName]); //"ajax type function?-kz"
 		var todos = data.todos;
 
 		for (var i = 0; i < todos.length; i++) {
@@ -120,7 +120,7 @@
 			}
 		}
 
-		localStorage[this._dbName] = JSON.stringify(data);
+		localStorage[this._dbName] = JSON.stringify(data); //"ajax type function?-kz"
 		callback.call(this, JSON.parse(localStorage[this._dbName]).todos);
 	};
 

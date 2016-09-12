@@ -10,7 +10,7 @@ Desired capabilities:
   - need to define data object
 
 
-B. Need to add data to panel
+*B. Need to add data to panel
 *  Target specific DIV in datapanel
 *  Generate innerHTML for DIV from data object
   destroy and rebuild DIV with new data
@@ -20,7 +20,11 @@ C. Click "Categories" -> Queries all "categories"
 *  -> pass "category" names as data to function that makes buttons
 *  -> render dataPanel Div with generated buttons
   -> generalize the above functions
-  
-D. Fix "this" binding issue
+
+*D. Fix "this" binding issue
+
+E. bind a click handler to a button
+
+
 
 Data Object:

@@ -11,15 +11,15 @@ Model.prototype.readCategories = function (callback) {
         return ('teal.model.readCategories');
     };
 
-Model.prototype.readTopics = function () {
+Model.prototype.readTopics = function (callback) {
         //generate a list of all defined topics
-        this.store.readFile(this.store.topics_db);
+        this.store.readFile(this.store.topics_db, callback);
         return('teal.model.readTopics');
 };
 
-Model.prototype.readResources = function () {
+Model.prototype.readResources = function (callback) {
         //generate a list of all defined topics
-        this.store.readFile(this.store.resources_db);
+        this.store.readFile(this.store.resources_db, callback);
         return('teal.model.readResources');
 };
 

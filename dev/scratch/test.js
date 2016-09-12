@@ -3,3 +3,5 @@ var createButtons = function(data) {
     view.addTemplateToPanel('data_panel_output', 'button', {id: [i], buttonname: [i]});
   }
 };
+
+console.log(arguments.callee.caller.toString());
