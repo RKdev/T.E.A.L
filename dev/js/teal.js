@@ -19,5 +19,5 @@ function Teal() {
         //get current view
         teal.view.getLayout();
 
-        attachEvent(geid('load'), 'click', function() {teal.controller.loadData();});
+        attachEvent(geid('load'), 'click', teal.controller.loadData);
 };
