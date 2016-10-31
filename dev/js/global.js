@@ -14,4 +14,8 @@
         return document.querySelectorAll(selector);
     };
 
+    window.attachEvent = function (target, type, callback) {
+      target.addEventListener(type, callback);
+    };
+
 })(window);
