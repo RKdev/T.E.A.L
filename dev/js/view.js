@@ -43,7 +43,7 @@ View.prototype.renderPanel = function(divRef, templateRef, data){
       el.innerHTML = this.templates.display(templateRef, data); //load
     }
     else {console.log('teal.view.renderPanel: div not found');}
-    return("renderPanel");
+    return("teal.view.renderPanel");
 };
 
 View.prototype.addTemplateToPanel = function(divRef, templateRef, data) {
@@ -57,7 +57,7 @@ View.prototype.addTemplateToPanel = function(divRef, templateRef, data) {
     el.innerHTML = html; //load
   }
   else {console.log('teal.view.addTemplateToPanel: div not found');}
-  return("addTemplateToPanel");
+  return("teal.view.addTemplateToPanel");
 };
 
 window.TEALClass = window.TEALClass || {};

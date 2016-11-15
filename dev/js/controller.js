@@ -7,10 +7,10 @@
         my.view = view;
     }
 
-    Controller.prototype.loadData = function(file, divRef){
+    Controller.prototype.loadCategories = function(file, divRef) {
       //read file - pass createButtons as a callback
       my.model.readCategories(my.createButtons);
-      return('teal.controller.loadData');
+      return('teal.controller.loadCategories');
     };
 
     Controller.prototype.createButtons = function(data) {

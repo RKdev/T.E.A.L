@@ -1,4 +1,5 @@
 function Teal() {
+
         this.store = new TEALClass.store();
         this.templates = new TEALClass.templates();
         this.view = new TEALClass.view(this.templates);
@@ -20,5 +21,5 @@ function Teal() {
         teal.view.getLayout();
 
         //add event to load button
-        attachEvent(geid('load'), 'click', teal.controller.loadData);
+        attachEvent(geid('load'), 'click', teal.controller.loadCategories);
 };
