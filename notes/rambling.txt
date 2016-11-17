@@ -1,0 +1,17 @@
+Okay. So... I started working on this last December - so it's been almost a year.
+
+In that time, I feel I've made pretty good strides toward learning-wise. I've learned
+more about MVC and how to implement that paradigm in pure JS
+
+Where I'm at now is trying to actually design and implement the functioning app.
+
+I think the next steps are definitely in the database realm. I need to actually start being
+able to store and recall real data. I wanted my government class to be a test case, but
+I haven't really used many electronic resources - including Aanki.
+
+I probably need to spend some time developing actual Aanki decks for the course.
+
+Programming-wise - I know the basic structure - it's just a matter of putting it down into actual code.
+
+So I need to pick some concrete goals, and stop redesigning for a bit. I have a basic MVC framework -
+I should just use it.

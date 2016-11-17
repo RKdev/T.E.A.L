@@ -1,5 +1,7 @@
 TEAL
 Short term:
+
+
 Long term:
 better encapsulation\inheritance
 figure out "sub-resources"
@@ -17,8 +19,7 @@ resources
 define testing functions
 
 
-
-
+Storage:
 
 
 *define basic 2 panel layout

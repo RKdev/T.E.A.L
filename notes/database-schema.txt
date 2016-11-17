@@ -9,3 +9,78 @@ replace data.json with different table files
 categories.json
 topics.json
 resources.json
+
+
+Database objects
+
+a TEAL_Record
+recordID: int;
+recordCreationDate: date;
+recordParent: str; //category record parent is root
+recordType: str; "category" is a type
+recordCategories:
+recordTopics:
+
+The Categories object
+The Topics object
+
+A book
+
+recordID: int;
+recordTitle: Calculus 7;
+recordCreationDate: date;
+recordType: book;
+bookType: {workbook (something with examples), normal book (just information)}
+recordCategories: math
+recordTopics: calculus, geometry, algebra in use (these topics must already exist)
+
+A chapter in a book
+recordID: int;
+recordTitle: Chapter 1;
+recordChapters: int;
+recordCreationDate: date;
+recordType: chapter;
+recordCategories: math
+recordTopics: calculus, geometry, algebra in use (these topics must already exist)
+recordCycle: int;
+resourceID: this must link to a specific resourceID
+
+A video
+
+recordID: int;
+recordTitle: Kahn Academy video blah blah blah;
+recordURL: url for the video
+recordCreationDate: date;
+recordType: video;
+recordCategories: math
+recordTopics: calculus, geometry, practical algebra (these topics must already exist)
+
+A Pin
+recordID: int;
+recordTitle: Pin name;
+recordBoard: pinterest board
+recordURL: url for the pin
+recordCreationDate: date;
+recordType: pin;
+recordCategories: math
+recordTopics: calculus, geometry, practical algebra (these topics must already exist)
+
+A hint
+recordID: int;
+recordTitle: Hint name;
+recordCreationDate: date;
+recordType: hint;
+recordCategories: math
+recordTopics: calculus, geometry, practical algebra (these topics must already exist)
+recordResource: a flash card
+
+A flash card
+recordID: int;
+recordCreationDate: date;
+recordType: hint;
+recordQuestion: the flash card question
+recordAnswer: the flash card answer
+recordHint:a hint to help you answer the flash card
+recordCategories: math
+recordTopics: calculus, geometry, practical algebra (these topics must already exist)
+recordResource:
