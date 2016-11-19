@@ -60,6 +60,17 @@ View.prototype.addTemplateToPanel = function(divRef, templateRef, data) {
   return("teal.view.addTemplateToPanel");
 };
 
+View.prototype.createButtons = function(data, target) {
+  for (var i = 0; i < data.length; i++){
+    for(var key in data[i]){
+      if(key === "id") {id = data[i][key];}
+      if(key === "name") {name = data[i][key];}
+    }
+    if( (id !== null) && (name !== null) ){
+      this.addTemplateToPanel(target, 'button', {id: id, buttonname: name});
+    }
+  }
+};
 window.TEALClass = window.TEALClass || {};
 window.TEALClass.view = View;
 })(window);

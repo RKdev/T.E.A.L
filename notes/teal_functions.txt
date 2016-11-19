@@ -1,0 +1,14 @@
+loadCategories needs to accomplish two things
+ - read the list of categories from a file
+ - use a callback
+ - the callback needs to take the data and do something with it
+
+function(jsondata) {
+
+console.log(jsondata);
+}
+
+
+teal.store.doAJAX('GET', '/dev/pretendDB/categories.json', function(jsondata) {
+teal.controller.createButtons(jsondata, 'data_panel_output');
+});

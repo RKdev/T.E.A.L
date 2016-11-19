@@ -7,21 +7,11 @@
         my.view = view;
     }
 
-    Controller.prototype.loadCategories = function(file, divRef) {
-      //read file - pass createButtons as a callback
-      my.model.readCategories(my.createButtons);
-      return('teal.controller.loadCategories');
-    };
-
-    Controller.prototype.createButtons = function(data) {
-      console.log(arguments.callee.caller.toString());
-      for (var i = 0; i < data.length; i++){
-        for(var key in data[i]){
-          if(key === "id") {id = data[i][key];}
-          if(key === "name") {name = data[i][key];}
-        }
-        if( (id !== null) && (name !== null) ){my.view.addTemplateToPanel('data_panel_output', 'button', {id: id, buttonname: name});}
-      }
+    Controller.prototype.loadCategories = function(target) {
+        my.model.readCategories(function(jsondata) {
+          my.view.createButtons(jsondata, target);
+        });
+        return('teal.controller.loadCategories');
     };
 
 window.TEALClass = window.TEALClass || {};

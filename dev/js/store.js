@@ -12,17 +12,17 @@
 
 
 //store needs to pass a local "utility" callback to requestAJAX, followed by the program's callback
-Store.prototype.doAJAX = function(type, db, route, callback, data) {
+Store.prototype.doAJAX = function(type, db, callback) {
   var xhr = new XMLHttpRequest();
   xhr.open(type, db, true);
   xhr.addEventListener("load", function(){
     //remove logging before prod
-    console.log('teal.store.requestAJAX:\n\n' + xhr.responseText);
-
+    console.log('teal.store.doAJAX:\n\n' + xhr.responseText);
     //remove logging before prod
-    console.log(params.callback(JSON.parse(this.responseText)));
+    console.log(callback(JSON.parse(this.responseText)));
   });
-
+  xhr.send();
+  return('teal.store.doAJAX');
 };
 
 Store.prototype.requestAJAX = function(params) {
@@ -53,7 +53,8 @@ Store.prototype.requestAJAX = function(params) {
 
 Store.prototype.readFile = function(file_db, callback) {
     //generate a list of all a files contents
-    this.requestAJAX({db:file_db, requestType:'GET', callback:callback});
+//    this.requestAJAX({db:file_db, requestType:'GET', callback:callback});
+      this.doAJAX('GET', file_db, callback);
 };
 
 Store.prototype.createRecord = function() {

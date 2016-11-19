@@ -21,5 +21,13 @@ function Teal() {
         teal.view.getLayout();
 
         //add event to load button
-        attachEvent(geid('load'), 'click', teal.controller.loadCategories);
+
+      //  attachEvent(geid('load'), 'click', function(){ teal.controller.loadCategories('data_panel_output'); });
+      attachEvent(geid('load'), 'click', loadMahShit('data_panel_output'));
+
+function loadMahShit(someString) {
+	return function() {
+		teal.controller.loadCategories(someString);
+	};
+}
 };
