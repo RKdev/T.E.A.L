@@ -23,11 +23,7 @@ function Teal() {
         //add event to load button
 
       //  attachEvent(geid('load'), 'click', function(){ teal.controller.loadCategories('data_panel_output'); });
-      attachEvent(geid('load'), 'click', loadMahShit('data_panel_output'));
-
-function loadMahShit(someString) {
-	return function() {
-		teal.controller.loadCategories(someString);
-	};
-}
+      attachEvent(geid('load'), 'click', function(){teal.controller.loadCategories('data_panel_output');});
+      attachEvent(geid('add'), 'click', function(){teal.controller.controlPanelAdd();});
+      attachEvent(geid('input_box'), 'keyup', function(e){if(e.keyCode == 13){teal.controller.controlPanelAdd(); geid('input_box').value = '';}});
 };

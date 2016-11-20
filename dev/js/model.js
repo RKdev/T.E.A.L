@@ -10,6 +10,10 @@ Model.prototype.readCategories = function (callback) {
         this.store.readFile(this.store.categories_db, callback);
         return ('teal.model.readCategories');
     };
+Model.prototype.addCategory = function (data, callback) {
+      this.store.createRecord(this.store.categories_db, data, callback);
+      console.log("teal.model.addCategory: " + callback);
+};
 
 Model.prototype.readTopics = function (callback) {
         //generate a list of all defined topics

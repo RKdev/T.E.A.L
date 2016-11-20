@@ -9,6 +9,6 @@ console.log(jsondata);
 }
 
 
-teal.store.doAJAX('GET', '/dev/pretendDB/categories.json', function(jsondata) {
+teal.store.AJAXGet('/dev/pretendDB/categories.json', function(jsondata) {
 teal.controller.createButtons(jsondata, 'data_panel_output');
 });

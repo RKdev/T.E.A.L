@@ -56,7 +56,7 @@ View.prototype.addTemplateToPanel = function(divRef, templateRef, data) {
     el.innerHTML = ''; //wipe
     el.innerHTML = html; //load
   }
-  else {console.log('teal.view.addTemplateToPanel: div not found');}
+  else {console.log('teal.view.addTemplateToPanel: div not found: ' + divRef);}
   return("teal.view.addTemplateToPanel");
 };
 
@@ -71,6 +71,20 @@ View.prototype.createButtons = function(data, target) {
     }
   }
 };
+
+View.prototype.clearDiv = function(divRef) {
+  var searchDiv;
+  var html;
+  if ((searchDiv = this.findDiv(divRef)) !== false){
+    el = geid(this.divs[searchDiv]);
+    html = el.innerHTML;
+    el.innerHTML = ''; //wipe
+  }
+  else {console.log('teal.view.clearDiv: div not found: ' + divRef);}
+  return('teal.view.clearDiv');
+
+};
+
 window.TEALClass = window.TEALClass || {};
 window.TEALClass.view = View;
 })(window);
