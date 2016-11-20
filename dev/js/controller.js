@@ -25,7 +25,7 @@
     Controller.prototype.controlPanelAdd = function(){
       var data = geid('input_box').value;
       if(data) {
-        console.log(this.addCategory(data, 'data_panel_output'));        
+        console.log(my.addCategory(data, 'data_panel_output'));      
       }
     };
 
