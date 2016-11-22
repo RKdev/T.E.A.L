@@ -4,11 +4,13 @@
 function Templates() {
     this.list = {
         dataPanel :
-             '<header><h2>{{Title}}</h2><hr/></header>'
+              '<div id=data_panel_header><header><h2>{{Title}}</h2></header></div>'
+            + '<hr/>'
             + '<div id=data_panel_output></div>',
 
         controlPanel :
-             '<header><h2>{{Title}}</h2><hr/></header>'
+              '<div id=control_panel_header><header><h2>{{Title}}</h2></header></div>'
+            + '<hr/>'
             + '<div id="control_panel_features">'
             + '<input id="load" type="button" class="button" value="{{controlbutton}}">'
             + '<br/>'
@@ -18,7 +20,9 @@ function Templates() {
             + '<input id="delete" type="button" class="button" value="Delete">'
             + '</div>',
 
-        button : '<input id="{{id}}" type="button" class="button" value="{{buttonname}}">'
+        button : '<input id="{{id}}" type="button" class="button" value="{{buttonname}}">',
+
+        header : '<header><h2>{{Title}}</h2></header>'
     };
 }
 

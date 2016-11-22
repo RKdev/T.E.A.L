@@ -9,10 +9,9 @@
         this.resources_db = '/dev/pretendDB/resources.json';
     }
 
-Store.prototype.AJAXGet = function(db, callback) {
-  console.log("AJAXGet: "+ callback);
+Store.prototype.AJAXGet = function(file, callback) {
   var xhr = new XMLHttpRequest();
-  xhr.open('GET', db, true);
+  xhr.open('GET', file, true);
   xhr.addEventListener("load", function(){
     console.log(callback(JSON.parse(this.responseText)));
   });
@@ -20,14 +19,12 @@ Store.prototype.AJAXGet = function(db, callback) {
   return('teal.store.AJAXGet');
 };
 
-Store.prototype.AJAXPost = function(db, data, callback) {
+Store.prototype.AJAXPost = function(file, data, callback) {
   var xhr = new XMLHttpRequest();
-  xhr.open('POST', db, true);
+  xhr.open('POST', file, true);
   xhr.addEventListener("load", function(){
-    console.log('AJAXPost: ' + callback);
     callback();
   });
-
   xhr.send(JSON.stringify(data));
   return('teal.store.AJAXPost');
 };
@@ -39,16 +36,15 @@ Store.prototype.readFile = function(file_db, callback) {
 };
 
 Store.prototype.createRecord = function(file_db, data, callback) {
-  me = this;
-  console.log('createRecord: ' + callback);
-  me.AJAXGet(file_db, function(jsonData){
-      var tealArray = [];
+  var my = this;
+  my.AJAXGet(file_db, function(jsonData){
+      var tempArray = [];
       var catObject = {};
-      tealArray = jsonData;
-      catObject.id = (tealArray.length + 1);
+      tempArray = jsonData;
+      catObject.id = (tempArray.length + 1);
       catObject.name = data;
-      tealArray.push(catObject);
-      me.AJAXPost(file_db, tealArray, function(){me.AJAXGet(file_db, callback);});
+      tempArray.push(catObject);
+      my.AJAXPost(file_db, tempArray, function(){my.AJAXGet(file_db, callback);});
   });
 };
 
@@ -61,6 +57,11 @@ Store.prototype.updateRecord = function() {
 };
 
 Store.prototype.destroyRecord = function() {
+
+};
+
+Store.prototype.dropData = function (file_db, callback) {
+  //remove all data from a file
 
 };
 

@@ -3,7 +3,12 @@
     function Model(store){
         this.hello = "world";
         this.store = store;
+        this.UIContext = "Initial Context";
     }
+
+Model.prototype.setUIContext = function (context) {
+    this.UIContext = context;
+};
 
 Model.prototype.readCategories = function (callback) {
         //generate a list of all defined categories
@@ -12,7 +17,6 @@ Model.prototype.readCategories = function (callback) {
     };
 Model.prototype.addCategory = function (data, callback) {
       this.store.createRecord(this.store.categories_db, data, callback);
-      console.log("teal.model.addCategory: " + callback);
 };
 
 Model.prototype.readTopics = function (callback) {

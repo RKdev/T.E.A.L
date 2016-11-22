@@ -8,6 +8,8 @@
     }
 
     Controller.prototype.loadCategories = function(targetDiv) {
+        my.model.setUIContext('Categories');
+        my.view.renderDiv('data_panel_header', 'header', {Title:my.model.UIContext});
         my.view.clearDiv(targetDiv);
         my.model.readCategories(function(jsondata) {
           my.view.createButtons(jsondata, targetDiv);
@@ -25,7 +27,7 @@
     Controller.prototype.controlPanelAdd = function(){
       var data = geid('input_box').value;
       if(data) {
-        console.log(my.addCategory(data, 'data_panel_output'));      
+        my.addCategory(data, 'data_panel_output');
       }
     };
 

@@ -32,9 +32,7 @@ View.prototype.findDiv = function(divValue) {
   return(false);
 };
 
-//this is really a special case - it should be generalized further
-// or kept the same, and have controller logic build template data
-View.prototype.renderPanel = function(divRef, templateRef, data){
+View.prototype.renderDiv = function(divRef, templateRef, data){
     //search the divs object for the name of the div to modify
     var searchDiv;
     if ((searchDiv = this.findDiv(divRef)) !== false){
@@ -42,8 +40,8 @@ View.prototype.renderPanel = function(divRef, templateRef, data){
       el.innerHTML = ''; //wipe
       el.innerHTML = this.templates.display(templateRef, data); //load
     }
-    else {console.log('teal.view.renderPanel: div not found');}
-    return("teal.view.renderPanel");
+    else {console.log('teal.view.renderDiv: div not found');}
+    return("teal.view.renderDiv");
 };
 
 View.prototype.addTemplateToPanel = function(divRef, templateRef, data) {
@@ -70,6 +68,7 @@ View.prototype.createButtons = function(data, target) {
       this.addTemplateToPanel(target, 'button', {id: id, buttonname: name});
     }
   }
+  return("teal.view.createButtons");
 };
 
 View.prototype.clearDiv = function(divRef) {

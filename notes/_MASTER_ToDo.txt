@@ -1,6 +1,7 @@
 TEAL
-Short term:
-
+Current:
+Categories view title should change
+Need a view module to change the title of an existing div
 
 Long term:
 better encapsulation\inheritance
@@ -18,12 +19,9 @@ resources
 
 define testing functions
 
-
-Storage:
-
-
-*define basic 2 panel layout
 done:
+*Load and add categories
+*define basic 2 panel layout
 *enter dummy data
 *create resources panel
 *create resources object

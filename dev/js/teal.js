@@ -14,16 +14,14 @@ function Teal() {
         teal.view.getLayout();
 
         //render initial view
-        teal.view.renderPanel('panel_1', 'dataPanel', {Title: 'Data Panel'});
-        teal.view.renderPanel('panel_2', 'controlPanel', {Title: 'Control Panel', controlbutton: 'Load Data'});
+        teal.view.renderDiv('panel_1', 'dataPanel', {Title: 'Data Panel'});
+        teal.view.renderDiv('panel_2', 'controlPanel', {Title: 'Control Panel', controlbutton: 'Load Data'});
 
         //get current view
         teal.view.getLayout();
 
-        //add event to load button
-
-      //  attachEvent(geid('load'), 'click', function(){ teal.controller.loadCategories('data_panel_output'); });
+        //add initial events, initial context is "Categories"
       attachEvent(geid('load'), 'click', function(){teal.controller.loadCategories('data_panel_output');});
-      attachEvent(geid('add'), 'click', function(){teal.controller.controlPanelAdd();});
-      attachEvent(geid('input_box'), 'keyup', function(e){if(e.keyCode == 13){teal.controller.controlPanelAdd(); geid('input_box').value = '';}});
+      attachEvent(geid('add'), 'click', function(){teal.controller.controlPanelAdd(); geid('input_box').value = '';});
+      attachEvent(geid('input_box'), 'keyup', function(e){if(e.keyCode === 13){teal.controller.controlPanelAdd(); geid('input_box').value = '';}});
 };

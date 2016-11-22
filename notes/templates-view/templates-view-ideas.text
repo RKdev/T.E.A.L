@@ -1,12 +1,12 @@
 Current view function:
 
 A. Gets layout from index.html
-B. uses "renderPanel()" to populate two panels with templates
+B. uses "renderDiv()" to populate two panels with templates
 
 
 
 Desired capabilities:
-*A. need to pass data in renderPanel function so that panels render with actual data
+*A. need to pass data in renderDiv function so that panels render with actual data
   - need to define data object
 
 
