@@ -28,6 +28,7 @@
       var data = geid('input_box').value;
       if(data) {
         my.addCategory(data, 'data_panel_output');
+        geid('input_box').value = '';
       }
       return('teal.controlPanelAdd');
     };
