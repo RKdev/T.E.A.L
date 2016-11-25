@@ -1,86 +1,24 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<title>Index Page</title>
-		<link rel="stylesheet" href="css/teal.css">
-		<script type="text/javascript" src="js/teal.js"/> </script>
-		<script type="text/javascript" src="js/categories.js"/> </script>
-		<script type="text/javascript" src="js/topics.js"/> </script>
-		<script type="text/javascript" src="js/resources.js"/> </script>
-		<script type="text/javascript" src="js/contents.js"/> </script>
-		<script type="text/javascript" src="js/pacman.js"/> </script>
-		<script type="text/javascript" src="js/dice.js"/></script>
-  </head>
-
-	<body>
-		<div id="panel1" class="qp">
-			<div id="categories-button-area">
-				<input type="button" id="load-categories" value="Load Categories" onclick="TEAL.categories.loadCategories()">
-			</br>
-				<input type="text" id="input-categories" onkeydown="if (event.keyCode === 13)  document.getElementById('add-categories').click()">
-				<input type="button" id="add-categories" value="add" onclick="TEAL.categories.addToCategories(document.getElementById('input-categories').value)">
-				<select id="categories-drop-down">
-				</select>
-				<input type="button" name="add-categories" value="delete" onclick="TEAL.categories.removeFromCategories()">
-			</div>
-			<hr/>
-			<div id="categories-output-area">
-			</div>
-		</div>
-
-		<div id="panel2" class="qp">
-			<div id="resources-header-area">
-        Resources
-			</div>
-			  <div id="resources-button-area">
-			  </br>
-			    <input type="text" id="input-resources" onkeydown="if (event.keyCode === 13) document.getElementById('add-resources').click()">
-			    <input type="button" id="add-resources" value="add" onclick="TEAL.resources.addToresources(document.getElementById('input-resources').value)">
-			    <select id="resources-drop-down">
-			    </select>
-			    <input type="button" name="add-resources" value="delete" onclick="TEAL.resources.removeFromresources()">
-			  </div>
-			  <hr/>
-			  <div id="resources-output-area">
-			  </div>
-		</div>
-
-		<div id="panel3" class="qp">
-			<div id="topics-header-area">
-			</div>
-			<div id="topics-button-area">
-			</br>
-				<input type="text" id="input-topics" onkeydown="if (event.keyCode === 13)  document.getElementById('add-topics').click()">
-				<input type="button" id="add-topics" value="add" onclick="TEAL.topics.addTotopics(document.getElementById('input-topics').value)">
-				<select id="topics-drop-down">
-				</select>
-				<input type="button" name="add-topics" value="delete" onclick="TEAL.topics.removeFromtopics()">
-			</div>
-			<hr/>
-			<div id="topics-output-area">
-			</div>
-		</div>
-
-
-		<div id="panel4" class="qp">
-			<!--	<canvas id="canvas" width="150" height="150"></canvas>
-			<iframe style="position:absolute; left:0; top:0; width:100%; height:100%" src="http://wikipedia.org"> </iframe> -->
-			<div id="contents-header-area">
-		      Contents
-			</div>
-				<div id="contents-button-area">
-				</br>
-				  <input type="text" id="input-contents" onkeydown="if (event.keyCode === 13) document.getElementById('add-contents').click()">
-				  <input type="button" id="add-contents" value="add" onclick="TEAL.contents.addTocontents(document.getElementById('input-contents').value)">
-				  <select id="contents-drop-down">
-			    </select>
-				<input type="button" name="add-contents" value="delete" onclick="TEAL.contents.removeFromcontents()">
-			  </div>
-			  <hr/>
-			  <div id="contents-output-area">
-			  </div>
-		</div>
-
-
-	</body>
+    <head>
+        <title>Welcome to T.E.A.L</title>
+        <link rel="stylesheet" href="css/teal.css" >
+        <script type="text/javascript" src="js/global.js"></script>
+        <script type="text/javascript" src="js/template.js"></script>
+        <script type="text/javascript" src="js/view.js"></script>
+        <script type="text/javascript" src="js/model.js"></script>
+        <script type="text/javascript" src="js/controller.js"></script>
+        <script type="text/javascript" src="js/store.js"></script>
+        <script type="text/javascript" src="js/teal.js"></script>
+    </head>
+  <body onload="initTeal()">
+    <div id='panel_1' class='panel'>
+    </div>
+    <div id='panel_2' class='panel'>
+    </div>
+    <div id='panel_3' class='panel'>
+    </div>
+    <div id='panel_4' class='panel'>
+    </div>
+  </body>
 </html>

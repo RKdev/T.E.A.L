@@ -4,9 +4,9 @@
 
     function Store(){
         this.hello = "world";
-        this.categories_db = '/dev/pretendDB/categories.json';
-        this.topics_db = '/dev/pretendDB/topics.json';
-        this.resources_db = '/dev/pretendDB/resources.json';
+        this.categories_db = '/pretendDB/categories.json';
+        this.topics_db = '/pretendDB/topics.json';
+        this.resources_db = '/pretendDB/resources.json';
     }
 
 Store.prototype.AJAXGet = function(file, callback) {

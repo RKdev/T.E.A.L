@@ -1,20 +1,32 @@
-  canvas {
-    border: 1px solid black;
-  }
-  #scaryButton { float: right;}
+/*$base03:    #002b36;
+$base02:    #073642;
+$base01:    #586e75;
+$base00:    #657b83;
+$base0:     #839496;
+$base1:     #93a1a1;
+$base2:     #eee8d5;
+$base3:     #fdf6e3;
+$yellow:    #b58900;
+$orange:    #cb4b16;
+$red:       #dc322f;
+$magenta:   #d33682;
+$violet:    #6c71c4;
+$blue:      #268bd2;
+$cyan:      #2aa198;
+$green:     #859900;
+*/
 
-  /*html, body { height: 100%; padding: 0; margin: 0; }*/
+body {
+    background-color:#073642;
+    color:#839496;
+    h1,h2,h3,h4,h5,h6 { color:#586e75;  }
+}
+header h2 {text-align: center;}
 
-  .qp{position: absolute; padding: 1em; border: 1px solid #000; overflow-x:none; overflow-y:auto;}
-  .categoriesButton {width: 50%; height: 50%; background-color: cyan; font-weight: bold;  font-size: 45}
-  .topicsButton {width: 50%; height: 50%; background-color: orange; font-weight: bold;  font-size: 45}
-  .resourcesButton {width: 50%; height: 50%; background-color: grey; font-weight: bold;  font-size: 45}
-  .contentsButton {width: 50%; height: 50%; background-color: grey; font-weight: bold;  font-size: 45}
-
-  #panel1{ top: 0; left: 0; right: 50%; bottom: 50%;}
-  #panel2{ top: 0; left: 50%; right: 0; bottom: 50%}
-  #panel3{ top: 50%; left: 0; right: 50%; bottom: 0;}
-  #panel4{ top: 50%; left: 50%; right: 0; bottom: 0}
-  #topics-header-area{ text-align: center;}
-  #resources-header-area{ text-align: center;}
-  #contents-header-area{ text-align: center;}
+/*width: 50%; height: 50%; */
+.button {background-color: #839496; border 0; font-weight: bold;  font-size: 45}
+.panel{position: absolute; padding: 50px; border: 1px solid #000; border-color: #839496; overflow-x:auto; overflow-y:auto;}
+#panel_1{ top: 0; left: 0; right: 50%; bottom: 50%;}
+#panel_2{ top: 0; left: 50%; right: 0; bottom: 50%}
+#panel_3{ top: 50%; left: 0; right: 50%; bottom: 0}
+#panel_4{ top: 50%; left: 50%; right: 0; bottom: 0}
