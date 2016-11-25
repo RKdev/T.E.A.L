@@ -1,1 +1,9 @@
-[{"id":1,"name":"Mathematics"},{"id":2,"name":"Literature"},{"id":3,"name":"Computers"},{"id":4,"name":"Religion"},{"id":5,"name":"Philosophy"},{"id":6,"name":"Comics"},{"id":7,"name":"History"},{"id":8,"name":"Science"},{"id":9,"name":"cc"}]
+[
+  {"id":1,"name":"Mathematics"},
+  {"id":2,"name":"Literature"},
+  {"id":3,"name":"Computers"},
+  {"id":4,"name":"Religion"},
+  {"id":5,"name":"Philosophy"},
+  {"id":6,"name":"Comics"},
+  {"id":7,"name":"History"},
+  {"id":8,"name":"Science"}]

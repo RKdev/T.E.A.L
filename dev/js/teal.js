@@ -15,7 +15,7 @@ function Teal() {
 
         //render initial view
         teal.view.renderDiv('panel_1', 'dataPanel', {Title: 'Data Panel'});
-        teal.view.renderDiv('panel_2', 'controlPanel', {Title: 'Control Panel', controlbutton: 'Load Data'});
+        teal.view.renderDiv('panel_2', 'controlPanel', {Title: 'Control Panel', controlbutton: 'Load Categories'});
 
         //get current view
         teal.view.getLayout();

@@ -2,7 +2,6 @@
 
     function Controller(model, view){
         my = this;
-        my.hello = "world";
         my.model = model;
         my.view = view;
     }
@@ -22,6 +21,7 @@
       my.model.addCategory(data,function(jsonData){
         my.view.createButtons(jsonData, targetDiv);
       });
+      return('teal.controller.addCategory');
     };
 
     Controller.prototype.controlPanelAdd = function(){
@@ -29,6 +29,7 @@
       if(data) {
         my.addCategory(data, 'data_panel_output');
       }
+      return('teal.controlPanelAdd');
     };
 
 window.TEALClass = window.TEALClass || {};
