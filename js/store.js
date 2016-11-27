@@ -30,6 +30,7 @@ Store.prototype.AJAXPost = function(file, data, callback) {
 
 Store.prototype.readFile = function(file_db, callback) {
     //generate a list of all a files contents
+      console.log(file_db);
       this.AJAXGet(file_db, callback);
 };
 

@@ -24,4 +24,6 @@ function Teal() {
       attachEvent(geid('load'), 'click', function(){teal.controller.loadCategories('data_panel_output');});
       attachEvent(geid('add'), 'click', function(){teal.controller.controlPanelAdd();});
       attachEvent(geid('input_box'), 'keyup', function(e){if(e.keyCode === 13){teal.controller.controlPanelAdd();}});
+      attachEvent(geid('data_panel_output'), 'click', function(e){if(e.target !== e.currentTarget){console.log(e.target.value);}e.stopPropagation();});
+
 };

@@ -36,9 +36,11 @@
 
     Controller.prototype.loadGeneral = function(targetDiv, uicontext) {
       my.model.setUIContext(uicontext);
-      my.view.renderDiv('data_panel_header', 'header', {Title:my.model.UIcontext});
+      my.view.renderDiv('data_panel_header', 'header', {Title:my.model.UIContext.capitalize()});
       my.view.clearDiv(targetDiv);
-
+      my.model.readGeneral(function(jsondata) {
+        my.view.createButtons(jsondata, targetDiv);
+      });
     };
 
 window.TEALClass = window.TEALClass || {};

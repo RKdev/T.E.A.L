@@ -10,9 +10,13 @@ Model.prototype.setUIContext = function (context) {
     this.UIContext = context;
 };
 
-Model.prototype.readGeneral = function (uicontext, callback){
-  this.store.readFile(this.store.uicontext, callback);
-  return ('teal.modle.readGeneral');
+String.prototype.capitalize = function(){
+       return this.replace( /(^|\s)([a-z])/g , function(m,p1,p2){ return p1+p2.toUpperCase(); } );
+      };
+
+Model.prototype.readGeneral = function (callback){
+  this.store.readFile(this.store[this.UIContext], callback);
+  return ('teal.model.readGeneral');
 };
 
 Model.prototype.readCategories = function (callback) {
