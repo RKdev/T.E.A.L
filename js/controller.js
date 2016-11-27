@@ -9,6 +9,7 @@
     Controller.prototype.loadCategories = function(targetDiv) {
         my.model.setUIContext('Categories');
         my.view.renderDiv('data_panel_header', 'header', {Title:my.model.UIContext});
+        attachEvent(geid('data_panel_output'), 'click', function(e){if(e.target !== e.currentTarget){console.log(e.target.value);}e.stopPropagation();});
         my.view.clearDiv(targetDiv);
         my.model.readCategories(function(jsondata) {
           my.view.createButtons(jsondata, targetDiv, my.model.UIContext);
