@@ -53,8 +53,18 @@ View.prototype.addTemplateToPanel = function(divRef, templateRef, data) {
     html = html + this.templates.display(templateRef, data);
     el.innerHTML = ''; //wipe
     el.innerHTML = html; //load
+    attachEvent(el, 'click', doSomething);
   }
   else {console.log('teal.view.addTemplateToPanel: div not found: ' + divRef);}
+
+  function doSomething(e) {
+      if (e.target !== e.currentTarget) {
+          var clickedItem = e.target.id;
+          console.log("Hello " + clickedItem);
+          e.stopPropagation();
+      }
+  }
+
   return("teal.view.addTemplateToPanel");
 };
 
@@ -67,6 +77,9 @@ View.prototype.createButtons = function(data, target) {
     if( (id !== null) && (name !== null) ){
       this.addTemplateToPanel(target, 'button', {id: id, buttonname: name});
     }
+  }
+  function buttonVal (button) {
+    console.log(button.target.value);
   }
   return("teal.view.createButtons");
 };

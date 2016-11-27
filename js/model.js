@@ -10,24 +10,30 @@ Model.prototype.setUIContext = function (context) {
     this.UIContext = context;
 };
 
+Model.prototype.readGeneral = function (uicontext, callback){
+  this.store.readFile(this.store.uicontext, callback);
+  return ('teal.modle.readGeneral');
+};
+
 Model.prototype.readCategories = function (callback) {
         //generate a list of all defined categories
-        this.store.readFile(this.store.categories_db, callback);
+        this.store.readFile(this.store.categories, callback);
         return ('teal.model.readCategories');
     };
+
 Model.prototype.addCategory = function (data, callback) {
-      this.store.createRecord(this.store.categories_db, data, callback);
+      this.store.createRecord(this.store.categories, data, callback);
 };
 
 Model.prototype.readTopics = function (callback) {
         //generate a list of all defined topics
-        this.store.readFile(this.store.topics_db, callback);
+        this.store.readFile(this.store.topics, callback);
         return('teal.model.readTopics');
 };
 
 Model.prototype.readResources = function (callback) {
         //generate a list of all defined topics
-        this.store.readFile(this.store.resources_db, callback);
+        this.store.readFile(this.store.resources, callback);
         return('teal.model.readResources');
 };
 

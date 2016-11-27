@@ -15,6 +15,7 @@
     };
 
     window.attachEvent = function (target, type, callback) {
+      console.log(target + ":" + callback);
       target.addEventListener(type, callback);
     };
 

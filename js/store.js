@@ -1,12 +1,10 @@
-//remember to remove logging before prod!
-
 (function(window){
 
     function Store(){
         this.hello = "world";
-        this.categories_db = '/pretendDB/categories.json';
-        this.topics_db = '/pretendDB/topics.json';
-        this.resources_db = '/pretendDB/resources.json';
+        this.categories = '/pretendDB/categories.json';
+        this.topics = '/pretendDB/topics.json';
+        this.resources = '/pretendDB/resources.json';
     }
 
 Store.prototype.AJAXGet = function(file, callback) {
