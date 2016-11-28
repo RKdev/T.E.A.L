@@ -6,10 +6,19 @@
         my.view = view;
     }
 
+    Controller.prototype.loadData = function(targetDiv, uicontext) {
+      my.model.setUIContext(uicontext);
+      my.view.renderDiv('data_panel_header', 'header', {Title:my.model.UIContext.capitalize()});
+      my.view.clearDiv(targetDiv);
+      my.model.readGeneral(function(jsondata) {
+        my.view.createButtons(jsondata, targetDiv);
+      });
+    };
+
     Controller.prototype.addCategory = function(data, targetDiv) {
       my.view.clearDiv(targetDiv);
       my.model.addCategory(data,function(jsonData){
-        my.view.createButtons(jsonData, targetDiv, my.model.UIContext);
+        my.view.createButtons(jsonData, targetDiv);
       });
       return('teal.controller.addCategory');
     };
@@ -21,15 +30,6 @@
         geid('input_box').value = '';
       }
       return('teal.controlPanelAdd');
-    };
-
-    Controller.prototype.loadData = function(targetDiv, uicontext) {
-      my.model.setUIContext(uicontext);
-      my.view.renderDiv('data_panel_header', 'header', {Title:my.model.UIContext.capitalize()});
-      my.view.clearDiv(targetDiv);
-      my.model.readGeneral(function(jsondata) {
-        my.view.createButtons(jsondata, targetDiv);
-      });
     };
 
 window.TEALClass = window.TEALClass || {};
