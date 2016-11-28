@@ -15,26 +15,8 @@ Model.prototype.readGeneral = function (callback){
   return ('teal.model.readGeneral');
 };
 
-Model.prototype.readCategories = function (callback) {
-        //generate a list of all defined categories
-        this.store.readFile(this.store.categories, callback);
-        return ('teal.model.readCategories');
-    };
-
 Model.prototype.addCategory = function (data, callback) {
       this.store.createRecord(this.store.categories, data, callback);
-};
-
-Model.prototype.readTopics = function (callback) {
-        //generate a list of all defined topics
-        this.store.readFile(this.store.topics, callback);
-        return('teal.model.readTopics');
-};
-
-Model.prototype.readResources = function (callback) {
-        //generate a list of all defined topics
-        this.store.readFile(this.store.resources, callback);
-        return('teal.model.readResources');
 };
 
 Model.prototype.listTopicsByCategory = function (category, callback) {
