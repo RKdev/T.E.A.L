@@ -19,7 +19,7 @@ function Templates() {
             + '<br/>'
             + '<input id="input_box" type="text">'
             + '<input id="add" type="button" class="button" value="Add">'
-            + '<input id="delete" type="button" class="button" value="Delete">'
+          //  + '<input id="delete" type="button" class="button" value="Delete">'
             + '</div>',
 
         button : '<input id="{{id}}" type="button" class="button" value="{{buttonname}}">',
