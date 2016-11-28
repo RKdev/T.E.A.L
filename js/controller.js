@@ -10,7 +10,7 @@
       my.model.setUIContext(uicontext);
       my.view.renderDiv('data_panel_header', 'header', {Title:my.model.UIContext.capitalize()});
       my.view.clearDiv(targetDiv);
-      my.model.readGeneral(function(jsondata) {
+      my.model.readData(function(jsondata) {
         my.view.createButtons(jsondata, targetDiv);
       });
     };

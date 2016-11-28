@@ -15,12 +15,18 @@ function Teal() {
 
         //render initial view
         teal.view.renderDiv('panel_1', 'dataPanel', {Title: 'Data Panel'});
-        teal.view.renderDiv('panel_2', 'controlPanel', {Title: 'Control Panel', controlbutton: 'Load Categories', topicsbutton: 'Load Topics', resourcesbutton: 'Load Resources'});
+        teal.view.renderDiv('panel_2', 'controlPanel',
+        {
+          Title: 'Control Panel',
+          Controlbutton: 'Load Categories',
+          Topicsbutton: 'Load Topics',
+          Resourcesbutton: 'Load Resources'
+        });
 
         //get current view
         teal.view.getLayout();
 
-        //add initial events, initial context is "Categories"
+        //add initial events
       attachEvent(geid('load'), 'click', function(){teal.controller.loadData('data_panel_output', 'categories');});
       attachEvent(geid('topload'), 'click', function(){teal.controller.loadData('data_panel_output', 'topics');});
       attachEvent(geid('resload'), 'click', function(){teal.controller.loadData('data_panel_output', 'resources');});
