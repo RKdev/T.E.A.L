@@ -1,15 +1,1 @@
-[{"parent":"Literature","name":"Ancient"},
-  {"parent":"Literature","name":"English"},
-  {"parent":"Literature","name":"American"},
-  {"parent":"Computers","name":"Programming"},
-  {"parent":"Computers","name":"Hardware"},
-  {"parent":"Computers","name":"Networking"},
-  {"parent":"Computers","name":"Operating Systems"},
-  {"parent":"Religion","name":"Christianity"},
-  {"parent":"Religion","name":"Paganism"},
-  {"parent":"Philosophy","name":"Greek"},
-  {"parent":"Philosophy","name":"Eastern"},
-  {"parent":"Comics","name":"X-Men"},
-  {"parent":"Comics","name":"Spider-Man"},
-  {"parent":"Mathematics","name":"Calculus"},
-  {"parent":"Mathematics","name":"PreCal"}]
+[{"parent":"Literature","name":"Ancient"},{"parent":"Literature","name":"English"},{"parent":"Literature","name":"American"},{"parent":"Computers","name":"Programming"},{"parent":"Computers","name":"Hardware"},{"parent":"Computers","name":"Networking"},{"parent":"Computers","name":"Operating Systems"},{"parent":"Religion","name":"Christianity"},{"parent":"Religion","name":"Paganism"},{"parent":"Philosophy","name":"Greek"},{"parent":"Philosophy","name":"Eastern"},{"parent":"Comics","name":"X-Men"},{"parent":"Comics","name":"Spider-Man"},{"parent":"Mathematics","name":"Calculus"},{"parent":"Mathematics","name":"PreCal"}]

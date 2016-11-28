@@ -15,18 +15,20 @@
       });
     };
 
-    Controller.prototype.addCategory = function(data, targetDiv) {
+    Controller.prototype.addData = function(data, targetDiv, uicontext) {
+      my.model.setUIContext(uicontext);
+      my.view.renderDiv('data_panel_header', 'header', {Title:my.model.UIContext.capitalize()});
       my.view.clearDiv(targetDiv);
-      my.model.addCategory(data,function(jsonData){
+      my.model.addData(data,function(jsonData){
         my.view.createButtons(jsonData, targetDiv);
       });
-      return('teal.controller.addCategory');
+      return('teal.controller.addData');
     };
 
     Controller.prototype.controlPanelAdd = function(){
       var data = geid('input_box').value;
       if(data) {
-        my.addCategory(data, 'data_panel_output');
+        my.addData(data, 'data_panel_output', my.model.UIContext);
         geid('input_box').value = '';
       }
       return('teal.controlPanelAdd');

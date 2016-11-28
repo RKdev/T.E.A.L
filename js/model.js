@@ -15,6 +15,10 @@ Model.prototype.readGeneral = function (callback){
   return ('teal.model.readGeneral');
 };
 
+Model.prototype.addData = function (data, callback) {
+      this.store.createRecord(this.store[this.UIContext], data, callback);
+};
+
 Model.prototype.addCategory = function (data, callback) {
       this.store.createRecord(this.store.categories, data, callback);
 };

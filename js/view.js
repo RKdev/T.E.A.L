@@ -64,11 +64,9 @@ View.prototype.createButtons = function(data, target) {
   var name = null;
   for (var i = 0; i < data.length; i++){
     for(var key in data[i]){
-      console.log(data[i]);
       if(key === "id") {id = data[i][key];}
       if(key === "name") {name = data[i][key];}
     }
-    console.log('id: ' + id + ' name: ' + name);
   //  if( (id !== null) && (name !== null) ){
       this.addTemplateToPanel(target, 'button', {id: id, buttonname: name});
   //  }

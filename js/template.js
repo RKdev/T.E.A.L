@@ -13,6 +13,8 @@ function Templates() {
             + '<hr/>'
             + '<div id="control_panel_features">'
             + '<input id="load" type="button" class="button" value="{{controlbutton}}">'
+            + '<input id="topload" type="button" class="button" value="{{topicsbutton}}">'
+            + '<input id="resload" type="button" class="button" value="{{resourcesbutton}}">'
             + '<br/>'
             + '<br/>'
             + '<input id="input_box" type="text">'
