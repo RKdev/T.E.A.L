@@ -17,6 +17,7 @@ Model.prototype.readData = function (callback){
 
 Model.prototype.addData = function (data, callback) {
       this.store.createRecord(this.store[this.UIContext], data, callback);
+      return('teal.model.addData');
 };
 
 Model.prototype.listTopicsByCategory = function (category, callback) {
