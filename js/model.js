@@ -20,6 +20,11 @@ Model.prototype.addData = function (data, callback) {
       return('teal.model.addData');
 };
 
+Model.prototype.readRecords = function (searchkey, searchval, callback) {
+      this.store.readRecords(this.store[this.UIContext], searchkey, searchval, callback);
+      return('teal.model.readRecords');
+};
+
 window.TEALClass = window.TEALClass || {};
 window.TEALClass.model = Model;
 })(window);

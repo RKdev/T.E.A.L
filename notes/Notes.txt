@@ -33,3 +33,16 @@ model.js
 view.js
 controller.js
 store.js
+
+
+Things not to do:
+/*      for(var i = 0; i < tempArray.length; i++){
+        for(var key in tempArray[i]){
+          if(tempArray[i].hasOwnProperty(key)){
+            if(tempArray[i][key].indexOf(query) !== -1){
+              returnArray.push(tempArray[i]);
+            }
+          }
+        }
+      }*/
+storing an array of objects into a temp array is unnecessary 
