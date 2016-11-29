@@ -45,7 +45,26 @@ Store.prototype.createRecord = function(file_db, data, callback) {
   });
 };
 
-Store.prototype.readRecord = function(){
+Store.prototype.readRecords = function(file, query, callback){
+  this.AJAXGet(file, function(jsonData){
+      var tempArray = [];
+      var returnArray = [];
+      tempArray = jsonData;
+      for(var i = 0; i < tempArray.length; i++){
+        for(var key in tempArray[i]){
+          if(tempArray[i].hasOwnProperty(key)){
+            if(tempArray[i][key].indexOf(query) !== -1){
+              returnArray.push(tempArray[i]);
+            }
+          }
+        }
+      }
+      callback(returnArray);
+  });
+};
+
+
+Store.prototype.readRecord = function(file, query){
 
 };
 
