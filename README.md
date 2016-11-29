@@ -26,4 +26,12 @@ I've been learning MVC from http://todomvc.com/ and it's been really helping me 
 I'm still going to keep it in pure javascript for now since this is supposed to be a learning exercise to help me get a solid understanding of
 Javascript and modern web design. Depending on how it goes I will make decisions about adding jQuery, Bootstrap, React or other frameworks as I gain more understanding and feel the project outgrowing what pure JS can readily do.
 
+UPDATE:
+
+It's been a minute since the last project update. I've finished the conversion to an MVC-style
+design in pure JS. The controller and model functions are more generalized. Now that I've gotten
+it to this level of abstraction, further abstraction methods are a lot easier to see. The next step is to work on the underlying data model. DOM manipulation is working fine for building skeleton structures of the UI. This will go through several iterations before it starts to match the initial
+"tree-structure" idea. The next step after a real, working prototype is in place will be to look at
+introducing a proper REST interface.
+
 Please visit the wiki page as well to see the evolution of the design.
