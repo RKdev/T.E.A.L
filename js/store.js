@@ -41,7 +41,7 @@ Store.prototype.createRecord = function(file_db, data, callback) {
       catObject.id = (tempArray.length + 1);
       catObject.name = data;
       tempArray.push(catObject);
-      my.AJAXPost(file_db, tempArray, function(){my.AJAXGet(file_db, callback);});
+      my.AJAXPost(file_db, tempArray, function(){my.AJAXGet(file_db, callback);}); //change to pure callback
   });
 };
 

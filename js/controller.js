@@ -19,7 +19,7 @@
       my.model.setUIContext(uicontext);
       my.view.renderDiv('data_panel_header', 'header', {Title:my.model.UIContext.capitalize()});
       my.view.clearDiv(targetDiv);
-      my.model.addData(data,function(jsonData){
+      my.model.addData(data,function(jsonData){ //call readRecords, passing createButtons as a callback
         my.view.createButtons(jsonData, targetDiv);
       });
       return('teal.controller.addData');
