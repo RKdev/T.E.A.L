@@ -26,12 +26,11 @@ Model.prototype.readData = function (callback){
 };
 
 Model.prototype.addData = function (data, callback) {
-      this.store.createRecord(this.store[this.UIContext], data, callback);
+      this.store.createRecord(this.UIContext, this.recordValue, data, callback);
       return('teal.model.addData');
 };
 
 Model.prototype.readRecords = function (callback) {
-      console.log(this.recordKey + ":" + this.recordValue);
       this.store.readRecords(this.store[this.UIContext], this.recordKey, this.recordValue, callback);
       return('teal.model.readRecords');
 };
