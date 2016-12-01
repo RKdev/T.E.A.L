@@ -61,11 +61,6 @@ Store.prototype.readRecords = function(file, searchkey, searchval, callback){
   });
 };
 
-
-Store.prototype.readRecord = function(file, query){
-
-};
-
 Store.prototype.updateRecord = function() {
 
 };
@@ -74,8 +69,12 @@ Store.prototype.destroyRecord = function() {
 
 };
 
-Store.prototype.dropData = function (file_db, callback) {
-  //remove all data from a file
+Store.prototype.dropAllRecords = function (file_db, callback) {
+  var my = this;
+  my.AJAXGet(file_db, function(jsonData){
+      var tempArray = [];
+      my.AJAXPost(file_db, tempArray, callback);
+  });
 
 };
 

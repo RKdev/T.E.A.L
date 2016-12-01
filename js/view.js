@@ -39,6 +39,7 @@ View.prototype.renderDiv = function(divRef, templateRef, data){
       el.innerHTML = this.templates.display(templateRef, data); //load
     }
     else {console.log('teal.view.renderDiv: div not found');}
+    this.getLayout();
     return("teal.view.renderDiv");
 };
 

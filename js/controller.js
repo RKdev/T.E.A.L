@@ -49,12 +49,16 @@
         else if (my.model.UIContext === "categories") {my.model.setUIContext('topics');}
         else if (my.model.UIContext === "topics") {my.model.setUIContext('resources');}
 
-        my.view.renderDiv('data_panel_header', 'header', {Title:my.model.UIContext.capitalize()});
+        my.view.renderDiv('data_panel_header', 'header', {Title:my.model.recordValue.capitalize()});
         my.view.clearDiv(myTargetDiv);
 
         my.model.readRecords(function(arrayData){
           my.view.createButtons(arrayData, myTargetDiv);
         });
+    };
+
+    Controller.prototype.dropAllRecords = function(targetDiv) {
+      my.model.dropAllRecords(function(){my.loadAllData(targetDiv, my.model.UIContext);});
     };
 
 window.TEALClass = window.TEALClass || {};

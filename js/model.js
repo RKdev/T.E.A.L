@@ -35,6 +35,10 @@ Model.prototype.readRecords = function (callback) {
       return('teal.model.readRecords');
 };
 
+Model.prototype.dropAllRecords = function (callback) {
+  this.store.dropAllRecords(this.store[this.UIContext], callback);
+};
+
 window.TEALClass = window.TEALClass || {};
 window.TEALClass.model = Model;
 })(window);
