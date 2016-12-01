@@ -25,11 +25,9 @@ View.prototype.getLayout = function() {
 View.prototype.findDiv = function(divValue) {
   //search for div key by value
   for(var key in this.divs) {
-  //found it
-    if(this.divs[key] === divValue) { return(key.toString()); }
+    if(this.divs[key] === divValue) { return(key.toString()); }   //found it
   }
-  //didn't find it
-  return(false);
+  return(false);  //didn't find it
 };
 
 View.prototype.renderDiv = function(divRef, templateRef, data){
