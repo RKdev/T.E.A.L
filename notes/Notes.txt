@@ -45,4 +45,13 @@ Things not to do:
           }
         }
       }*/
-storing an array of objects into a temp array is unnecessary 
+storing an array of objects into a temp array is unnecessary
+
+Add record
+ record types
+  hierarchy
+  note
+  flash card
+  
+
+The review algorithm will crawl through the hierarchy tree and track that you’ve reviewed everything in that branch of the hierarchy

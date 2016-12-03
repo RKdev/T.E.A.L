@@ -4,39 +4,50 @@
         this.hello = "world";
         this.store = store;
         this.UIContext = "Initial Context";
-        this.recordKey = "Initial Record Key";
-        this.recordValue = "Initial Record Value";
+        this.searchKey = "Initial Record Key";
+        this.searchValue = "Initial Record Value";
     }
+
+
+Model.prototype.newRecord = function() {
+  var record = new Record();
+  return record;
+};
 
 Model.prototype.setUIContext = function (context) {
     this.UIContext = context;
 };
 
-Model.prototype.setRecordKey = function (key) {
-    this.recordKey = key;
+Model.prototype.setsearchKey = function (key) {
+    this.searchKey = key;
 };
 
-Model.prototype.setRecordValue = function (value) {
-    this.recordValue = value;
+Model.prototype.setsearchValue = function (value) {
+    this.searchValue = value;
 };
 
-Model.prototype.readData = function (callback){
+Model.prototype.readData = function (callback) {
   this.store.readFile(this.store[this.UIContext], callback);
   return ('teal.model.readData');
 };
 
 Model.prototype.addData = function (data, callback) {
-      this.store.createRecord(this.UIContext, this.recordValue, data, callback);
+      var record = new Record(data);
+      record.parent = this.searchValue;
+
+      this.store.createRecord(this.UIContext, record, callback);
       return('teal.model.addData');
 };
 
 Model.prototype.readRecords = function (callback) {
-      this.store.readRecords(this.store[this.UIContext], this.recordKey, this.recordValue, callback);
+//      console.log(this.store[this.UIContext] + ":" + this.searchKey + ":" + this.searchValue + ":" + callback);
+//      this.store.readRecords(this.store[this.UIContext], this.searchKey, this.searchValue, callback);
       return('teal.model.readRecords');
 };
 
 Model.prototype.dropAllRecords = function (callback) {
   this.store.dropAllRecords(this.store[this.UIContext], callback);
+  return('teal.model.dropAllRecords');
 };
 
 window.TEALClass = window.TEALClass || {};

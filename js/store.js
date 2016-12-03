@@ -32,18 +32,14 @@ Store.prototype.readFile = function(file_db, callback) {
       this.AJAXGet(file_db, callback);
 };
 
-Store.prototype.createRecord = function(file_db, parent, data, callback) {
+Store.prototype.createRecord = function(file_db, data, callback) {
   var my = this;
   var file = this[file_db];
 
   my.AJAXGet(file, function(jsonData){
       var tempArray = [];
-      var catObject = {};
       tempArray = jsonData;
-      catObject.id = (tempArray.length + 1);
-      catObject.name = data;
-      catObject.parent = parent;
-      tempArray.push(catObject);
+      tempArray.push(data);
       my.AJAXPost(file, tempArray, callback);
   });
 };
