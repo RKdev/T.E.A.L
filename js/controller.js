@@ -8,10 +8,9 @@
 
     Controller.prototype.loadAllData = function(targetDiv, uicontext) {
       my.model.setUIContext(uicontext);
-      console.log(this.UIContext + ":" + this.model.searchKey + ":" + this.model.searchValue);
       my.view.renderDiv('data_panel_header', 'header', {Title:my.model.UIContext.capitalize()});
       my.view.clearDiv(targetDiv);
-      my.model.readData(function(jsondata) {
+      my.model.readRecords(function(jsondata) {
         my.view.createButtons(jsondata, targetDiv);
       });
     };
@@ -45,10 +44,6 @@
         my.model.setsearchValue(searchval);
 
         //prep back buttons
-
-        if (my.model.UIContext === "Initial Context") {my.model.setUIContext('categories');}
-        else if (my.model.UIContext === "categories") {my.model.setUIContext('topics');}
-        else if (my.model.UIContext === "topics") {my.model.setUIContext('resources');}
 
         my.view.renderDiv('data_panel_header', 'header', {Title:my.model.searchValue.capitalize()});
         my.view.clearDiv(myTargetDiv);

@@ -3,9 +3,9 @@
     function Model(store){
         this.hello = "world";
         this.store = store;
-        this.UIContext = "Initial Context";
-        this.searchKey = "Initial Record Key";
-        this.searchValue = "Initial Record Value";
+        this.UIContext = "categories";
+        this.searchKey = "parent";
+        this.searchValue = "categories";
     }
 
 
@@ -34,14 +34,14 @@ Model.prototype.readData = function (callback) {
 Model.prototype.addData = function (data, callback) {
       var record = new Record(data);
       record.parent = this.searchValue;
-
+      console.log(record);
       this.store.createRecord(this.UIContext, record, callback);
       return('teal.model.addData');
 };
 
 Model.prototype.readRecords = function (callback) {
-//      console.log(this.store[this.UIContext] + ":" + this.searchKey + ":" + this.searchValue + ":" + callback);
-//      this.store.readRecords(this.store[this.UIContext], this.searchKey, this.searchValue, callback);
+      console.log("**********" + this.store[this.UIContext] + ":" + this.searchKey + ":" + this.searchValue + ":" + callback);
+      this.store.readRecords(this.store[this.UIContext], this.searchKey, this.searchValue, callback);
       return('teal.model.readRecords');
 };
 
