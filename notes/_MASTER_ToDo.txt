@@ -1,6 +1,5 @@
 TEAL
 Current:
-unmarry uicontex logic from model
 generalize all load functions based on searchkey, searchvalue, and parent
 define vertical search mechanism
 define horizontal search mechanism
@@ -23,6 +22,7 @@ resources
 define testing functions
 
 done:
+*unmarry uicontex logic from model
 *Categories view title should change
 *Need a view module to change the title of an existing div
 *Load and add categories

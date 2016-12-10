@@ -40,7 +40,7 @@
     Controller.prototype.loadData = function(searchval) {
         var myTargetDiv = 'data_panel_output';
 
-        my.model.setsearchKey('parent');
+        my.model.setsearchKey('id');
         my.model.setsearchValue(searchval);
 
         //prep back buttons

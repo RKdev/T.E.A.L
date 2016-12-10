@@ -6,6 +6,7 @@
         this.database = "categories";
         this.searchKey = "parent";
         this.searchValue = ".";
+        this.currentModel = [];
     }
 
 
@@ -26,6 +27,14 @@ Model.prototype.setsearchValue = function (value) {
     this.searchValue = value;
 };
 
+Model.prototype.clearCurrentModel = function () {
+    this.currentModel = [];
+};
+
+Model.prototype.addToCurrentModel = function (value) {
+  this.currentModel.push(value);
+};
+
 Model.prototype.readData = function (callback) {
   this.store.readFile(this.store[this.database], callback);
   return ('teal.model.readData');
@@ -40,7 +49,6 @@ Model.prototype.addData = function (data, callback) {
 };
 
 Model.prototype.readRecords = function (callback) {
-      console.log("**********" + this.store[this.database] + ":" + this.searchKey + ":" + this.searchValue + ":" + callback);
       this.store.readRecords(this.store[this.database], this.searchKey, this.searchValue, callback);
       return('teal.model.readRecords');
 };

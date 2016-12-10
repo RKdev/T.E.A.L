@@ -34,7 +34,7 @@ Store.prototype.readFile = function(file_db, callback) {
 
 Store.prototype.createRecord = function(file_db, data, callback) {
   var my = this;
-  var file = this[file_db];
+  var file = my[file_db];
 
   my.AJAXGet(file, function(jsonData){
       var tempArray = [];

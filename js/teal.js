@@ -19,16 +19,12 @@ function Teal() {
         {
           Title: 'Control Panel',
           Controlbutton: 'Load Categories',
-  //        Topicsbutton: 'Load Topics',
-  //        Resourcesbutton: 'Load Resources'
         });
 
         //add initial events
       attachEvent(geid('load'), 'click', function(){teal.controller.loadAllData('data_panel_output', 'categories');});
-      //attachEvent(geid('topload'), 'click', function(){teal.controller.loadAllData('data_panel_output', 'topics');});
-      //attachEvent(geid('resload'), 'click', function(){teal.controller.loadAllData('data_panel_output', 'resources');});
       attachEvent(geid('addH'), 'click', function(){teal.controller.controlPanelAdd();});
       attachEvent(geid('input_box'), 'keyup', function(e){if(e.keyCode === 13){teal.controller.controlPanelAdd();}});
-      attachEvent(geid('data_panel_output'), 'click', function(e){if(e.target !== e.currentTarget){teal.controller.loadData(e.target.value);}e.stopPropagation();});
+      attachEvent(geid('data_panel_output'), 'click', function(e){if(e.target !== e.currentTarget){teal.controller.loadData(e.target.id);}e.stopPropagation();});
       attachEvent(geid('drop'), 'click', function(){teal.controller.dropAllRecords('data_panel_output');});
 };
