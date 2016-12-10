@@ -1,6 +1,6 @@
 TEAL
 Current:
-unmarry uicontext logic from model
+unmarry uicontex logic from model
 generalize all load functions based on searchkey, searchvalue, and parent
 define vertical search mechanism
 define horizontal search mechanism

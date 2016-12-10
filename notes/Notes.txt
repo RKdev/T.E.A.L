@@ -2,6 +2,9 @@ A.L.F - the Adaptable Learning Framework
 E.L.F - the Extensible Learning Framework
 T.E.A.L - The Extensible Adaptable Learning framework
 
+Teach Tree?
+
+
 To Do
 
 Create basic input form
@@ -52,6 +55,6 @@ Add record
   hierarchy
   note
   flash card
-  
+
 
 The review algorithm will crawl through the hierarchy tree and track that you’ve reviewed everything in that branch of the hierarchy

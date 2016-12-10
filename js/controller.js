@@ -6,18 +6,18 @@
         my.view = view;
     }
 
-    Controller.prototype.loadAllData = function(targetDiv, uicontext) {
-      my.model.setUIContext(uicontext);
-      my.view.renderDiv('data_panel_header', 'header', {Title:my.model.UIContext.capitalize()});
+    Controller.prototype.loadAllData = function(targetDiv, database) {
+      my.model.setdatabase(database);
+      my.view.renderDiv('data_panel_header', 'header', {Title:my.model.database.capitalize()});
       my.view.clearDiv(targetDiv);
       my.model.readRecords(function(jsondata) {
         my.view.createButtons(jsondata, targetDiv);
       });
     };
 
-    Controller.prototype.addData = function(data, targetDiv, uicontext) {
-      my.model.setUIContext(uicontext);
-      my.view.renderDiv('data_panel_header', 'header', {Title:my.model.UIContext.capitalize()});
+    Controller.prototype.addData = function(data, targetDiv, database) {
+      my.model.setdatabase(database);
+      my.view.renderDiv('data_panel_header', 'header', {Title:my.model.database.capitalize()});
       my.view.clearDiv(targetDiv);
       my.model.addData(data,
         function(){my.model.readRecords(
@@ -31,7 +31,7 @@
     Controller.prototype.controlPanelAdd = function(){
       var data = geid('input_box').value;
       if(data) {
-        my.addData(data, 'data_panel_output', my.model.UIContext);
+        my.addData(data, 'data_panel_output', my.model.database);
         geid('input_box').value = '';
       }
       return('teal.controlPanelAdd');
@@ -55,7 +55,7 @@
     };
 
     Controller.prototype.dropAllRecords = function(targetDiv) {
-      my.model.dropAllRecords(function(){my.loadAllData(targetDiv, my.model.UIContext);});
+      my.model.dropAllRecords(function(){my.loadAllData(targetDiv, my.model.database);});
       return('teal.controller.dropAllRecords');
     };
 

@@ -3,9 +3,9 @@
     function Model(store){
         this.hello = "world";
         this.store = store;
-        this.UIContext = "categories";
+        this.database = "categories";
         this.searchKey = "parent";
-        this.searchValue = "categories";
+        this.searchValue = ".";
     }
 
 
@@ -14,8 +14,8 @@ Model.prototype.newRecord = function() {
   return record;
 };
 
-Model.prototype.setUIContext = function (context) {
-    this.UIContext = context;
+Model.prototype.setdatabase = function (context) {
+    this.database = context;
 };
 
 Model.prototype.setsearchKey = function (key) {
@@ -27,7 +27,7 @@ Model.prototype.setsearchValue = function (value) {
 };
 
 Model.prototype.readData = function (callback) {
-  this.store.readFile(this.store[this.UIContext], callback);
+  this.store.readFile(this.store[this.database], callback);
   return ('teal.model.readData');
 };
 
@@ -35,18 +35,18 @@ Model.prototype.addData = function (data, callback) {
       var record = new Record(data);
       record.parent = this.searchValue;
       console.log(record);
-      this.store.createRecord(this.UIContext, record, callback);
+      this.store.createRecord(this.database, record, callback);
       return('teal.model.addData');
 };
 
 Model.prototype.readRecords = function (callback) {
-      console.log("**********" + this.store[this.UIContext] + ":" + this.searchKey + ":" + this.searchValue + ":" + callback);
-      this.store.readRecords(this.store[this.UIContext], this.searchKey, this.searchValue, callback);
+      console.log("**********" + this.store[this.database] + ":" + this.searchKey + ":" + this.searchValue + ":" + callback);
+      this.store.readRecords(this.store[this.database], this.searchKey, this.searchValue, callback);
       return('teal.model.readRecords');
 };
 
 Model.prototype.dropAllRecords = function (callback) {
-  this.store.dropAllRecords(this.store[this.UIContext], callback);
+  this.store.dropAllRecords(this.store[this.database], callback);
   return('teal.model.dropAllRecords');
 };
 

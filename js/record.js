@@ -6,7 +6,7 @@
       Record.prototype.book = function(name) {
         this.id = '';
         this.type = 'hierarchy';
-        this.parent = teal.model.UIContext;
+        this.parent = teal.model.database;
         this.child = '';
         return('record.book');
       };
