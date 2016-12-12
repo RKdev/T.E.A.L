@@ -1,0 +1,10 @@
+Categories
+set parent "."
+
+make record
+
+select record
+set parent to selected record id
+
+to read data
+set 

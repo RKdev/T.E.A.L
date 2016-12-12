@@ -8,6 +8,8 @@
 
     Controller.prototype.loadAllData = function(targetDiv, database) {
       my.model.setdatabase(database);
+      my.model.searchKey = "parent";
+      my.model.searchValue = ".";
       my.view.renderDiv('data_panel_header', 'header', {Title:my.model.database.capitalize()});
       my.view.clearDiv(targetDiv);
       my.model.readRecords(function(jsondata) {
@@ -17,7 +19,6 @@
 
     Controller.prototype.addData = function(data, targetDiv, database) {
       my.model.setdatabase(database);
-      my.view.renderDiv('data_panel_header', 'header', {Title:my.model.database.capitalize()});
       my.view.clearDiv(targetDiv);
       my.model.addData(data,
         function(){my.model.readRecords(
@@ -37,15 +38,15 @@
       return('teal.controlPanelAdd');
     };
 
-    Controller.prototype.loadData = function(searchval) {
+    Controller.prototype.loadData = function(searchval, name) {
         var myTargetDiv = 'data_panel_output';
 
-        my.model.setsearchKey('id');
+
         my.model.setsearchValue(searchval);
 
         //prep back buttons
 
-        my.view.renderDiv('data_panel_header', 'header', {Title:my.model.searchValue.capitalize()});
+        my.view.renderDiv('data_panel_header', 'header', {Title:name.capitalize()});
         my.view.clearDiv(myTargetDiv);
 
         my.model.readRecords(function(arrayData){

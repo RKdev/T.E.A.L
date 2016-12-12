@@ -17,11 +17,14 @@ function Templates() {
             + '<br/>'
             + '<input id="input_box" type="text">'
             + '<input id="addH" type="button" class="button" value="Add Hierarchy">'
-            + '<input id="addR" type="button" class="button" value="Add Notes">'
+            + '<input id="addN" type="button" class="button" value="Add Notes">'
             + '<input id="addF" type="button" class="button" value="Add Flash Card">'
-          //  + '<input id="delete" type="button" class="button" value="Delete">'
+            //+ '<input id="delete" type="button" class="button" value="Delete">'
             + '<hr/>'
-            + '<input id="drop" type="button" class="button" value="Drop All Data">'
+            + 'Shortcuts'
+            + '<br/>'
+            + '<input id="load_sc_1" type="button" class="button" value="Ch_8">'
+            + '<input id="load_sc_2" type="button" class="button" value="Ch_11">'
             + '</div>',
 
         button : '<input id="{{id}}" type="button" class="button" value="{{buttonname}}">',

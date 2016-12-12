@@ -1,8 +1,7 @@
       function Record(name){
         this.name = name;
         this.date = Date.now();
-        this.random = Math.round(Math.random() * 1000);
-        this.id = "" + this.date  + this.random;
+        this.id = "" + this.date + Math.round(Math.random() * 1000);
       }
 
       Record.prototype.setProperty = function (key, value) {
