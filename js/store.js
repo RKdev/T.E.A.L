@@ -5,6 +5,7 @@
         this.categories = '/pretendDB/categories.json';
         this.topics = '/pretendDB/topics.json';
         this.resources = '/pretendDB/resources.json';
+        this.teal = '/pretendDB/teal.json';
     }
 
 Store.prototype.AJAXGet = function(file, callback) {

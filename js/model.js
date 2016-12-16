@@ -8,14 +8,13 @@
         this.searchValue = ".";
     }
 
-
 Model.prototype.newRecord = function() {
   var record = new Record();
   return record;
 };
 
-Model.prototype.setdatabase = function (context) {
-    this.database = context;
+Model.prototype.setdatabase = function (name) {
+    this.database = name;
 };
 
 Model.prototype.setsearchKey = function (key) {
@@ -39,7 +38,6 @@ Model.prototype.addData = function (data, callback) {
 };
 
 Model.prototype.readRecords = function (callback) {
-      console.log(this.store[this.database] + this.searchKey + this.searchValue + callback);
       this.store.readRecords(this.store[this.database], this.searchKey, this.searchValue, callback);
       return('teal.model.readRecords');
 };

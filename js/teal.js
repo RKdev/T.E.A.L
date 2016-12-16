@@ -22,11 +22,10 @@ function Teal() {
         });
 
         //add initial events
-      attachEvent(geid('load'), 'click', function(){teal.controller.loadAllData('data_panel_output', 'categories');});
+      attachEvent(geid('load'), 'click', function(){teal.controller.loadAllData('data_panel_output');});
       attachEvent(geid('addH'), 'click', function(){teal.controller.controlPanelAdd();});
-      attachEvent(geid('input_box'), 'keyup', function(e){if(e.keyCode === 13){teal.controller.controlPanelAdd();}});
+      attachEvent(geid('inputH'), 'keyup', function(e){if(e.keyCode === 13){teal.controller.controlPanelAdd();}});
       attachEvent(geid('data_panel_output'), 'click', function(e){if(e.target !== e.currentTarget){teal.controller.loadData(e.target.id, e.target.value);}e.stopPropagation();});
-      //attachEvent(geid('drop'), 'click', function(){teal.controller.dropAllRecords('data_panel_output');});
       attachEvent(geid('load_sc_1'), 'click', function(){teal.controller.loadData("1481419033797327", "Chapter 8: The Administrative State");});
       attachEvent(geid('load_sc_2'), 'click', function(){teal.controller.loadData("148141938211330", "Chapter 11: Local Government");});
 

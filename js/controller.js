@@ -6,19 +6,17 @@
         my.view = view;
     }
 
-    Controller.prototype.loadAllData = function(targetDiv, database) {
-      my.model.setdatabase(database);
+    Controller.prototype.loadAllData = function(targetDiv) {
       my.model.searchKey = "parent";
       my.model.searchValue = ".";
-      my.view.renderDiv('data_panel_header', 'header', {Title:my.model.database.capitalize()});
+      my.view.renderDiv('data_panel_header', 'header', {Title:'Categories'});
       my.view.clearDiv(targetDiv);
       my.model.readRecords(function(jsondata) {
         my.view.createButtons(jsondata, targetDiv);
       });
     };
 
-    Controller.prototype.addData = function(data, targetDiv, database) {
-      my.model.setdatabase(database);
+    Controller.prototype.addData = function(data, targetDiv) {
       my.view.clearDiv(targetDiv);
       my.model.addData(data,
         function(){my.model.readRecords(
@@ -30,10 +28,10 @@
     };
 
     Controller.prototype.controlPanelAdd = function(){
-      var data = geid('input_box').value;
+      var data = geid('inputH').value;
       if(data) {
-        my.addData(data, 'data_panel_output', my.model.database);
-        geid('input_box').value = '';
+        my.addData(data, 'data_panel_output');
+        geid('inputH').value = '';
       }
       return('teal.controlPanelAdd');
     };
@@ -41,10 +39,7 @@
     Controller.prototype.loadData = function(searchval, name) {
         var myTargetDiv = 'data_panel_output';
 
-
         my.model.setsearchValue(searchval);
-
-        //prep back buttons
 
         my.view.renderDiv('data_panel_header', 'header', {Title:name.capitalize()});
         my.view.clearDiv(myTargetDiv);
