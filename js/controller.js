@@ -37,15 +37,30 @@
     };
 
     Controller.prototype.loadData = function(searchval, name) {
-        var myTargetDiv = 'data_panel_output';
+        //var myTargetDiv = 'data_panel_output';
 
         my.model.setsearchValue(searchval);
 
-        my.view.renderDiv('data_panel_header', 'header', {Title:name.capitalize()});
-        my.view.clearDiv(myTargetDiv);
-
         my.model.readRecords(function(arrayData){
-          my.view.createButtons(arrayData, myTargetDiv);
+          /*
+            Get array of records
+            If record that was clicked on is of type 'Hierarchy' then render buttons
+              in "data_panel_output"
+            If record that was clicked on is of type 'Notes' then render data
+              to 'notes_panel_output'
+            If record that was clicked on is of type 'Flashcard' then render data
+              to 'flash_cards_output'
+          */
+
+          //Hierarchy
+          my.view.renderDiv('data_panel_header', 'header', {Title:name.capitalize()});
+          my.view.clearDiv('data_panel_output');
+          my.view.createButtons(arrayData, 'data_panel_output');
+
+          //Notes
+
+          //Flashcard
+
         });
         return('teal.controller.loadData');
     };
