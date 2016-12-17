@@ -31,6 +31,11 @@ function Templates() {
             + '<input id="load_sc_2" type="button" class="button" value="Ch_11">'
             + '</div>',
 
+        note :
+              '<div id=notes_panel_header><header><h2>{{Title}}</h2></header></div>'
+            + '<hr/>'
+            + '<div id=notes_panel_output><textarea>{{Da                                                             jjjjjjjjjjjjjta}}</textarea></div>',
+
         button : '<input id="{{id}}" type="button" class="button" value="{{buttonname}}">',
 
         header : '<header><h2>{{Title}}</h2></header>'
