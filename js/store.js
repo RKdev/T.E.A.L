@@ -61,9 +61,9 @@ Store.prototype.updateRecord = function(file_db, id, updatekey, updatevalue, cal
   var my = this;
   my.AJAXGet(file_db, function(jsonData){
       for (var key in jsonData) {
-        if(jsonData[key].id === id){
-          jsonData[key][updatekey] = updatevalue;
-          console.log(jsonData[key]);
+        if (jsonData[key].id === id) {
+           jsonData[key][updatekey] = updatevalue;
+           console.log(jsonData[key]);
         }
       }
       my.AJAXPost(file_db, jsonData, callback);
