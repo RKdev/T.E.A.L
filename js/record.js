@@ -10,5 +10,10 @@
       };
 
       Record.prototype.addNote = function (data) {
-        this.data = data;
+        this.type = 'note';
+        this.note = data;
+      };
+
+      Record.prototype.me = function() {
+        console.log(this);
       };

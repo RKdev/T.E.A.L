@@ -37,6 +37,10 @@ Model.prototype.addData = function (data, callback) {
       return('teal.model.addData');
 };
 
+Model.prototype.queryRecord = function(key, value, callback) {
+  this.store.readRecords(this.store[this.database], key, value, callback);
+};
+
 Model.prototype.readRecords = function (callback) {
       this.store.readRecords(this.store[this.database], this.searchKey, this.searchValue, callback);
       return('teal.model.readRecords');

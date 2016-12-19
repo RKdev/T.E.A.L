@@ -53,7 +53,7 @@ Store.prototype.readRecords = function(file, searchkey, searchval, callback){
             returnArray.push(jsonData[key]);
           }
       }
-      console.log(returnArray);
+      //console.log(returnArray);
       callback(returnArray);
   });
 };
