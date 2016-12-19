@@ -57,18 +57,17 @@ Store.prototype.readRecords = function(file, searchkey, searchval, callback){
 };
 
 
-Store.prototype.updateRecord = function(file_db, id, key, value, callback) {
+Store.prototype.updateRecord = function(file_db, id, updatekey, updatevalue, callback) {
   var my = this;
   my.AJAXGet(file_db, function(jsonData){
-      for (var searchKey in jsonData) {
-        if(jsonData[searchKey].id === id){
-          jsonData[searchKey][key] = value;
-          console.log(jsonData[searchKey]);
+      for (var key in jsonData) {
+        if(jsonData[key].id === id){
+          jsonData[key][updatekey] = updatevalue;
+          console.log(jsonData[key]);
         }
       }
       my.AJAXPost(file_db, jsonData, callback);
   });
-
 };
 
 Store.prototype.destroyRecord = function() {
