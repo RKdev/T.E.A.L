@@ -3,8 +3,6 @@
     function Store(){
         this.hello = "world";
         this.categories = '/pretendDB/categories.json';
-        this.topics = '/pretendDB/topics.json';
-        this.resources = '/pretendDB/resources.json';
         this.teal = '/pretendDB/teal.json';
     }
 
@@ -58,12 +56,29 @@ Store.prototype.readRecords = function(file, searchkey, searchval, callback){
   });
 };
 
-Store.prototype.updateRecord = function() {
+
+Store.prototype.updateRecord = function(file_db, id, key, value, callback) {
+  var my = this;
+  my.AJAXGet(file_db, function(jsonData){
+      for (var searchKey in jsonData) {
+        if(jsonData[searchKey].id === id){
+          jsonData[searchKey][key] = value;
+          console.log(jsonData[searchKey]);
+        }
+      }
+      my.AJAXPost(file_db, jsonData, callback);
+  });
 
 };
 
 Store.prototype.destroyRecord = function() {
-
+  /*
+    GET data from file_db
+    read into array
+    search array for id
+    splice array[id]
+    POST data to file_db
+  */
 };
 
 Store.prototype.dropAllRecords = function (file_db, callback) {

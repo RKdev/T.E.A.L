@@ -39,8 +39,7 @@
     Controller.prototype.loadData = function(searchval, name) {
         //var myTargetDiv = 'data_panel_output';
 
-        console.log("searchVal: " + searchval + " " + "Name:" + name);
-        my.model.queryRecord('id', searchval, function(){return(0);});
+        my.model.queryRecord('id', searchval, function(){});
         my.model.setsearchValue(searchval);
 
         my.model.readRecords(function(arrayData){
@@ -68,15 +67,16 @@
         return('teal.controller.loadData');
     };
 
-    Controller.prototype.updateRecordsProperty = function(searchval, key, value) {
-      my.model.queryRecord('parent', searchval, function(arrayData){
+    Controller.prototype.updateRecordsProperty = function(key, value) { //searchval
+        my.model.readData(function(arrayData){
+//      my.model.queryRecord('parent', searchval, function(arrayData){
         var tempRecord = new Record('x');
         for(var i = 0; i < arrayData.length; i++){
             for (var tempKey in arrayData[i]){
               tempRecord[tempKey] = arrayData[i][tempKey];
           }
-          tempRecord.setProperty(key, value);
-          tempRecord.me();
+          tempRecord.setProperty(key, value); //set property
+          tempRecord.showMe(); // see the record
         }
       });
     };

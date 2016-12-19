@@ -14,6 +14,6 @@
         this.note = data;
       };
 
-      Record.prototype.me = function() {
+      Record.prototype.showMe = function() {
         console.log(this);
       };
