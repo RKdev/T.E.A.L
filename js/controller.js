@@ -44,7 +44,7 @@
           console.log(tempArray.length);
           for(i = 0; i < tempArray.length; i++) {
 //        teal.store.updateRecord(teal.store.categories, tempArray[i].id, 'type', 'hierarchy', function(x){console.log(x)});
-          console.log('index:' + i + ' id' + ":" + tempArray[i].id + " name:" + tempArray[i].name + " type:" + tempArray[i].type);
+          console.log('index:' + (i+1) + ' id' + ":" + tempArray[i].id + " name:" + tempArray[i].name + " type:" + tempArray[i].type);
           }
         });
 
