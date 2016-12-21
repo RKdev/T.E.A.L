@@ -39,10 +39,18 @@
     Controller.prototype.loadData = function(searchval, name) {
         //var myTargetDiv = 'data_panel_output';
 
-        my.model.queryRecord('id', searchval, function(){});
-        my.model.setsearchValue(searchval);
+        teal.store.readFile(teal.store.categories, function(jsonData){
+          var tempArray = jsonData;
+          console.log(tempArray.length);
+          for(i = 0; i < tempArray.length; i++) {
+//        teal.store.updateRecord(teal.store.categories, tempArray[i].id, 'type', 'hierarchy', function(x){console.log(x)});
+          console.log('index:' + i + ' id' + ":" + tempArray[i].id + " name:" + tempArray[i].name + " type:" + tempArray[i].type);
+          }
+        });
 
-        my.model.readRecords(function(arrayData){
+//        my.model.setsearchValue(searchval);
+
+//        my.model.readRecords(function(arrayData){
 
           /*
             Get array of records
@@ -55,15 +63,15 @@
           */
 
           //Hierarchy
-          my.view.renderDiv('data_panel_header', 'header', {Title:name.capitalize()});
-          my.view.clearDiv('data_panel_output');
-          my.view.createButtons(arrayData, 'data_panel_output');
+          //my.view.renderDiv('data_panel_header', 'header', {Title:name.capitalize()});
+          //my.view.clearDiv('data_panel_output');
+          //my.view.createButtons(arrayData, 'data_panel_output');
 
           //Notes
 
           //Flashcard
 
-        });
+//        });
         return('teal.controller.loadData');
     };
 
