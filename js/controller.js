@@ -39,7 +39,7 @@
     Controller.prototype.controlPanelAddN = function(){
       var data = geid('inputN').value;
       if(data) {
-        my.addData(data, 'note','notes_panel_output');
+        my.addData(data, 'note','data_panel_output');
         geid('inputN').value = '';
       }
       return('teal.controlPanelAddH');
@@ -57,6 +57,9 @@
                   my.view.renderDiv('data_panel_header', 'header', {Title:name.capitalize()});
                   my.view.clearDiv('data_panel_output');
                   my.view.createButtons(arrayData, 'data_panel_output');
+              }
+              else if (newArrayData[0].type === 'note') {
+                my.view.renderDiv('notes_panel_header', 'header', {Title:name.capitalize()});
               }
             });
 
