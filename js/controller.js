@@ -40,17 +40,10 @@
         //var myTargetDiv = 'data_panel_output';
 
         teal.store.readFile(teal.store.categories, function(jsonData){
-          var tempArray = jsonData;
-          console.log(tempArray.length);
-          for(i = 0; i < tempArray.length; i++) {
-//        teal.store.updateRecord(teal.store.categories, tempArray[i].id, 'type', 'hierarchy', function(x){console.log(x)});
-          console.log('index:' + (i+1) + ' id' + ":" + tempArray[i].id + " name:" + tempArray[i].name + " type:" + tempArray[i].type);
-          }
-        });
 
-//        my.model.setsearchValue(searchval);
+          my.model.setsearchValue(searchval);
 
-//        my.model.readRecords(function(arrayData){
+          my.model.readRecords(function(arrayData){
 
           /*
             Get array of records
@@ -63,21 +56,20 @@
           */
 
           //Hierarchy
-          //my.view.renderDiv('data_panel_header', 'header', {Title:name.capitalize()});
-          //my.view.clearDiv('data_panel_output');
-          //my.view.createButtons(arrayData, 'data_panel_output');
+          my.view.renderDiv('data_panel_header', 'header', {Title:name.capitalize()});
+          my.view.clearDiv('data_panel_output');
+          my.view.createButtons(arrayData, 'data_panel_output');
 
           //Notes
 
           //Flashcard
-
-//        });
+          });
+        });
         return('teal.controller.loadData');
     };
 
     Controller.prototype.updateRecordsProperty = function(key, value) { //searchval
         my.model.readData(function(arrayData){
-//      my.model.queryRecord('parent', searchval, function(arrayData){
         var tempRecord = new Record('x');
         for(var i = 0; i < arrayData.length; i++){
             for (var tempKey in arrayData[i]){
