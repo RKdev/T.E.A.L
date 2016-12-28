@@ -48,11 +48,17 @@
     Controller.prototype.loadData = function(searchval, name) {
         //var myTargetDiv = 'data_panel_output';
 
-        teal.store.readFile(teal.store.categories, function(jsonData){
-
           my.model.setsearchValue(searchval);
 
           my.model.readRecords(function(arrayData){
+            teal.store.readRecords(teal.store.categories, 'id', searchval, function(newArrayData){
+              if (newArrayData[0].type === 'hierarchy'){
+                  console.log(arrayData[0]);
+                  my.view.renderDiv('data_panel_header', 'header', {Title:name.capitalize()});
+                  my.view.clearDiv('data_panel_output');
+                  my.view.createButtons(arrayData, 'data_panel_output');
+              }
+            });
 
           /*
             Get array of records
@@ -65,15 +71,12 @@
           */
 
           //Hierarchy
-          my.view.renderDiv('data_panel_header', 'header', {Title:name.capitalize()});
-          my.view.clearDiv('data_panel_output');
-          my.view.createButtons(arrayData, 'data_panel_output');
 
           //Notes
 
           //Flashcard
           });
-        });
+
         return('teal.controller.loadData');
     };
 
