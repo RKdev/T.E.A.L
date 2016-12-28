@@ -36,6 +36,15 @@
       return('teal.controlPanelAddH');
     };
 
+    Controller.prototype.controlPanelAddN = function(){
+      var data = geid('inputN').value;
+      if(data) {
+        my.addData(data, 'note','notes_panel_output');
+        geid('inputN').value = '';
+      }
+      return('teal.controlPanelAddH');
+    };
+
     Controller.prototype.loadData = function(searchval, name) {
         //var myTargetDiv = 'data_panel_output';
 
