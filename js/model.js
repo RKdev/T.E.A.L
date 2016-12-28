@@ -34,6 +34,9 @@ Model.prototype.addData = function (data, type, callback) {
       var record = new Record(data);
       record.parent = this.searchValue;
       record.type = type;
+      if (type === 'note') {
+        record.name = "Note: " + data;
+      }
       this.store.createRecord(this.database, record, callback);
       return('teal.model.addData');
 };

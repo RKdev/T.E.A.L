@@ -34,7 +34,9 @@ function Templates() {
         note :
               '<div id=notes_panel_header><header><h2>{{Title}}</h2></header></div>'
             + '<hr/>'
-            + '<div id=notes_panel_output><textarea>{{Da                                                             jjjjjjjjjjjjjta}}</textarea></div>',
+            + '<div id=notes_panel_output><textarea>{{Data}}</textarea></div>',
+
+        notedata : '<textarea>{{Data}}</textarea>',
 
         button : '<input id="{{id}}" type="button" class="button" value="{{buttonname}}">',
 

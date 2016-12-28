@@ -23,6 +23,11 @@ body {
 }
 header h2 {text-align: center;}
 
+textarea {
+    width: 612px;
+    height: 150px;
+}
+
 /*width: 50%; height: 50%; */
 .button {background-color: #839496; border 0; font-weight: bold;  font-size: 45}
 .panel{position: absolute; padding: 50px; border: 1px solid #000; border-color: #839496; overflow-x:auto; overflow-y:auto;}
