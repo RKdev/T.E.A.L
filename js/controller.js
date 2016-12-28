@@ -27,13 +27,13 @@
       return('teal.controller.addData');
     };
 
-    Controller.prototype.controlPanelAdd = function(){
+    Controller.prototype.controlPanelAddH = function(){
       var data = geid('inputH').value;
       if(data) {
         my.addData(data, 'data_panel_output');
         geid('inputH').value = '';
       }
-      return('teal.controlPanelAdd');
+      return('teal.controlPanelAddH');
     };
 
     Controller.prototype.loadData = function(searchval, name) {
