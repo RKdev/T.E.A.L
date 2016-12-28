@@ -30,9 +30,10 @@ Model.prototype.readData = function (callback) {
   return ('teal.model.readData');
 };
 
-Model.prototype.addData = function (data, callback) {
+Model.prototype.addData = function (data, type, callback) {
       var record = new Record(data);
       record.parent = this.searchValue;
+      record.type = type;
       this.store.createRecord(this.database, record, callback);
       return('teal.model.addData');
 };

@@ -16,9 +16,9 @@
       });
     };
 
-    Controller.prototype.addData = function(data, targetDiv) {
+    Controller.prototype.addData = function(data, type, targetDiv) {
       my.view.clearDiv(targetDiv);
-      my.model.addData(data,
+      my.model.addData(data, type,
         function(){my.model.readRecords(
           function(jsonData){
             my.view.createButtons(jsonData, targetDiv);
@@ -30,7 +30,7 @@
     Controller.prototype.controlPanelAddH = function(){
       var data = geid('inputH').value;
       if(data) {
-        my.addData(data, 'data_panel_output');
+        my.addData(data, 'hierarchy','data_panel_output');
         geid('inputH').value = '';
       }
       return('teal.controlPanelAddH');
