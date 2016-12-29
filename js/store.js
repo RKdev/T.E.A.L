@@ -56,15 +56,26 @@ Store.prototype.readRecords = function(file, searchkey, searchval, callback){
   });
 };
 
+Store.prototype.readRecord = function(file, searchkey, searchval, callback){
+  this.AJAXGet(file, function(jsonData){
+      for(var key in jsonData) {
+          if (jsonData[key][searchkey] === searchval) {
+            returnRecord = jsonData[key];
+          }
+      }
+      //console.log(returnArray);
+      callback(returnRecord);
+  });
+};
 
 Store.prototype.updateRecordProperty = function(file_db, id, updatekey, updatevalue, callback) {
   var my = this;
   my.AJAXGet(file_db, function(jsonData){
       for (var key in jsonData) {
-        //if (jsonData[key].id === id) {
+        if (jsonData[key].id === id) {
            jsonData[key][updatekey] = updatevalue;
            console.log(jsonData[key]);
-        //}
+        }
       }
       my.AJAXPost(file_db, jsonData, callback);
   });

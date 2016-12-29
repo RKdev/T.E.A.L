@@ -30,7 +30,7 @@ Model.prototype.readData = function (callback) {
   return ('teal.model.readData');
 };
 
-Model.prototype.addData = function (data, type, callback) {
+Model.prototype.addRecord = function (data, type, callback) {
       var record = new Record(data);
       record.parent = this.searchValue;
       record.type = type;
@@ -38,16 +38,21 @@ Model.prototype.addData = function (data, type, callback) {
         record.name = "Note: " + data;
       }
       this.store.createRecord(this.database, record, callback);
-      return('teal.model.addData');
-};
-
-Model.prototype.queryRecord = function(key, value, callback) {
-  this.store.readRecords(this.store[this.database], key, value, callback);
+      return('teal.model.addRecord');
 };
 
 Model.prototype.readRecords = function (callback) {
       this.store.readRecords(this.store[this.database], this.searchKey, this.searchValue, callback);
       return('teal.model.readRecords');
+};
+
+Model.prototype.readRecord = function (callback) {
+      this.store.readRecord(this.store[this.database], this.searchKey, this.searchValue, callback);
+      return('teal.model.readRecords');
+};
+
+Model.prototype.updateRecordProperty = function (id, updatekey, updatevalue, callback) {
+  this.store.updateRecordProperty(this.store[this.database], id, updatekey, updatevalue, callback);
 };
 
 Model.prototype.dropAllRecords = function (callback) {

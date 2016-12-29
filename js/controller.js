@@ -18,7 +18,7 @@
 
     Controller.prototype.addData = function(data, type, targetDiv) {
       my.view.clearDiv(targetDiv);
-      my.model.addData(data, type,
+      my.model.addRecord(data, type,
         function(){my.model.readRecords(
           function(jsonData){
             my.view.createButtons(jsonData, targetDiv);
@@ -89,7 +89,7 @@
         return('teal.controller.loadData');
     };
 
-    Controller.prototype.updateRecordsProperty = function(key, value) { //searchval
+    Controller.prototype.updateRecordsProperty = function(id, key, value) { //searchval
         my.model.readData(function(arrayData){
         var tempRecord = new Record('x');
         for(var i = 0; i < arrayData.length; i++){
@@ -100,6 +100,11 @@
           tempRecord.showMe(); // see the record
         }
       });
+    };
+
+    Controller.prototype.updateRecordProperty = function (id, key, value) {
+      console.log(my.model);
+      my.model.updateRecordProperty(id, key, value, function(){});
     };
 
     Controller.prototype.dropAllRecords = function(targetDiv) {

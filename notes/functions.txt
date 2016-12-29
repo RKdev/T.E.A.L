@@ -64,3 +64,16 @@ teal.store.readFile(teal.store.categories, function(jsonData){
 });
 
 //        teal.store.updateRecord(teal.store.categories, tempArray[i].id, 'type', 'hierarchy', function(x){console.log(x)});
+
+Controller.prototype.updateRecordsProperty = function(id, key, value) { //searchval
+    my.model.readData(function(arrayData){
+    var tempRecord = new Record('x');
+    for(var i = 0; i < arrayData.length; i++){
+        for (var tempKey in arrayData[i]){
+          tempRecord[tempKey] = arrayData[i][tempKey];
+      }
+      tempRecord.setProperty(key, value); //set property
+      tempRecord.showMe(); // see the record
+    }
+  });
+};

@@ -23,7 +23,6 @@ function Templates() {
             + '<br/>'
             + '<input id="inputF" type="text">'
             + '<input id="addF" type="button" class="button" value="Add Flash Card">'
-            //+ '<input id="delete" type="button" class="button" value="Delete">'
             + '<hr/>'
             + 'Shortcuts'
             + '<br/>'
