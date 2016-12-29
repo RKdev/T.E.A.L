@@ -3,6 +3,7 @@
         this.date = Date.now();
         this.id = "" + this.date + Math.round(Math.random() * 1000);
         this.cycle = 0;
+        this.data = '';
       }
 
       Record.prototype.setProperty = function (key, value) {

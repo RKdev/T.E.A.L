@@ -31,7 +31,12 @@ function Teal() {
       attachEvent(geid('data_panel_output'), 'click', function(e){if(e.target !== e.currentTarget){teal.controller.loadData(e.target.id, e.target.value);}e.stopPropagation();});
       attachEvent(geid('load_sc_1'), 'click', function(){teal.controller.loadData("1481419033797327", "Chapter 8: The Administrative State");});
       attachEvent(geid('load_sc_2'), 'click', function(){teal.controller.loadData("148141938211330", "Chapter 11: Local Government");});
-      attachEvent(geid('notes_panel_output'), 'keyup', function(e){if(e.keyCode === 13){console.log(e);}});
-      attachEvent(geid('notes_panel_output'), 'keydown', function(e){if(e.keyCode !== 13){console.log(e);}});
+      attachEvent(geid('notes_panel_output'), 'keyup', function(e){if(e.keyCode === 13){
+        if(teal.model.searchValue !== "."){
+              //console.log(geid('notes_panel_text').value);
+              teal.controller.updateRecordProperty(teal.model.searchValue, 'data', geid('notes_panel_text').value);
+        }
+      }});
+      attachEvent(geid('notes_panel_output'), 'keydown', function(e){console.log(e);});
 
 };

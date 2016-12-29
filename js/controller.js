@@ -16,7 +16,7 @@
       });
     };
 
-    Controller.prototype.addData = function(data, type, targetDiv) {
+    Controller.prototype.addRecord = function(data, type, targetDiv) {
       my.view.clearDiv(targetDiv);
       my.model.addRecord(data, type,
         function(){my.model.readRecords(
@@ -24,13 +24,13 @@
             my.view.createButtons(jsonData, targetDiv);
           });
         });
-      return('teal.controller.addData');
+      return('teal.controller.addRecord');
     };
 
     Controller.prototype.controlPanelAddH = function(){
       var data = geid('inputH').value;
       if(data) {
-        my.addData(data, 'hierarchy','data_panel_output');
+        my.addRecord(data, 'hierarchy','data_panel_output');
         geid('inputH').value = '';
       }
       return('teal.controlPanelAddH');
@@ -39,7 +39,7 @@
     Controller.prototype.controlPanelAddN = function(){
       var data = geid('inputN').value;
       if(data) {
-        my.addData(data, 'note','data_panel_output');
+        my.addRecord(data, 'note','data_panel_output');
         geid('inputN').value = '';
       }
       return('teal.controlPanelAddH');
@@ -66,6 +66,7 @@
             teal.store.readRecords(teal.store.categories, 'id', searchval, function(newArrayData){
               if (newArrayData[0].type === 'hierarchy'){
                   my.view.renderDiv('data_panel_header', 'header', {Title:name.capitalize()});
+                  my.view.clearDiv('notes_panel_output');
                   my.view.clearDiv('data_panel_output');
                   my.view.createButtons(arrayData, 'data_panel_output');
               }
@@ -103,8 +104,20 @@
     };
 
     Controller.prototype.updateRecordProperty = function (id, key, value) {
-      console.log(my.model);
       my.model.updateRecordProperty(id, key, value, function(){});
+    };
+
+    Controller.prototype.readRecord = function (id) {
+      teal.store.readRecord(teal.store.categories, 'id', id, function(x){console.log(x);});
+    };
+
+    Controller.prototype.listAllRecords = function() {
+      teal.store.readFile(teal.store.categories, function(x){
+        for(var i = 0; i < x.length; i++){
+                console.log("Index: " + (i + 1) + " " + "ID: " + x[i].id + " Type: " + x[i].type + " Name: " +  x[i].name);
+        }
+        console.log(x.length);
+      });
     };
 
     Controller.prototype.dropAllRecords = function(targetDiv) {

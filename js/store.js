@@ -63,7 +63,6 @@ Store.prototype.readRecord = function(file, searchkey, searchval, callback){
             returnRecord = jsonData[key];
           }
       }
-      //console.log(returnArray);
       callback(returnRecord);
   });
 };
