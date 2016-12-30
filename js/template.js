@@ -6,7 +6,10 @@ function Templates() {
         dataPanel :
               '<div id=data_panel_header><header><h2>{{Title}}</h2></header></div>'
             + '<hr/>'
-            + '<div id=data_panel_output></div>',
+            + '<div id=data_panel_output></div>'
+            //+ '<hr/>'
+            + '<header><h4>Notes</h4></header>'
+            + '<div id=data_panel_notes_output></div>',
 
         controlPanel :
               '<div id=control_panel_header><header><h2>{{Title}}</h2></header></div>'
@@ -21,8 +24,8 @@ function Templates() {
             + '<input id="inputN" type="text">'
             + '<input id="addN" type="button" class="button" value="Add Notes">'
             + '<br/>'
-            + '<input id="inputF" type="text">'
-            + '<input id="addF" type="button" class="button" value="Add Flash Card">'
+      //      + '<input id="inputF" type="text">'
+      //      + '<input id="addF" type="button" class="button" value="Add Flash Card">'
             + '<hr/>'
             + 'Shortcuts'
             + '<br/>'

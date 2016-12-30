@@ -11,6 +11,9 @@
       my.model.searchValue = ".";
       my.view.renderDiv('data_panel_header', 'header', {Title:'Categories'});
       my.view.clearDiv(targetDiv);
+      my.view.clearDiv('notes_panel_output');
+      my.view.clearDiv('notes_panel_header');
+      my.view.clearDiv('data_panel_notes_output');
       my.model.readRecords(function(jsondata) {
         my.view.createButtons(jsondata, targetDiv);
       });
@@ -64,15 +67,30 @@
             //Hierarchy
 
             teal.store.readRecords(teal.store.categories, 'id', searchval, function(newArrayData){
+              var notesArray = [];
+              var hierarchyArray = [];
+
               if (newArrayData[0].type === 'hierarchy'){
-                  my.view.renderDiv('data_panel_header', 'header', {Title:name.capitalize()});
                   my.view.clearDiv('notes_panel_output');
+                  my.view.clearDiv('notes_panel_header');
                   my.view.clearDiv('data_panel_output');
-                  my.view.createButtons(arrayData, 'data_panel_output');
+                  my.view.clearDiv('data_panel_notes_output');
+                  my.view.renderDiv('data_panel_header', 'header', {Title:name.capitalize()});
+                  for(var i in arrayData){
+                    if (arrayData[i].type === 'note') {
+                      notesArray.push(arrayData[i]);
+                    }
+                      else {
+                        hierarchyArray.push(arrayData[i]);
+                      }
+                  }
+                  my.view.createButtons(notesArray, 'data_panel_notes_output');
+                  my.view.createButtons(hierarchyArray, 'data_panel_output');
               }
               //Notes
 
               else if (newArrayData[0].type === 'note') {
+                console.log(arrayData[0]);
                 my.view.clearDiv('notes_panel_output');
                 my.view.renderDiv('notes_panel_header', 'header', {Title:name.capitalize()});
                 if (typeof newArrayData[0].data !== 'undefined') {
