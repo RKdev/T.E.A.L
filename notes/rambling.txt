@@ -15,3 +15,9 @@ Programming-wise - I know the basic structure - it's just a matter of putting it
 
 So I need to pick some concrete goals, and stop redesigning for a bit. I have a basic MVC framework -
 I should just use it.
+
+
+Review Concept:
+
+"Conceptual review" - definitions
+"Practical review" - solve problems

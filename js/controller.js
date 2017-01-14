@@ -42,7 +42,7 @@
     Controller.prototype.controlPanelAddN = function(){
       var data = geid('inputN').value;
       if(data) {
-        my.addRecord(data, 'note','data_panel_output');
+        my.addRecord(data, 'note','data_panel_notes_output');
         geid('inputN').value = '';
       }
       return('teal.controlPanelAddH');

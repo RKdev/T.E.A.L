@@ -15,22 +15,22 @@ function Templates() {
               '<div id=control_panel_header><header><h2>{{Title}}</h2></header></div>'
             + '<hr/>'
             + '<div id="control_panel_features">'
-            + '<input id="load" type="button" class="button" value="{{Controlbutton}}">'
+            + '<input id="load" type="button" class="button normal" value="{{Controlbutton}}">'
             + '<br/>'
             + '<br/>'
             + '<input id="inputH" type="text">'
-            + '<input id="addH" type="button" class="button" value="Add Hierarchy">'
+            + '<input id="addH" type="button" class="button normal" value="Add Hierarchy">'
             + '<br/>'
             + '<input id="inputN" type="text">'
-            + '<input id="addN" type="button" class="button" value="Add Notes">'
+            + '<input id="addN" type="button" class="button normal" value="Add Notes">'
             + '<br/>'
       //      + '<input id="inputF" type="text">'
-      //      + '<input id="addF" type="button" class="button" value="Add Flash Card">'
+      //      + '<input id="addF" type="button" class="button normal" value="Add Flash Card">'
             + '<hr/>'
             + 'Shortcuts'
             + '<br/>'
-            + '<input id="load_sc_1" type="button" class="button" value="Ch_8">'
-            + '<input id="load_sc_2" type="button" class="button" value="Ch_11">'
+            + '<input id="load_sc_1" type="button" class="button normal" value="Schaums Algebra">'
+            + '<input id="load_sc_2" type="button" class="button normal" value="Ch_11">'
             + '</div>',
 
         note :
@@ -40,7 +40,10 @@ function Templates() {
 
         notedata : '<textarea id=notes_panel_text>{{Data}}</textarea>',
 
-        button : '<input id="{{id}}" type="button" class="button" value="{{buttonname}}">',
+        button : '<input id="{{id}}" type="button" class="button normal" value="{{buttonname}}">',
+
+        buttonreviewed : '<input id="{{id}}" type="button" class="button reviewed" value="{{buttonname}}">',
+
 
         header : '<header><h2>{{Title}}</h2></header>'
     };
