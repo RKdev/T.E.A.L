@@ -1,0 +1,61 @@
+/*jshint ignore: start*/
+controller.js
+    Controller.prototype.loadAllData = function(targetDiv) {
+    Controller.prototype.addRecord = function(data, type, targetDiv) {
+    Controller.prototype.controlPanelAddH = function(){
+    Controller.prototype.controlPanelAddN = function(){
+    Controller.prototype.loadData = function(searchval, name) {
+    Controller.prototype.updateRecordsProperty = function(id, key, value) { //searchval
+    Controller.prototype.updateRecordProperty = function (id, key, value) {
+    Controller.prototype.readRecord = function (id) {
+    Controller.prototype.listAllRecords = function() {
+    Controller.prototype.dropAllRecords = function(targetDiv) {
+
+global.js
+    window.geid = function(elem_id){
+    window.qs = function(selector) {
+    window.qsa = function(selector) {
+    window.attachEvent = function (target, type, callback) {
+    String.prototype.capitalize = function(){
+
+model.js
+Model.prototype.newRecord = function() {
+Model.prototype.setdatabase = function (name) {
+Model.prototype.setsearchKey = function (key) {
+Model.prototype.setsearchValue = function (value) {
+Model.prototype.readData = function (callback) {
+Model.prototype.addRecord = function (data, type, callback) {
+Model.prototype.readRecords = function (callback) {
+Model.prototype.readRecord = function (callback) {
+Model.prototype.updateRecordProperty = function (id, updatekey, updatevalue, callback) {
+Model.prototype.dropAllRecords = function (callback) {
+
+record.js
+      Record.prototype.setProperty = function (key, value) {
+      Record.prototype.addNote = function (data) {
+      Record.prototype.showMe = function() {
+
+store.js
+Store.prototype.AJAXGet = function(file, callback) {
+Store.prototype.AJAXPost = function(file, data, callback) {
+Store.prototype.readFile = function(file_db, callback) {
+Store.prototype.createRecord = function(file_db, data, callback) {
+Store.prototype.readRecords = function(file, searchkey, searchval, callback){
+Store.prototype.readRecord = function(file, searchkey, searchval, callback){
+Store.prototype.updateRecordProperty = function(file_db, id, updatekey, updatevalue, callback) {
+Store.prototype.destroyRecord = function() {
+Store.prototype.dropAllRecords = function (file_db, callback) {
+
+teal.js
+    var initTeal = function() {
+
+template.js
+Templates.prototype.display = function(template, data){
+
+view.js
+View.prototype.getLayout = function() {
+View.prototype.findDiv = function(divValue) {
+View.prototype.renderDiv = function(divRef, templateRef, data){
+View.prototype.addTemplateToPanel = function(divRef, templateRef, data) {
+View.prototype.createButtons = function(data, target) {
+View.prototype.clearDiv = function(divRef) {
